@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Alterações no pom.">
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="adicionando .gitignore">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +15,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,7 +44,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/gina_/IdeaProjects/blueSupermarket/blueSupermarket/src/main/webapp",
+    "last_opened_file_path": "C:/Users/Lucca/Documents/ESTUDOS/Compass.UOL/Sprint3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable"
   }
 }]]></component>
@@ -45,9 +63,7 @@
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
       <option name="docBase" value="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
+      <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
@@ -73,6 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657302562362</updated>
       <workItem from="1657302563600" duration="1000" />
+      <workItem from="1657560885426" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="Alterações no pom.">
       <created>1657304538653</created>
@@ -83,6 +100,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
