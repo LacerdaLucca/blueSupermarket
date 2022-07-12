@@ -19,19 +19,7 @@ public class UsuarioDao {
         }
     }
 
-    public String inserirUsuario(Usuario usuario) {
-        try (java.sql.PreparedStatement stm = connection.prepareStatement("INSERT INTO USUARIOS (NOME, CPF, SENHA, CEP, ENDEREÇO) "
-                + "VALUES ("+usuario.getNome()+
-                ", '"+usuario.getCpf()+
-                "', '"+usuario.getSenha()+
-                "','"+usuario.getCep()+
-                "', "+usuario.getEndereço())){
-            stm.execute();
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return "O usuário foi inserido.";
-    }
+
 
     public Usuario consultarUsuarioPorCpf (String cpf)  {
         Usuario usuarioRetornado = new Usuario();
