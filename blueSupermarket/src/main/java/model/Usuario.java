@@ -3,13 +3,18 @@ package model;
 public class Usuario {
 
     private String nome;
-    private int cpf;
+    private String cpf;
     private String senha;
     private String endereço;
 
-    public Usuario(String nome, int cpf) {
+    private String cep;
+
+    public Usuario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+    }
+
+    public Usuario() {
     }
 
     public String getNome() {
@@ -20,11 +25,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -42,5 +47,24 @@ public class Usuario {
 
     public void setEndereço(String endereço) {
         this.endereço = endereço;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", senha='" + senha + '\'' +
+                ", endereço='" + endereço + '\'' +
+                ", cep='" + cep + '\'' +
+                '}';
     }
 }

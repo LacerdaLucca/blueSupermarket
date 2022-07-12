@@ -3,38 +3,68 @@ package DAO;
 import factory.ConnectionFactory;
 import model.Usuario;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UsuarioDao {
 
-    public static Statement pegaConexao() throws SQLException {
+
+    Connection connection = null;
+    public UsuarioDao()  {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        Connection connection = connectionFactory.recuperarConexao();
-
-        Statement stm = connection.createStatement();
-
-        return stm;
+        try {
+            this.connection = connectionFactory.recuperarConexao();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public static String inserirUsuario(Usuario usuario) throws SQLException {
-
-        Connection connection = null;
-        java.sql.Statement stm = connection.createStatement();
-        stm.execute("INSERT INTO USUARIOS (NOME, CPF, SENHA, ENDEREÇO) "
+    public String inserirUsuario(Usuario usuario) {
+        try (java.sql.PreparedStatement stm = connection.prepareStatement("INSERT INTO USUARIOS (NOME, CPF, SENHA, CEP, ENDEREÇO) "
                 + "VALUES ("+usuario.getNome()+
                 ", '"+usuario.getCpf()+
                 "', '"+usuario.getSenha()+
-                "', "+usuario.getEndereço());
-
+                "','"+usuario.getCep()+
+                "', "+usuario.getEndereço())){
+            stm.execute();
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
         return "O usuário foi inserido.";
     }
 
-    public static void deletarPorCpf(int cpf) throws SQLException {
+    public Usuario consultarUsuarioPorCpf (String cpf)  {
+        Usuario usuarioRetornado = new Usuario();
+        try(java.sql.PreparedStatement stm = connection.prepareStatement("SELECT NOME, CPF, SENHA, CEP, ENDEREÇO FROM USUARIOS WHERE CPF = " +cpf)){
+            stm.execute();
+            try(ResultSet rst = stm.getResultSet()) {
+                while (rst.next()) {
 
-        java.sql.Statement stm = pegaConexao();
-        stm.execute("DELETE FROM USUARIOS WHERE CPF = " +cpf);
+                    String nomeUsuario = rst.getString("NOME");
+                    usuarioRetornado.setNome(nomeUsuario);
+                    String cpfUsuario = rst.getString("CPF");
+                    usuarioRetornado.setCpf(cpfUsuario);
+                    String senhaUsuario = rst.getString("SENHA");
+                    usuarioRetornado.setSenha(senhaUsuario);
+                    String cepUsuario = rst.getString("CEP");
+                    usuarioRetornado.setCep(cepUsuario);
+                    String enderecoUsuario = rst.getString("ENDEREÇO");
+                    usuarioRetornado.setEndereço(enderecoUsuario);
+                }
+            }
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+
+        }
+        return usuarioRetornado;
     }
+
+    public void deletarPorCpf(String cpf) {
+        try (java.sql.PreparedStatement stm = connection.prepareStatement("DELETE FROM USUARIOS WHERE CPF = " +cpf)){
+            stm.execute();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
 }
