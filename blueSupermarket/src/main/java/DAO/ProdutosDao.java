@@ -3,6 +3,7 @@ package main.java.DAO;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,6 +20,7 @@ public class ProdutosDao {
 		this.f = new Factory();
 		f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
 		this.stm = f.getStatement();
+		updateProdutos();
 	}
 	
 	public void close() {
@@ -35,17 +37,18 @@ public class ProdutosDao {
 		
 		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("Produtos.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\User\\Meus Documentos\\Produtos.csv",Charset.forName("ISO-8859-1")));
 			while((line = br.readLine())!=null) {
 				String[] produto = line.split(",");
 				try {
 					SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 					java.util.Date data = sdf.parse(produto[5]);
 					insertProduto(Integer.parseInt(produto[0]),produto[1],produto[2],Double.parseDouble(produto[3]),Integer.parseInt(produto[4]),data);
-				}catch(NullPointerException e) {
+				}catch(ArrayIndexOutOfBoundsException e) {
 					insertProduto(Integer.parseInt(produto[0]),produto[1],produto[2],Double.parseDouble(produto[3]),Integer.parseInt(produto[4]),null);
 				}
 			}
+			br.close();
 		}catch(ParseException e) {
 			System.out.println("Erro na conversão de datas! (method updateProdutos())");
 			System.out.println(e.getMessage());
@@ -56,6 +59,7 @@ public class ProdutosDao {
 			System.out.println(e.getMessage());
 			return;
 		}
+		System.out.println("ATUALIZAÇÃO CONCLUIDA!!");
 	}
 	
 	private boolean checkProdutos() {
