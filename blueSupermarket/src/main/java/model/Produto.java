@@ -24,7 +24,7 @@ public class Produto extends Quantidade{
         }catch(ParseException e){
         	System.out.println("ERRO AO OBTER PROMOCAO! (method getPromocao())");
         	System.out.println(e.getMessage());
-        }
+        }catch(NullPointerException e) {}
         
     }
     
