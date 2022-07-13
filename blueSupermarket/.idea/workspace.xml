@@ -7,13 +7,11 @@
     <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Inserção pastas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filter/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resource/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/usuarioForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/usuarioForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +58,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/gina_/IdeaProjects/blueSupermarket/blueSupermarket/src/main/webapp&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable&quot;
-
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -178,5 +175,9 @@
     <MESSAGE value="Alterações workspace.xml" />
     <MESSAGE value="Alterações" />
     <option name="LAST_COMMIT_MESSAGE" value="Alterações" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
