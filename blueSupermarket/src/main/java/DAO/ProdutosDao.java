@@ -37,7 +37,8 @@ public class ProdutosDao {
 		
 		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\User\\Meus Documentos\\Produtos.csv",Charset.forName("ISO-8859-1")));
+			//System.out.println("PASTA ->" + System.getProperty("user.dir"));
+			BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Produtos.csv",Charset.forName("ISO-8859-1")));
 			while((line = br.readLine())!=null) {
 				String[] produto = line.split(",");
 				try {
