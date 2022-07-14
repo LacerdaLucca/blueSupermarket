@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=ISO-8859-1" language="java" %>
+<%@ page contentType="text/html;charset=ISO-8859-1" language="java" pageEncoding="UTF-8"%>
 <html>
 <body>
 <h2>Clique abaixo e faça seu cadastro!</h2>
