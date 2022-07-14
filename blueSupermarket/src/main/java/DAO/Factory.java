@@ -1,12 +1,13 @@
-package factory;
+package DAO;
 
 import java.sql.*;
 
 public class Factory {
-private Connection c;
+    private Connection c;
 	
 	//construtor
 	public Factory() {
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		}catch(ClassNotFoundException e) {
