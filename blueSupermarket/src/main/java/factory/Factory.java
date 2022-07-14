@@ -19,7 +19,7 @@ private Connection c;
 	//seta uma nova conexao
 	public void setConnection(String URL) {
 		try {
-			Connection con = DriverManager.getConnection(URL,"root","root");			
+			Connection con = DriverManager.getConnection(URL,"root","root");
 			this.c = con;
 		}catch (SQLException e){
 			System.out.println("ERRO AO CONFIGURAR A CONEXAO! (method setConnection())");

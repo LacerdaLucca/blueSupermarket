@@ -1,4 +1,4 @@
-package main.java.DAO;
+package DAO;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import main.java.models.Produto;
+import factory.Factory;
+import model.Produto;
 
 public class ProdutosDao {
 	private Statement stm;
@@ -86,7 +87,7 @@ public class ProdutosDao {
 		}
 		String sql = "INSERT INTO produtos(ID,NOME,DESCRICAO,PRECO,QUANTIDADE,VALIDADE) VALUES(?,?,?,?,?,?)";
 		try {
-			PreparedStatement ps = f.getConnection().prepareStatement(sql);
+			PreparedStatement ps = (PreparedStatement) f.getStatement();
 			ps.setInt(1, ID);
 			ps.setString(2, nome);
 			ps.setString(3, desc);
@@ -110,7 +111,7 @@ public class ProdutosDao {
 	public void updateQuant(int ID, int quant){
 		String sql = "UPDATE produtos SET QUANTIDADE = "+quant;
 		try {
-			PreparedStatement ps =f.getConnection().prepareStatement(sql);
+			PreparedStatement ps = (PreparedStatement) f.getStatement();
 			ps.execute();
 		}catch(SQLException e) {
 			System.out.println("ERRO AO ATUALIZAR A TABELA! (method updateQuant())");
@@ -123,7 +124,7 @@ public class ProdutosDao {
 		String sql = "SELECT * FROM produtos";
 		
 		try {
-			PreparedStatement ps = this.f.getConnection().prepareStatement(sql);
+			PreparedStatement ps = (PreparedStatement) this.f.getStatement();
 			ps.execute();
 			ResultSet rs = ps.getResultSet();
 			while(rs.next()) {

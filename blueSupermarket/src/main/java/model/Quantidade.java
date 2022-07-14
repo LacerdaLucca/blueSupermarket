@@ -1,4 +1,4 @@
-package main.java.models;
+package model;
  
 public class Quantidade {
 	   private int ID;
