@@ -1,8 +1,7 @@
-package main.java.models;
+package model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import main.java.models.Quantidade;
 
 public class Produto extends Quantidade{
 	private String nome;
