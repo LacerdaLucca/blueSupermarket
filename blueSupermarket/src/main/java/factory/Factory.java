@@ -27,13 +27,6 @@ private Connection c;
 		}
 	}
 	
-	
-	public Connection getConnection() {
-			
-		return this.c;
-	
-	}
-	
 	public Statement getStatement() {
 		try {
 			return c.createStatement();
