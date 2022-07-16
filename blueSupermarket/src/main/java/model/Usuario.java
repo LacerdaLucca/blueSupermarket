@@ -67,28 +67,4 @@ public class Usuario {
                 ", cep='" + cep + '\'' +
                 '}';
     }
-
-    public boolean verificaCPF(String cpf){
-        boolean cpfEhValido = true;
-        if(cpf.length() != 11){
-            throw new tamanhoErradoException();
-        }
-        cpfEhValido = validaPrimeiroDigito(cpf);
-        cpfEhValido = validaSegundoDigito(cpf);
-        return cpfEhValido;
-    }
-
-    private boolean validaSegundoDigito(String cpf) {
-        boolean digitoValido = false;
-
-        for (int i = 0; i < ; i++) {
-            soma += Integer.parseInt(cpf.charAt(i) + "") * peso--;
-        }
-        return  digitoValido;
-    }
-
-    private boolean validaPrimeiroDigito(String cpf) {
-        boolean digitoValido = false;
-        return digitoValido;
-    }
 }
