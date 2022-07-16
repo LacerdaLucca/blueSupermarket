@@ -31,6 +31,7 @@ public class UsuarioServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
+        System.out.println(senha);
         String cep = request.getParameter("cep");
         String endereco = request.getParameter("endereco");
     //    Usuario usuario = new Usuario(nome, cpf);
