@@ -2,14 +2,11 @@ package DAO;
 
 import factory.Factory;
 import model.Carrinho;
-import model.ListaIdCarrinho;
 import model.Produto;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -54,40 +51,8 @@ public class CarrinhoDao {
             }
         }
     }
-    public List<ListaIdCarrinho> listaProdutosCarrinho(){
-        List<ListaIdCarrinho> lista = new ArrayList<>();
-        String sql = "SELECT idProd FROM carrinho";
-        try {
-            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
-            ps.execute();
-            ResultSet rs = ps.getResultSet();
-            while(rs.next()) {
-                lista.add(new ListaIdCarrinho(rs.getInt("idProd")));
-            }
-            System.out.println(lista.size());
-            return lista;
-        }catch(SQLException e) {
-            System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
 
-
-    public void deletarCarrinho(int id){
-
-            String sql = "DELETE FROM carrinho WHERE idProd = ?";
-            try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
-                pstm.setInt(1,id);
-                pstm.execute();
-            } catch (SQLException e) {
-                e.getMessage();
-                System.out.println("Não foi possível isnserir produto");
-            }
-
-    }
-
-    public void truncateCarrinho(){
+    public void dropCarrinho(){
             String sql = "TRUNCATE carrinho";
             try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
                 pstm.execute();

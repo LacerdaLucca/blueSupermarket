@@ -37,9 +37,9 @@
                 </tr>
 
                 <form action="/blueSupermarket/finalizar" method="post">
-                   	<input type="hidden" name="cep" value="${frete.cep}" />
-                   	<input type="hidden" name="valor" value="${frete.valorFrete}" />
-                   	<input type="hidden" name="prazo" value="${frete.prazo}" />
+                   	<input type="hidden" name="cep" value="${freteP.cep}" />
+                   	<input type="hidden" name="valor" value="${freteP.valorFrete}" />
+                   	<input type="hidden" name="prazo" value="${freteP.prazo}" />
                    	<input type="hidden" name="usuario" value="${usuario.cpf}" />
   					<button type="submit">Finalizar Compra</button>
        			</form>

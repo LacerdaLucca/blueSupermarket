@@ -64,12 +64,4 @@ public class FreteService {
 
         return valorFrete+" "+prazoEntrega;
     }
-
-    public double tratamentoValorFrete(String valor){
-        String[] div = valor.split(",");
-        String valFrete = div[0]+"."+div[1];
-        double valorFrete=Double.parseDouble(valFrete);
-        return valorFrete;
-    }
-
 }
