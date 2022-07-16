@@ -61,6 +61,8 @@ public class Usuario {
     }
 
     public void setCep(String cep) {
+        if(!verificaCep(cep))
+            throw new RuntimeException();
         this.cep = cep;
     }
 
@@ -132,5 +134,9 @@ public class Usuario {
                 + "(?=\\S+$)" // Sem espaço em branco
                 + ".{8,20}$"; // De 8 a 20 chars
         return senha.matches(senhaValida);
+    }
+    private boolean verificaCep(String cep) {
+        String digitos = "(.*\\d.*).{8}";
+        return cep.matches(digitos);
     }
 }
