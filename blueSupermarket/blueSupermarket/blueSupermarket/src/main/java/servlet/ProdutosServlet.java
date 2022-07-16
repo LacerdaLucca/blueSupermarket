@@ -1,9 +1,7 @@
 package servlet;
 
-import DAO.CarrinhoDao;
 import DAO.ProdutosDao;
 import model.Produto;
-import services.CarrinhoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +19,6 @@ public class ProdutosServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         listProdutos.clear();
-        new CarrinhoService().esvaziarCarrinho();
         listProdutos.addAll(new ProdutosDao().getProdutos());
             request.setAttribute("listaProdutos", listProdutos);
             request.getRequestDispatcher("/WEB-INF/views/listaProdutos.jsp").forward(request,response);

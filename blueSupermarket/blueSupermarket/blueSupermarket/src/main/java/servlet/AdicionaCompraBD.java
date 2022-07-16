@@ -3,8 +3,6 @@ package servlet;
 import DAO.CarrinhoDao;
 import model.Carrinho;
 import model.Produto;
-import services.CarrinhoService;
-import services.FreteService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +14,9 @@ import java.util.List;
 
 @WebServlet("/finalizar")
 public class AdicionaCompraBD extends HttpServlet {
+    public void setListaProdutos(List<Produto> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
     private List<Produto> listaProdutos= new ArrayList<>();
 
     public void service(HttpServletRequest req, HttpServletResponse resp){
@@ -34,29 +35,34 @@ public class AdicionaCompraBD extends HttpServlet {
         String prazo = req.getParameter("prazo");
         String cpf = req.getParameter("usuario");
 
-        listaProdutos.addAll(new CarrinhoService().listaProd());
+//         listaProdutos.addAll(new CarrinhoServlet().getListProdutosCarrinho());
+        System.out.println(this.listaProdutos.size());
         Carrinho carrinho = new Carrinho();
-        int index = listaProdutos.size()-1;
-        double valorTotal = listaProdutos.get(index).getValorTotal();
 
+        double total= listaProdutos.get(listaProdutos.size()-1).getValorTotal();
+        int[] quant = null;
+        quant[0]=0;
         for (int i = 0; i < listaProdutos.size(); i++) {
-            carrinho.setIdProdutos(listaProdutos.get(i).getID());
-            carrinho.setQtn(1);
-            carrinho.setCpfUsuario(cpf);
-            carrinho.setCep(cep);
-            carrinho.setValorFrete(new FreteService().tratamentoValorFrete(valorFrete));
-            carrinho.setPrazoEntrega(Integer.parseInt(prazo));
-            carrinho.setValorTotal(valorTotal);
-            try{
-                new CarrinhoDao().inserirCompra(carrinho);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+            for (int j = 0; j < listaProdutos.size() ; j++) {
+                if(i==j){
+                    quant[i]++;
+                }
             }
         }
-//        carrinho.setValorTotal(total);
+        int quantidade = quant.length;
+
+        for (int i = 0; i < quantidade; i++) {
+            carrinho.setIdProdutos(listaProdutos.get(i).getID());
+            carrinho.setQtn(quant[i]);
+            carrinho.setCpfUsuario(cpf);
+            carrinho.setCep(cep);
+            carrinho.setValorFrete(Double.parseDouble(valorFrete));
+            carrinho.setPrazoEntrega(Integer.parseInt(prazo));
+        }
+        carrinho.setValorTotal(total);
 
         try{
-            new CarrinhoDao().truncateCarrinho();
+            new CarrinhoDao().dropCarrinho();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

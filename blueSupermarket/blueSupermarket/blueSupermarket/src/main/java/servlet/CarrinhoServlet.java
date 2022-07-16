@@ -25,25 +25,21 @@ public class CarrinhoServlet extends HttpServlet {
 
         String paramDel = request.getParameter("del");
         String paramAdd=request.getParameter("add");
-        String paramSalvar = request.getParameter("salvar");
 
          System.out.println("del "+ paramDel);
          System.out.println("add "+paramAdd);
 
-        if (paramDel== null && paramAdd== null && paramSalvar==null){
+        if (paramDel== null && paramAdd== null){
+            try{
+                CarrinhoDao carrinhoDao =  new CarrinhoDao();
+                carrinhoDao.adicionaCarrinho(listProdutosCarrinho);
+            }catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             request.setAttribute("produtos", listProdutosCarrinho);
             request.getRequestDispatcher("/WEB-INF/views/carrinho.jsp").forward(request,response);
         }else{
-            if (paramSalvar!=null){
-                try{
-                    CarrinhoDao carrinhoDao =  new CarrinhoDao();
-                    carrinhoDao.adicionaCarrinho(listProdutosCarrinho);
-                    request.getRequestDispatcher("/WEB-INF/views/formCep.jsp").forward(request,response);
-                }catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-
-            }else if(paramDel== null){
+            if(paramDel== null){
                 String id = request.getParameter("add");
                 int idProd = Integer.parseInt(id);
 
@@ -55,7 +51,7 @@ public class CarrinhoServlet extends HttpServlet {
             }else{
                 String id = request.getParameter("del");
                 int idDel = Integer.parseInt(id);
-//                Produto produtos = new CarrinhoService().addProdutoCarrinho(idDel);
+                Produto produtos = new CarrinhoService().addProdutoCarrinho(idDel);
                 int index = 0;
                 for (Produto produto: listProdutosCarrinho) {
                     if(produto.getID() == idDel){
@@ -64,7 +60,6 @@ public class CarrinhoServlet extends HttpServlet {
                 }
                 System.out.println(index);
                 listProdutosCarrinho.remove(index);
-                new CarrinhoService().deletarProdPorID(idDel);
 
                 request.setAttribute("produtos", listProdutosCarrinho);
                 request.getRequestDispatcher("/WEB-INF/views/carrinho.jsp").forward(request,response);

@@ -59,10 +59,12 @@
       <br>
          <a href="/blueSupermarket/produtos"><h3>Continuar comprando </h3> </a>
       	<br>
-
-      	 <a href="/blueSupermarket/carrinho?salvar=true"><h3>Finalizar carrinho </h3> </a>
-         <br>
       <br>
+       <form action="/blueSupermarket/frete" method="post">
+            CEP: <input type="text" name="cep"  />
+            <input type="submit"/>
+        </form>
+    	<br>
 
 </body>
 </html>
