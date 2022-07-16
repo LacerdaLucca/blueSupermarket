@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Inserção pastas.">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioFormServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/Factory.class" afterDir="false" />
+>>>>>>> featureusuario
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +62,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/gina_/IdeaProjects/blueSupermarket/blueSupermarket/src/main/webapp",
+<<<<<<< HEAD
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+=======
+>>>>>>> featureusuario
     "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
@@ -72,7 +83,9 @@
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
       <option name="docBase" value="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
-      <option name="envOptions" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
