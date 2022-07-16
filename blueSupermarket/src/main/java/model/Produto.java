@@ -13,24 +13,17 @@ public class Produto extends Quantidade{
     private long quantidade;
     private java.util.Date validade;
     private boolean promocao;
-
-//    public Produto(String nome, String desc, double preco, long quantidade, Date validade) {
-//        this.nome = nome;
-//        this.desc = desc;
-//        this.preco = preco;
-//        this.quantidade = quantidade;
-//        this.validade = validade;
-//        this.promocao = promocao;
-//    }
+    private double valorTotal;
 
     //construtor
-    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade){
-        this.setID(ID);
+    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+        this.ID=ID;
         this.nome= nome;
         this.desc = desc;
         this.preco = preco;
         this.quantidade =quant;
         this.validade=validade;
+        this.valorTotal = valorTotal;
 //        try {
 //        	this.promocao = getPromocao();
 //        }catch(ParseException e){
@@ -41,9 +34,6 @@ public class Produto extends Quantidade{
     }
     
     //getters
-
-
-
     public int getID() {
         return ID;
     }
@@ -97,6 +87,10 @@ public class Produto extends Quantidade{
         this.promocao = promocao;
     }
 
+    public double getValorTotal() {return valorTotal; }
+
+    public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
+
     public boolean getPromocao() throws ParseException{
     	this.promocao = false;
 		java.util.Date date = new java.util.Date();
@@ -133,7 +127,7 @@ public class Produto extends Quantidade{
     
     //clona o produto
     private Produto cloneProduto() {
-    	Produto clone = new Produto(getID(),this.nome,this.desc,this.preco,getQuant(),this.validade);
+    	Produto clone = new Produto(getID(),this.nome,this.desc,this.preco,getQuant(),this.validade, this.valorTotal);
     	return clone;
     }
 }

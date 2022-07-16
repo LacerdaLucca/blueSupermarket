@@ -23,7 +23,6 @@
                 <th>NOME</th>
                 <th>DESCRIÇÃO</th>
                 <th>PREÇO</th>
-                <th>QUANTIDADE</th>
                 <th>VALIDADE</th>
 
             </tr>
@@ -35,16 +34,18 @@
                     <td>${produto.nome}</td>
                     <td>${produto.desc}</td>
                     <td>${produto.preco}</td>
-                    <td>${produto.quantidade}</td>
                     <td>${produto.validade}</td>
-                    <td><form action="/blueSupermarket/carrinho?id=${produto.ID}" method="post">
-                    	<input type="submit"/>
+                    <td><form action="/blueSupermarket/carrinho?add=${produto.ID}" method="post">
+                    	<input type="submit" value="Enviar para o carrinho"/>
                     </form></td>
                 </tr>
 
            </c:forEach>
         </tbody>
     </table>
-	<a href="/carrinho">Ir para o Carrinho</a>
+    <form action="/blueSupermarket/carrinho" method="get">
+        <input type="submit" value="Ir para o Carrinho"/>
+    </form>
+
 </body>
 </html>

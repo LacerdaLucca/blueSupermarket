@@ -1,5 +1,6 @@
 package DAO;
 
+import factory.Factory;
 import model.Produto;
 
 import java.io.BufferedReader;
@@ -20,8 +21,16 @@ public class ProdutosDao {
 	public ProdutosDao() {
 		this.f = new Factory();
 		f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-		this.stm = f.getStatement();
-		updateProdutos();
+		try{
+			this.stm=f.getC().createStatement();
+			updateProdutos();
+		}catch (SQLException sqe){
+
+		}
+	}
+
+	public Statement getStm() throws SQLException {
+		return stm;
 	}
 	
 	public void close() {
@@ -128,7 +137,7 @@ public class ProdutosDao {
 			ps.execute();
 			ResultSet rs = ps.getResultSet();
 			while(rs.next()) {
-				Produto produto = new Produto(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getDouble(4),rs.getInt(5),rs.getDate(6));
+				Produto produto = new Produto(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getDouble(4),rs.getInt(5),rs.getDate(6),0);
 				produtos.add(produto);
 			}
 			return produtos;
@@ -149,8 +158,8 @@ public class ProdutosDao {
 			ps.execute();
 			ResultSet rs = ps.getResultSet();
 			while(rs.next()) {
-				produto = new Produto(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getDouble(4),rs.getInt(5),rs.getDate(6));
-
+				produto = new Produto(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getDouble(4),rs.getInt(5),rs.getDate(6),0);
+				if(!rs.next()) return produto;
 			}
 			return produto;
 		}catch(SQLException e) {

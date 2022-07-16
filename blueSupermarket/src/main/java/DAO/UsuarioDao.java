@@ -1,6 +1,7 @@
 package DAO;
 
 
+import factory.Factory;
 import model.Usuario;
 
 import java.sql.*;
@@ -11,12 +12,14 @@ public class UsuarioDao {
     private Factory f;
 
     public UsuarioDao()  {
-        this.f = new Factory();
-        f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        this.stm = f.getStatement();
+       try{
+           this.f = new Factory();
+           f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
+           this.stm = f.getC().createStatement();
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       }
     }
-
-
 
     public Usuario consultarUsuarioPorCpf (String cpf)  {
         Usuario usuarioRetornado = new Usuario();

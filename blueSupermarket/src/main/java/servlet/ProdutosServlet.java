@@ -1,7 +1,9 @@
 package servlet;
 
+import DAO.CarrinhoDao;
 import DAO.ProdutosDao;
 import model.Produto;
+import services.CarrinhoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,18 +19,13 @@ public class ProdutosServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private List<Produto> listProdutos= new ArrayList<>();
 
-    public ProdutosServlet(){
-        new ProdutosDao().updateProdutos();
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        listProdutos.clear();
+        new CarrinhoService().esvaziarCarrinho();
         listProdutos.addAll(new ProdutosDao().getProdutos());
-        for (Produto produt:listProdutos ) {
-            System.out.println(produt.getNome());
+            request.setAttribute("listaProdutos", listProdutos);
+            request.getRequestDispatcher("/WEB-INF/views/listaProdutos.jsp").forward(request,response);
 
-        }
-        request.setAttribute("listaProdutos", listProdutos);
-        request.getRequestDispatcher("/WEB-INF/views/listaProdutos.jsp").forward(request,response);
 
     }
 }

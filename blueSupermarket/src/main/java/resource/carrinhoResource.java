@@ -2,6 +2,7 @@ package resource;
 
 import DAO.CarrinhoDao;
 import model.Carrinho;
+import model.Compra;
 import model.Produto;
 import services.CarrinhoService;
 
@@ -31,8 +32,8 @@ public class carrinhoResource {
     @POST
     @Path("/salvarCarrinho")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void salvarCarrinho(@FormParam("carrinho")Carrinho carrinho) throws SQLException {
-        new CarrinhoDao().inserirCompra(carrinho);
+    public void salvarCarrinho(@FormParam("carrinho") Compra compra) throws SQLException {
+        new CarrinhoDao().inserirCompra(compra);
 
     }
 }
