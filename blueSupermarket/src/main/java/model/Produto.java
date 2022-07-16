@@ -1,57 +1,96 @@
 package model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Produto extends Quantidade{
+    private int ID;
 	private String nome;
     private String desc;
     private double preco;
+
+    private long quantidade;
     private java.util.Date validade;
     private boolean promocao;
+    private double valorTotal;
 
     //construtor
-    public Produto(int ID,String nome,String desc,double preco, int quant,java.util.Date validade){
-        this.setID(ID);
+    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+        this.ID=ID;
         this.nome= nome;
         this.desc = desc;
         this.preco = preco;
-        this.setQuant(quant);
+        this.quantidade =quant;
         this.validade=validade;
-        try {
-        	getPromocao();
-        }catch(ParseException e){
-        	System.out.println("ERRO AO OBTER PROMOCAO! (method getPromocao())");
-        	System.out.println(e.getMessage());
-        }catch(NullPointerException e) {}
+        this.valorTotal = valorTotal;
+//        try {
+//        	this.promocao = getPromocao();
+//        }catch(ParseException e){
+//        	System.out.println("ERRO AO OBTER PROMOCAO! (method getPromocao())");
+//        	System.out.println(e.getMessage());
+//        }
         
     }
     
     //getters
     public int getID() {
-    	return this.getID();
+        return ID;
     }
-    
+
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     public String getNome() {
-    	return this.nome;
+        return nome;
     }
-    
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getDesc() {
-    	return this.desc;
+        return desc;
     }
-    
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     public double getPreco() {
-    	return this.preco;
+        return preco;
     }
-    
-    public int getQuant() {
-    	return this.getQuant();
+
+    public long getQuantidade() {
+        return quantidade;
     }
-    
-    public java.util.Date getValidade(){
-    	return this.validade;
+
+    public void setQuantidade(long quantidade) {
+        this.quantidade = quantidade;
     }
-    
+
+    public Date getValidade() {
+        return validade;
+    }
+
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
+
+    public boolean isPromocao() {
+        return promocao;
+    }
+
+    public void setPromocao(boolean promocao) {
+        this.promocao = promocao;
+    }
+
+    public double getValorTotal() {return valorTotal; }
+
+    public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
+
     public boolean getPromocao() throws ParseException{
     	this.promocao = false;
 		java.util.Date date = new java.util.Date();
@@ -88,7 +127,7 @@ public class Produto extends Quantidade{
     
     //clona o produto
     private Produto cloneProduto() {
-    	Produto clone = new Produto(getID(),this.nome,this.desc,this.preco,getQuant(),this.validade);
+    	Produto clone = new Produto(getID(),this.nome,this.desc,this.preco,getQuant(),this.validade, this.valorTotal);
     	return clone;
     }
 }
