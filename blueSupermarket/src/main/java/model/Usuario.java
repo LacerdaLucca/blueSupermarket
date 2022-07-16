@@ -5,8 +5,8 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String senha;
-    private String endereco;
     private String cep;
+    private String endereco;
 
     public Usuario(String nome, String cpf, String senha, String cep, String endereco) {
         this.nome = nome;
@@ -66,8 +66,8 @@ public class Usuario {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", senha='" + senha + '\'' +
-                ", endereço='" + endereco + '\'' +
                 ", cep='" + cep + '\'' +
+                ", endereco='" + endereco + '\'' +
                 '}';
     }
 }
