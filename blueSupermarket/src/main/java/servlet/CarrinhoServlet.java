@@ -21,6 +21,8 @@ public class CarrinhoServlet extends HttpServlet {
     private List<Produto> listProdutosCarrinho= new ArrayList<>();
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         try{
             new CarrinhoDao().truncateCarrinho();
             String paramDel = request.getParameter("del");

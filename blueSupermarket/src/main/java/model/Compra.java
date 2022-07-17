@@ -5,12 +5,13 @@ import java.time.LocalDate;
 public class Compra {
     private int idCarrinhos;
     private int idProdutos;
+    private String nomeProd;
     private int qtn;
     private String cpfUsuario;
     private String cep;
     private double valorFrete;
     private int prazoEntrega;
-    private double valorTotal;
+    private double valorTotal =0;
 
     private String dataCompra;
 
@@ -25,6 +26,14 @@ public class Compra {
 
     public void setIdProdutos(int idProdutos) {
         this.idProdutos = idProdutos;
+    }
+
+    public String getNomeProd() {
+        return nomeProd;
+    }
+
+    public void setNomeProd(String nomeProd) {
+        this.nomeProd = nomeProd;
     }
 
     public int getQtn() {
