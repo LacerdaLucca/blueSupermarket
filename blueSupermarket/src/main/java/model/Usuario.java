@@ -27,7 +27,7 @@ public class Usuario {
 
     public void setNome(String nome) {
         if(!verificaNome(nome))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("nome invalido");
         this.nome = nome;
     }
 
@@ -37,7 +37,7 @@ public class Usuario {
 
     public void setCpf(String cpf) {
         if(!verificaCPF(cpf))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("cpf invalido");
         this.cpf = cpf;
     }
 
@@ -47,7 +47,7 @@ public class Usuario {
 
     public void setSenha(String senha) {
         if(!verificaSenha(senha))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("senha invalida");
         this.senha = senha;
     }
 
@@ -65,7 +65,7 @@ public class Usuario {
 
     public void setCep(String cep) {
         if(!verificaCep(cep))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("cep invalido");
         this.cep = cep;
     }
 
@@ -139,7 +139,9 @@ public class Usuario {
         return senha.matches(senhaValida);
     }
     private boolean verificaCep(String cep) {
-        String digitos = "(.*\\d.*).{8}";
+        if(cep.length() != 8)
+            return false;
+        String digitos = "(.*\\d.*)";
         return cep.matches(digitos);
     }
 }
