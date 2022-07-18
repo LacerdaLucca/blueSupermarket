@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,7 +49,8 @@ public class ProdutosDao {
 		
 		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("C:\\Bolsa Estágio CompassoUol\\Avaliacao4\\blueSupermarket\\src\\main\\java\\DAO\\Produtos.csv",Charset.forName("ISO-8859-1")));
+			Path root = Paths.get(".").normalize().toAbsolutePath();
+			BufferedReader br = new BufferedReader(new FileReader("/Produtos.csv"));
 			while((line = br.readLine())!=null) {
 				String[] produto = line.split(",");
 				try {
