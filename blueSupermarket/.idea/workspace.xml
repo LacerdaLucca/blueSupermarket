@@ -4,34 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/blueSupermarket.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/Produtos.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/ProdutosDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/UsuarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/factory/Factory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Carrinho.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Frete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Quantidade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/resource/carrinhoResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/CarrinhoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/FreteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/FreteServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/ProdutosServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/frete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/listaProdutos.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/usuarioForm.jsp" beforeDir="false" />
+    <list default="true" id="65812146-e47f-480f-982f-7594d9b32f9c" name="Changes" comment="Alterações">
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

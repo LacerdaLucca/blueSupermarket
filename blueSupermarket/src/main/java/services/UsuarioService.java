@@ -3,6 +3,7 @@ package services;
 import DAO.UsuarioDao;
 import exception.LoginInvalidoException;
 import model.Usuario;
+import servlet.UsuarioFormServlet;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
