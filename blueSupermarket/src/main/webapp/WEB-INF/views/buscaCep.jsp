@@ -27,8 +27,4 @@
     </body>
 
     </html>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> featurebuscacep

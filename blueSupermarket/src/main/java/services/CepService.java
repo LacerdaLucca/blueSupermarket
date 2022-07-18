@@ -21,11 +21,10 @@ public class CepService {
         }
         sc.close();
 
-<<<<<<< HEAD
+
        return dados;
-=======
-        return dados;
->>>>>>> featurebuscacep
+
+
     }
 
 }
