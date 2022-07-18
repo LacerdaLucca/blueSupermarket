@@ -19,7 +19,10 @@ public class RelatoriosServlets extends HttpServlet {
     private List<Relatorio> relatoriosPorData = new ArrayList<>();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String paramForm = req.getParameter("listar");
+        relatoriosPorData.clear();
+        //        String paramForm = req.getParameter("listarPorNomePeriodo");
+//        String paramFormData = req.getParameter("listarPorPeriodo");
+
         String paramNomeProd = req.getParameter("nome");
         String paramDataIn = req.getParameter("dataIn");
         String paramDataFim = req.getParameter("dataFim");
@@ -27,7 +30,11 @@ public class RelatoriosServlets extends HttpServlet {
         System.out.println(paramDataIn);
         System.out.println(paramDataFim);
 
-        relatoriosPorData.addAll(new RelatoriosService().listaVenda(paramNomeProd,paramDataIn,paramDataFim));
+       if (paramNomeProd == null & paramDataIn != null & paramDataFim != null){
+           relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramDataIn,paramDataFim));
+       }else if(paramNomeProd != null & paramDataIn != null & paramDataFim != null){
+           relatoriosPorData.addAll(new RelatoriosService().listaVendaNome(paramNomeProd,paramDataIn,paramDataFim));
+       }
 
         req.setAttribute("vendas", relatoriosPorData);
         req.getRequestDispatcher("/WEB-INF/views/relatorio.jsp").forward(req,resp);

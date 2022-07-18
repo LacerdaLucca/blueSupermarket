@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Relatorio {
 
     private int idProd;
@@ -34,5 +36,18 @@ public class Relatorio {
 
     public void setQntVendas(long qntVendas) {
         this.qntVendas = qntVendas;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Relatorio)) return false;
+        Relatorio relatorio = (Relatorio) o;
+        return getIdProd() == relatorio.getIdProd() && getQntVendas() == relatorio.getQntVendas() && getNomeProd().equals(relatorio.getNomeProd());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdProd(), getNomeProd(), getQntVendas());
     }
 }

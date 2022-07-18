@@ -21,13 +21,35 @@ public class RelatoriosDao {
         this.stm = f.getC().createStatement();
     }
 
-    public List<Relatorio> listVendaPorId(String nome, String dataInic, String dataFinal){
+    public List<Relatorio> listVendaPorNome(String nome, String dataInic, String dataFinal){
         List<Relatorio> listaDeVendas = new ArrayList<>();
         String sql = "SELECT IdProduto, nomProd FROM compras WHERE nomProd LIKE ? AND dataCompra BETWEEN ? AND ?";
-        String nomeB = "%"+nome+"%";
+        String nomeB = nome+"%";
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
             ps.setString(1,nomeB);
+            ps.setString(2,dataInic);
+            ps.setString(3,dataFinal);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                listaDeVendas.add(new Relatorio(rs.getInt("IdProduto"), rs.getString("nomProd"), 0));
+                if (!rs.next()) return listaDeVendas;
+            }
+            return listaDeVendas;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public List<Relatorio> listVendaPorData(String dataInic, String dataFinal){
+        List<Relatorio> listaDeVendas = new ArrayList<>();
+        String sql = "SELECT IdProduto, nomProd FROM compras WHERE dataCompra BETWEEN ? AND ?";
+
+        try {
+            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
             ps.setString(2,dataInic);
             ps.setString(3,dataFinal);
             ps.execute();
@@ -46,5 +68,4 @@ public class RelatoriosDao {
             return null;
         }
     }
-
 }
