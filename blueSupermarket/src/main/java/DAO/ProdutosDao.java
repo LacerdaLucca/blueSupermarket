@@ -3,6 +3,7 @@ package DAO;
 import factory.Factory;
 import model.Produto;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -46,11 +47,12 @@ public class ProdutosDao {
 			return;
 		}
 		//2 Obtem os dados atraves do arquivo csv e atualiza os valores dentro da tabela
-		
-		String line = "";
+
+		String line = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
 		try {
-			Path root = Paths.get(".").normalize().toAbsolutePath();
-			BufferedReader br = new BufferedReader(new FileReader("/Produtos.csv"));
+			BufferedReader br = new BufferedReader(new FileReader(line+"\\Produtos.csv",Charset.forName("ISO-8859-1")));
+
+
 			while((line = br.readLine())!=null) {
 				String[] produto = line.split(",");
 				try {
