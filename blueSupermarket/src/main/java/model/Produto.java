@@ -16,6 +16,13 @@ public class Produto extends Quantidade{
     private double valorTotal;
 
     //construtor
+
+
+    public Produto(int ID, String nome) {
+        this.ID = ID;
+        this.nome = nome;
+    }
+
     public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
         this.ID=ID;
         this.nome= nome;

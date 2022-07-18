@@ -36,9 +36,7 @@
            </c:forEach>
         </tbody>
     </table>
-    <form action="/blueSupermarket/carrinho" method="get">
-        <input type="submit" value="Ir para o Carrinho"/>
-    </form>
+
 
 </body>
 </html>

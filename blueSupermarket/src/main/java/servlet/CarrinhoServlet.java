@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/carrinho")
+@WebServlet("/sistema/carrinho")
 public class CarrinhoServlet extends HttpServlet {   
 	private static final long serialVersionUID = 1L;
     private double valorTotal;
@@ -25,6 +25,7 @@ public class CarrinhoServlet extends HttpServlet {
 
         try{
             new CarrinhoDao().truncateCarrinho();
+
             String paramDel = request.getParameter("del");
             String paramAdd=request.getParameter("add");
             String paramSalvar = request.getParameter("salvar");

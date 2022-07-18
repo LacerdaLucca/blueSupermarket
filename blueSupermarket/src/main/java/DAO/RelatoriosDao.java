@@ -21,6 +21,7 @@ public class RelatoriosDao {
         this.stm = f.getC().createStatement();
     }
 
+
     public List<Relatorio> listVendaPorNome(String nome, String dataInic, String dataFinal){
         List<Relatorio> listaDeVendas = new ArrayList<>();
         String sql = "SELECT IdProduto, nomProd FROM compras WHERE nomProd LIKE ? AND dataCompra BETWEEN ? AND ?";

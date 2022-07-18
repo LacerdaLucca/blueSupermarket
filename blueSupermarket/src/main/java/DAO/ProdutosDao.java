@@ -129,7 +129,7 @@ public class ProdutosDao {
 	}
 	
 	public List<Produto> getProdutos(){
-		List<Produto> produtos = new ArrayList<Produto>();
+		List<Produto> produtos = new ArrayList();
 		String sql = "SELECT * FROM produtos";
 		
 		try {
@@ -162,6 +162,28 @@ public class ProdutosDao {
 				if(!rs.next()) return produto;
 			}
 			return produto;
+		}catch(SQLException e) {
+			System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+	public List<Produto> listaProdutoPorNome(String nome){
+		List<Produto> produtos = new ArrayList();
+		String nomeSql = "%"+nome+"%";
+		String sql = "SELECT ID, NOME FROM produtos WHERE NOME LIKE ?";
+
+		try {
+			PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+			ps.setString(1,nomeSql);
+			ps.execute();
+			ResultSet rs = ps.getResultSet();
+			while(rs.next()) {
+				produtos.add(new Produto(rs.getInt(1),rs.getString(2)));
+				if(!rs.next()) return produtos;
+			}
+			return produtos;
 		}catch(SQLException e) {
 			System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
 			System.out.println(e.getMessage());
