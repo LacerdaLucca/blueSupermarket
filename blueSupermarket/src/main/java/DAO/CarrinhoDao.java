@@ -25,15 +25,15 @@ public class CarrinhoDao {
 
     public void inserirCompra(Compra compra){
 
-        String sql = "INSERT INTO compras (idProduto, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, valorTotal, dataCompra) VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO compras (idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra) VALUES (?,?,?,?,?,?,?,?)";
         try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
             pstm.setInt(1,compra.getIdProdutos());
-            pstm.setInt(2,compra.getQtn());
-            pstm.setString(3,compra.getCpfUsuario());
-            pstm.setString(4,compra.getCep());
-            pstm.setDouble(5,compra.getValorFrete());
-            pstm.setInt(6,compra.getPrazoEntrega());
-            pstm.setDouble(7,compra.getValorTotal());
+            pstm.setString(2,compra.getNomeProd());
+            pstm.setInt(3,compra.getQtn());
+            pstm.setString(4,compra.getCpfUsuario());
+            pstm.setString(5,compra.getCep());
+            pstm.setDouble(6,compra.getValorFrete());
+            pstm.setInt(7,compra.getPrazoEntrega());
             pstm.setString(8,compra.getDataCompra());
             pstm.execute();
         } catch (SQLException e) {

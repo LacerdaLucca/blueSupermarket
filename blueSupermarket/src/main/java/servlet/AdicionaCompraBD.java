@@ -31,20 +31,14 @@ public class AdicionaCompraBD extends HttpServlet {
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 
-        double valorTotal=0;
-
-        for (Produto produto:listaProdutos) {
-            valorTotal+= produto.getValorTotal();
-        }
-
         for (int i = 0; i < listaProdutos.size(); i++) {
             compra.setIdProdutos(listaProdutos.get(i).getID());
+            compra.setNomeProd(listaProdutos.get(i).getNome());
             compra.setQtn(1);
             compra.setCpfUsuario(cpf);
             compra.setCep(cep);
             compra.setValorFrete(new FreteService().tratamentoValorFrete(valorFrete));
             compra.setPrazoEntrega(Integer.parseInt(prazo));
-            compra.setValorTotal(valorTotal);
             compra.setDataCompra(new CarrinhoService().dataCompra());
             try{
                 new CarrinhoDao().inserirCompra(compra);
@@ -55,7 +49,7 @@ public class AdicionaCompraBD extends HttpServlet {
 
         try{
             new CarrinhoDao().truncateCarrinho();
-            resp.sendRedirect("/blueSupermarket/produtos");
+            resp.sendRedirect("/blueSupermarket/");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
