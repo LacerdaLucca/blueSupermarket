@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Inserção pastas.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Quantidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Quantidade.java" afterDir="false" />
-    </list>
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="validação do campo cep" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +24,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -149,6 +146,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
