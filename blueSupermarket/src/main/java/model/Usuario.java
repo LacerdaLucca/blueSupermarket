@@ -5,13 +5,16 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String senha;
-    private String endereço;
+    private String endereco;
 
     private String cep;
 
-    public Usuario(String nome, String cpf) {
+    public Usuario(String nome, String cpf, String senha, String endereco, String cep) {
         this.nome = nome;
         this.cpf = cpf;
+        this.senha = senha;
+        this.endereco = endereco;
+        this.cep = cep;
     }
 
     public Usuario() {
@@ -41,12 +44,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereço) {
+        this.endereco = endereco;
     }
 
     public String getCep() {
@@ -63,7 +66,7 @@ public class Usuario {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", senha='" + senha + '\'' +
-                ", endereço='" + endereço + '\'' +
+                ", endereco='" + endereco + '\'' +
                 ", cep='" + cep + '\'' +
                 '}';
     }
