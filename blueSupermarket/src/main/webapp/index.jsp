@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=ISO-8859-1" language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.List, model.Produto"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:directive.page isELIgnored="false"/>
@@ -41,6 +41,10 @@
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blueSupermarket/cep">Cep</a>
+            </li>
+
         </ul>
     </div>
 
@@ -60,10 +64,10 @@
         <div>
             <br>
 
-            	Lista de produtos: <br>
+               Lista de produtos: <br>
 
-            	<br>
-            	  <table>
+               <br>
+                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -75,7 +79,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	<c:forEach items="${listaProdutos}" var="produto">
+                       <c:forEach items="${listaProdutos}" var="produto">
                             <tr>
                                 <td>${produto.ID }</td>
                                 <td>${produto.nome}</td>
@@ -83,7 +87,7 @@
                                 <td>${produto.preco}</td>
                                 <td>${produto.validade}</td>
                                 <td><form action="/blueSupermarket/carrinho?add=${produto.ID}" method="post">
-                                	<input type="submit" value="Enviar para o carrinho"/>
+                                   <input type="submit" value="Enviar para o carrinho"/>
                                 </form></td>
                             </tr>
 

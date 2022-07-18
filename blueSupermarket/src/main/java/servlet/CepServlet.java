@@ -27,7 +27,9 @@ public class CepServlet extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/views/buscaCep.jsp").forward(req,resp);
 
         }else {
-        String cepBusca;
+
+            String cepBusca;
+
             try {
                 cepBusca = new CepService().getCep(cep);
             } catch (Exception e) {

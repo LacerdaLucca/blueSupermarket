@@ -21,7 +21,10 @@ public class CepService {
         }
         sc.close();
 
+
        return dados;
+
+
     }
 
 }
