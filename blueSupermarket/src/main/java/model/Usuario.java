@@ -1,4 +1,7 @@
 package model;
+
+import exception.LoginInvalidoException;
+
 public class Usuario {
 
     private String nome;
@@ -24,7 +27,7 @@ public class Usuario {
 
     public void setNome(String nome) {
         if(!verificaNome(nome))
-            throw new RuntimeException();
+            throw new LoginInvalidoException();
         this.nome = nome;
     }
 
@@ -34,7 +37,7 @@ public class Usuario {
 
     public void setCpf(String cpf) {
         if(!verificaCPF(cpf))
-            throw new RuntimeException();
+            throw new LoginInvalidoException();
         this.cpf = cpf;
     }
 
@@ -44,7 +47,7 @@ public class Usuario {
 
     public void setSenha(String senha) {
         if(!verificaSenha(senha))
-            throw new RuntimeException();
+            throw new LoginInvalidoException();
         this.senha = senha;
     }
 
@@ -62,7 +65,7 @@ public class Usuario {
 
     public void setCep(String cep) {
         if(!verificaCep(cep))
-            throw new RuntimeException();
+            throw new LoginInvalidoException();
         this.cep = cep;
     }
 

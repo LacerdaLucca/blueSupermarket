@@ -1,6 +1,7 @@
 package services;
 
 import DAO.UsuarioDao;
+import exception.LoginInvalidoException;
 import model.Usuario;
 
 import java.io.BufferedReader;
@@ -13,9 +14,12 @@ public class UsuarioService {
     public void insereUsuario(String nome, String cpf, String senha, String cep, String endereco){
 
         System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
-        Usuario usuario = new Usuario(nome, cpf, senha, cep, endereco);
-        usuarioDao.inserirUsuario(usuario);
+        try {
+            Usuario usuario = new Usuario(nome, cpf, senha, cep, endereco);
+            usuarioDao.inserirUsuario(usuario);
+        }catch(LoginInvalidoException ex){
 
+        }
     }
 
 }
