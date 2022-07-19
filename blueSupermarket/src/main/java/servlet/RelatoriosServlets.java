@@ -5,6 +5,7 @@ import model.Produto;
 import model.Relatorio;
 import services.RelatoriosService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +29,7 @@ public class RelatoriosServlets extends HttpServlet {
         String getCpfUsuario= req.getParameter("usuario");
 
        if (paramNomeProd == null & paramNomeBusca == null & paramDataIn == null & paramDataFim == null) {
-            Dispatcher(req,res,"buscaRelatorio.jsp");
+            Dispatcher(req,resp,"buscaRelatorio.jsp");
         } else {
             if (paramNomeProd != null & paramDataIn == null & paramDataFim == null) {
                 List<Produto> listaProdutos = new ArrayList<>();
@@ -55,8 +56,8 @@ public class RelatoriosServlets extends HttpServlet {
         }
     }
 
-    protected void Dispatcher(HttpServletRequest req, HttpServletResponse resp, String caminho){
+    protected void Dispatcher(HttpServletRequest req, HttpServletResponse resp, String caminho) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/"+caminho);
-        dispatcher.foward(req,resp);
+        dispatcher.forward(req,resp);
     }
 }

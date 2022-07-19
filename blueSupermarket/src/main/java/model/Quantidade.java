@@ -1,23 +1,23 @@
 package model;
  
 public class Quantidade {
-	   private int ID;
+	   private int idQtn;
 	   private int quant;
 	    
 	    public Quantidade() {
-	    	this.ID = 0;
+	    	this.idQtn = 0;
 	    	this.quant = 0;
 	    }
-	    
-	    protected void setID(int ID){
-	        this.ID = ID;
-	    }
 
-	    protected int getID(){
-	        return this.ID;
-	    }
+	public int getIdQtn() {
+		return idQtn;
+	}
 
-	    protected void setQuant(int quant){
+	public void setIdQtn(int idQtn) {
+		this.idQtn = idQtn;
+	}
+
+	protected void setQuant(int quant){
 	        this.quant = quant;
 	    }
 

@@ -129,7 +129,6 @@
                             <th>DESCRIÇÃO</th>
                             <th>PREÇO</th>
                             <th>VALIDADE</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -144,7 +143,6 @@
                                 	<input type="submit" value="Enviar carrinho"/>
                                 </form></td>
                             </tr>
-
                        </c:forEach>
                     </tbody>
                 </table>

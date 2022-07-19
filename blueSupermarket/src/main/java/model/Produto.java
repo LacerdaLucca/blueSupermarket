@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 public class Produto extends Quantidade{
-    private int ID;
+    private int idProd;
 	private String nome;
     private String desc;
     private double preco;
@@ -19,12 +19,12 @@ public class Produto extends Quantidade{
 
 
     public Produto(int ID, String nome) {
-        this.ID = ID;
+        this.idProd = ID;
         this.nome = nome;
     }
 
     public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
-        this.ID=ID;
+        this.idProd=ID;
         this.nome= nome;
         this.desc = desc;
         this.preco = preco;
@@ -42,12 +42,12 @@ public class Produto extends Quantidade{
     
     //getters
     public int getID() {
-        return ID;
+        return idProd;
     }
 
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.idProd = ID;
     }
 
     public String getNome() {
