@@ -3,11 +3,14 @@ package factory;
 import java.sql.*;
 
 public class Factory {
-private Connection c;
-	
+	private Connection c;
+
+	public Connection getC() {
+		return c;
+	}
 	//construtor
 	public Factory() {
-		this.c=null;
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		}catch(ClassNotFoundException e) {
@@ -19,25 +22,14 @@ private Connection c;
 	//seta uma nova conexao
 	public void setConnection(String URL) {
 		try {
-			Connection con = DriverManager.getConnection(URL,"root","lucca");
-			this.c = con;
+			 c = DriverManager.getConnection(URL,"root","lucca");
+
 		}catch (SQLException e){
 			System.out.println("ERRO AO CONFIGURAR A CONEXAO! (method setConnection())");
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	public Statement getStatement() {
-		try {
-			return c.createStatement();
-		} catch(SQLException e) {
-			System.out.println("ERRO AO OBTER STATEMENT (method getStatement())");
-			System.out.println(e.getMessage());
-			return null;
-		}
-		
-	}
-	
+
 	public void closeConnection() {
 		System.out.println("Fechando conexao com o banco de dados");
 		try {

@@ -1,6 +1,7 @@
 package servlet;
 
 import DAO.UsuarioDao;
+import exception.LoginInvalidoException;
 import model.Usuario;
 import services.UsuarioService;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 @WebServlet("/usuario")
 public class UsuarioServlet extends HttpServlet {
 
-
+  //  UsuarioDao usuarioDao = new UsuarioDao();
     UsuarioService usuarioService = new UsuarioService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,14 +32,18 @@ public class UsuarioServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
+        System.out.println(senha);
         String cep = request.getParameter("cep");
         String endereco = request.getParameter("endereco");
-
-        usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
-
-
-
-
+    //    Usuario usuario = new Usuario(nome, cpf);
+   //     usuarioDao.inserirUsuario(usuario);
+        try {
+            usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
+        }catch(LoginInvalidoException ex){
+            response.setContentType("text/html");
+            response.getWriter().println(ex.getMessage() + " <a href ='usuarioForm' > Volte a tela interior </a>");
+    }
+   //     System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
 
     }
 

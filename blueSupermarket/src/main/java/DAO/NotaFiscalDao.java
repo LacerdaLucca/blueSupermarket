@@ -6,13 +6,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class notaFiscalDAO {
+public class NotaFiscalDao {
     private Statement stm;
     private Factory f;
-    public notaFiscalDAO(Connection connection){
+    public NotaFiscalDao(Connection connection) throws SQLException {
         this.f = new Factory();
         f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        this.stm = f.getStatement();
+        this.stm = f.getC().createStatement();
     }
 
     public void adiciona(NotaFiscal nf){

@@ -1,5 +1,7 @@
 package model;
 
+import exception.LoginInvalidoException;
+
 public class Usuario {
 
     private String nome;
@@ -9,12 +11,11 @@ public class Usuario {
     private String cep;
 
     public Usuario(String nome, String cpf, String senha, String cep, String endereco) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.senha = senha;
-        this.cep = cep;
-        this.endereco = endereco;
-
+        setNome(nome);
+        setCpf(cpf);
+        setSenha(senha);
+        setCep(cep);
+        setEndereco(endereco);
     }
 
     public Usuario() {
@@ -25,6 +26,8 @@ public class Usuario {
     }
 
     public void setNome(String nome) {
+        if(!verificaNome(nome))
+            throw new LoginInvalidoException("nome invalido");
         this.nome = nome;
     }
 
@@ -33,6 +36,8 @@ public class Usuario {
     }
 
     public void setCpf(String cpf) {
+        if(!verificaCPF(cpf))
+            throw new LoginInvalidoException("cpf invalido");
         this.cpf = cpf;
     }
 
@@ -41,6 +46,8 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
+        if(!verificaSenha(senha))
+            throw new LoginInvalidoException("senha invalida");
         this.senha = senha;
     }
 
@@ -57,6 +64,8 @@ public class Usuario {
     }
 
     public void setCep(String cep) {
+        if(!verificaCep(cep))
+            throw new LoginInvalidoException("cep invalido");
         this.cep = cep;
     }
 
@@ -69,5 +78,70 @@ public class Usuario {
                 ", endereço='" + endereco + '\'' +
                 ", cep='" + cep + '\'' +
                 '}';
+    }
+    private boolean verificaCPF(String cpf){
+        boolean cpfEhValido = true;
+        if(cpf.length() != 11){
+            cpfEhValido = false;
+        }
+        if(cpfEhValido) {
+            cpfEhValido = validaPrimeiroDigito(cpf);
+        }
+        if(cpfEhValido){
+            cpfEhValido = validaSegundoDigito(cpf);
+        }
+        return cpfEhValido;
+    }
+
+    private boolean validaPrimeiroDigito(String cpf) {
+        boolean digitoValido = false;
+        int soma = 0, dig = 0, j = 10;
+        for (int i = 0; i < 9; i++) {
+            soma += (int)(cpf.charAt(i)-48)*j;
+            j--;
+        }
+        int resp = (11-(soma % 11));
+        if(resp < 10){
+            dig = resp;
+        }
+        int dig10 = (int)(cpf.charAt(9)-48);
+        if(dig == dig10)
+            digitoValido = true;
+        return digitoValido;
+    }
+    private boolean validaSegundoDigito(String cpf) {
+        boolean digitoValido = false;
+        int soma = 0, dig = 0, j = 11;
+        for (int i = 0; i < 10; i++) {
+            soma += (int)(cpf.charAt(i)-48)*j;
+            j--;
+        }
+        int resp = (11 - (soma % 11));
+        if(resp < 10){
+            dig = resp;
+        }
+        int dig10 = (int)(cpf.charAt(10)-48);
+        if(dig == dig10)
+            digitoValido = true;
+        return  digitoValido;
+    }
+
+    private boolean verificaNome(String nome) {
+        String digitos = "(.*\\d.*)";
+        return !nome.matches(digitos);
+    }
+    private boolean verificaSenha(String senha) {
+        String senhaValida = "^(?=.*\\d)" //Pelo menos 1 digito
+                + "(?=.*[a-z])(?=.*[A-Z])" // Pelo menos 1 minuscula e 1 maiuscula
+                + "(?=.*[@#$%^&+=])" // Pelo menos 1 char especial
+                + "(?=\\S+$)" // Sem espaço em branco
+                + ".{8,20}$"; // De 8 a 20 chars
+        return senha.matches(senhaValida);
+    }
+    private boolean verificaCep(String cep) {
+        if(cep.length() != 8)
+            return false;
+        String digitos = "(.*\\d.*)";
+        return cep.matches(digitos);
     }
 }

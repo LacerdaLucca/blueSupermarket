@@ -1,7 +1,9 @@
 package services;
 
 import DAO.UsuarioDao;
+import exception.LoginInvalidoException;
 import model.Usuario;
+import servlet.UsuarioFormServlet;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,7 +17,6 @@ public class UsuarioService {
         System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
         Usuario usuario = new Usuario(nome, cpf, senha, cep, endereco);
         usuarioDao.inserirUsuario(usuario);
-
     }
 
 }
