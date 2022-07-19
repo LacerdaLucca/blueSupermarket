@@ -15,7 +15,7 @@
 	Relatorio Solicitado: <br>
 
 	<br>
-	     <form action="/blueSupermarket/relatorio" method="get">
+	     <form action="/blueSupermarket/sistema/relatorio" method="get">
 	        Nome do Produto: <input type="text" name="nome"/>
             <input type="submit" value="buscar"/>
          </form>

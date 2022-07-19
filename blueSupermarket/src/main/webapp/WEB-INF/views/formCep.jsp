@@ -15,7 +15,7 @@
 
 	<h2>Calcular Frete</h2>
 
-       <form action="/blueSupermarket/frete" method="post">
+       <form action="/blueSupermarket/sistema/frete" method="post">
             CEP: <input type="text" name="cep"  />
             <input type="submit"/>
         </form>

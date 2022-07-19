@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/relatorio")
+@WebServlet("/sistema/relatorio")
 public class RelatoriosServlets extends HttpServlet {
     private List<Relatorio> relatoriosPorData = new ArrayList<>();
     @Override

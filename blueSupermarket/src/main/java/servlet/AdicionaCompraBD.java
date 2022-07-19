@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/finalizar")
+@WebServlet("/sistema/finalizar")
 public class AdicionaCompraBD extends HttpServlet {
     private List<Produto> listaProdutos= new ArrayList<>();
 
@@ -49,7 +49,7 @@ public class AdicionaCompraBD extends HttpServlet {
 
         try{
             new CarrinhoDao().truncateCarrinho();
-            resp.sendRedirect("/blueSupermarket/");
+            resp.sendRedirect("/blueSupermarket/produtos");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

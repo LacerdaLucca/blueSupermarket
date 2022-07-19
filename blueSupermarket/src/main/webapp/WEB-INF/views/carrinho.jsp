@@ -44,7 +44,7 @@
                     <td> ${produto.desc}</td>
                     <td> ${produto.preco}</td>
                     <td> ${produto.validade}</td>
-                    <td><form action="/blueSupermarket/carrinho?del=${produto.ID}" method="post">
+                    <td><form action="/blueSupermarket/sistema/carrinho?del=${produto.ID}" method="post">
                        	<input type="submit" value="Deletardo carrinho"/>
                     </form></td>
                 </tr>
@@ -60,7 +60,7 @@
          <a href="/blueSupermarket/produtos"><h3>Continuar comprando </h3> </a>
       	<br>
 
-      	 <a href="/blueSupermarket/carrinho?salvar=true"><h3>Finalizar carrinho </h3> </a>
+      	 <a href="/blueSupermarket/sistema/carrinho?salvar=true"><h3>Finalizar carrinho </h3> </a>
          <br>
       <br>
 
