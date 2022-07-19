@@ -24,6 +24,11 @@ public class NotaFiscal {
         this.idCarrinho = idCarrinho;
     }
 
+    public NotaFiscal(String cpfUsuario, int idCarrinho) {
+        this.cpfUsuario = cpfUsuario;
+        this.idCarrinho = idCarrinho;
+    }
+
     public String getCpfUsuario() {
         return cpfUsuario;
     }
@@ -50,7 +55,7 @@ public class NotaFiscal {
         }
         Usuario usuario = usuarioDao.consultarUsuarioPorCpf(this.cpfUsuario);
         String nome = usuario.getNome();
-        List<Compra> carrinho = carrinhoDao.listaUltimaCompra();
+        List<Compra> carrinho = carrinhoDao.listaUltimaCompra(cpfUsuario);
         String jsonData = "{\"Empresa\":\""+empresa.getNome()+"\",\"CNPJ\":\""+empresa.getCnpj()+"\",\"Usuario\":"+nome+",\"CPF\":"+this.cpfUsuario+",\"Carrinho\":"+carrinho+"}";
         JsonElement jsonElement = new JsonParser().parse(jsonData);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

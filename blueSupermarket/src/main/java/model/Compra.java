@@ -31,6 +31,10 @@ public class Compra {
     public Compra() {
     }
 
+    public void setIdCarrinhos(int idCarrinhos) {
+        this.idCarrinhos = idCarrinhos;
+    }
+
     public int getIdCarrinhos() {
         return idCarrinhos;
     }

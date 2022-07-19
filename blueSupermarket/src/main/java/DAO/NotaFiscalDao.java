@@ -9,13 +9,13 @@ import java.util.List;
 public class NotaFiscalDao {
     private Statement stm;
     private Factory f;
-    public NotaFiscalDao(Connection connection) throws SQLException {
+    public NotaFiscalDao() throws SQLException {
         this.f = new Factory();
         f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
         this.stm = f.getC().createStatement();
     }
 
-    public void adiciona(NotaFiscal nf){
+    public NotaFiscal adiciona(NotaFiscal nf){
 
         String comando = "INSERT INTO nota_fiscal (idcarrinho, cpf) VALUES (?, ?)";
         try (PreparedStatement ps = stm.getConnection().prepareStatement(comando, Statement.RETURN_GENERATED_KEYS)){
@@ -30,7 +30,7 @@ public class NotaFiscalDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        return nf;
     }
 
     public void remove(int id){
