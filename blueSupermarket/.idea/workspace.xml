@@ -4,78 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="merge validacao usuario">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Script.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blueSupermarket.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/Produtos.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/LoginInvalidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/filter/AutenticacaoFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/CEP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Carrinho.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Frete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Relatorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resource/carrinhoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resource/notaFiscalResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/CarrinhoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/CepService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/FreteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/RelatoriosService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginFormServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ProdutosServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/RelatoriosServlets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioFormServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCep.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formCep.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/frete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/listaProdutos.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mapa.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/imagens/gros-electromenager.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/imagens/nao-pereciveis.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/imagens/nao-pereciveis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/imagens/pereciveis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/relatorios.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/DAO/CarrinhoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/DAO/ProdutosDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/factory/Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Carrinho.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Produto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Quantidade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Usuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/CarrinhoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/UsuarioService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/servlet/ProdutosServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" afterDir="false" />
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="merge dev">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/notaFiscalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/usuarioForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usuarioForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resource/notaFiscalResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resource/notaFiscalResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lucca/Downloads/Curso-JAX-RS-e-Jersey-Domine-a-cria-o-de-webservices-REST-capitulo4",
+    "last_opened_file_path": "C:/Users/Lucca/Documents/ESTUDOS/Compass.UOL/Sprint3/Loja",
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "editor.preferences.import"
   }
@@ -232,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657309230350</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merge dev">
+      <created>1658249787619</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658249787619</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -265,7 +206,8 @@
     <MESSAGE value="Alterações no pom." />
     <MESSAGE value="Alterações workspace.xml" />
     <MESSAGE value="Alterações" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterações" />
+    <MESSAGE value="merge dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge dev" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
