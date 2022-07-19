@@ -36,7 +36,7 @@
 
                 </tr>
 
-                <form action="/blueSupermarket/sistema/finalizar" method="post">
+                <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
                    	<input type="hidden" name="cep" value="${frete.cep}" />
                    	<input type="hidden" name="valor" value="${frete.valorFrete}" />
                    	<input type="hidden" name="prazo" value="${frete.prazo}" />

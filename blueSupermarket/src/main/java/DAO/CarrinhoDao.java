@@ -104,21 +104,23 @@ public class CarrinhoDao {
 
     public List<Compra> listaUltimaCompra(){
         List<Compra> lista = new ArrayList<>();
-        String sql = "SELECT * FROM compra where idCarrinhos = MAX(idCarrinhos)";
+        String sql = " SELECT * FROM compras  JOIN (SELECT cpfUsuario, MAX(dataCompra) ultimaData from compras )ultimoRegistro\n" +
+                "                     on compras.dataCompra = ultimoRegistro.ultimaData\n" +
+                "                     and compras.cpfUsuario = ultimoRegistro.cpfUsuario;";
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
                 lista.add(new Compra(rs.getInt("idCarrinhos"),
-                        rs.getInt("idProdutos"),
-                        rs.getString("nomProduto"),
+                        rs.getInt("idProduto"),
+                        rs.getString("nomProd"),
                         rs.getInt("qtn"),
                         rs.getString("cpfUsuario"),
                         rs.getString("cep"),
                         rs.getDouble("valorFrete"),
                         rs.getInt("prazoEntrega"),
-                        rs.getDouble("valorTotal"),
+                        0,
                         rs.getString("dataCompra")));
             }
             return lista;

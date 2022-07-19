@@ -10,4 +10,12 @@ public class Empresa {
         this.cnpj = cnpj;
         this.endereco = endereco;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
 }

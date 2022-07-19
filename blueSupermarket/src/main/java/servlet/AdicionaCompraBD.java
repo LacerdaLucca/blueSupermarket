@@ -48,7 +48,7 @@ public class AdicionaCompraBD extends HttpServlet {
 
         try{
             new CarrinhoDao().truncateCarrinho();
-            resp.sendRedirect("/blueSupermarket/produtos");
+            resp.sendRedirect("/blueSupermarket/sistema/ultimaCompra");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

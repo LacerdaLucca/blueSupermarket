@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet("/ultimaCompra")
+@WebServlet("/sistema/ultimaCompra")
 public class NotaFiscalServlet extends HttpServlet {
     private Statement stm;
     private Factory f;

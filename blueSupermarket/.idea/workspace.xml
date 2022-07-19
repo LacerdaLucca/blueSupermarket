@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="modificação para servlet">
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="criação de metodo de busca em CarrinhoDao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Empresa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/frete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/frete.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/feature-relatorios" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -30,6 +36,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_11_ProdutosDao.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_6_ProdutosDao.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_9_ProdutosDao.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -51,6 +62,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -180,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658253044664</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="criação de metodo de busca em CarrinhoDao">
+      <created>1658256922885</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658256922885</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -215,7 +234,8 @@
     <MESSAGE value="Alterações" />
     <MESSAGE value="merge dev" />
     <MESSAGE value="modificação para servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificação para servlet" />
+    <MESSAGE value="criação de metodo de busca em CarrinhoDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="criação de metodo de busca em CarrinhoDao" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
