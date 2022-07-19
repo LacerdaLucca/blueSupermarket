@@ -15,25 +15,15 @@ import java.sql.Statement;
 
 @WebServlet("/sistema/ultimaCompra")
 public class NotaFiscalServlet extends HttpServlet {
-    private Statement stm;
-    private Factory f;
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.f = new Factory();
-        this.f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        try {
-            this.stm = this.f.getC().createStatement();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        int id = 1;
         NotaFiscalDao notaFiscalDao = null;
         try {
-            notaFiscalDao = new NotaFiscalDao(stm.getConnection());
+            notaFiscalDao = new NotaFiscalDao();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        NotaFiscal notaFiscal = notaFiscalDao.busca(id);
+        NotaFiscal notaFiscal = notaFiscalDao.busca((int)req.getAttribute("notaFiscal"));
         resp.setContentType("application/json");
         resp.getWriter().print(notaFiscal.toJson());
     }
