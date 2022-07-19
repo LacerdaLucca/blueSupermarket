@@ -9,14 +9,13 @@ public class Produto extends Quantidade{
 	private String nome;
     private String desc;
     private double preco;
-
     private long quantidade;
     private java.util.Date validade;
     private boolean promocao;
     private double valorTotal;
 
     //construtor
-    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal ){
         this.ID=ID;
         this.nome= nome;
         this.desc = desc;
@@ -24,16 +23,19 @@ public class Produto extends Quantidade{
         this.quantidade =quant;
         this.validade=validade;
         this.valorTotal = valorTotal;
-//        try {
-//        	this.promocao = getPromocao();
-//        }catch(ParseException e){
-//        	System.out.println("ERRO AO OBTER PROMOCAO! (method getPromocao())");
-//        	System.out.println(e.getMessage());
-//        }
+        try {
+        	this.promocao = getPromocao();
+        }catch(ParseException e){
+        	System.out.println("ERRO AO OBTER PROMOCAO! (method getPromocao())");
+       	System.out.println(e.getMessage());
+       }
         
     }
     
     //getters
+
+
+
     public int getID() {
         return ID;
     }
