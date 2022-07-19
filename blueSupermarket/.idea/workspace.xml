@@ -4,12 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Inserção pastas.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CepService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/ProdutosDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" />
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/blueSupermarket.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/Produtos.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/ProdutosDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/UsuarioDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/factory/Factory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Carrinho.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Frete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Produto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Quantidade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/resource/carrinhoResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/CarrinhoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/FreteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/FreteServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/ProdutosServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/frete.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/listaProdutos.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/usuarioForm.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +41,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -31,6 +52,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -57,13 +79,6 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/gina_/IdeaProjects/blueSupermarket/blueSupermarket/src/main/webapp&quot;,
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-=======
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; featureusuario
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
 }</component>
@@ -125,7 +140,6 @@
       <updated>1657302562362</updated>
       <workItem from="1657302563600" duration="1000" />
       <workItem from="1657560885426" duration="961000" />
-      <workItem from="1657904660448" duration="2402000" />
     </task>
     <task id="LOCAL-00001" summary="Alterações no pom.">
       <created>1657304538653</created>
@@ -151,9 +165,6 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
   </component>
@@ -163,6 +174,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
