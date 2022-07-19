@@ -31,7 +31,10 @@ public class Produto extends Quantidade{
        }
         
     }
-    
+    public Produto(int ID, String nome) {
+        this.ID = ID;
+        this.nome = nome;
+    }
     //getters
 
 
