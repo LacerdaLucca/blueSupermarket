@@ -100,7 +100,33 @@ public class CarrinhoDao {
                 e.getMessage();
                 System.out.println("Produto não deletado");
             }
-
-
     }
+
+    public List<Compra> listaUltimaCompra(){
+        List<Compra> lista = new ArrayList<>();
+        String sql = "SELECT * FROM compra where idCarrinhos = MAX(idCarrinhos)";
+        try {
+            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                lista.add(new Compra(rs.getInt("idCarrinhos"),
+                        rs.getInt("idProdutos"),
+                        rs.getString("nomProduto"),
+                        rs.getInt("qtn"),
+                        rs.getString("cpfUsuario"),
+                        rs.getString("cep"),
+                        rs.getDouble("valorFrete"),
+                        rs.getInt("prazoEntrega"),
+                        rs.getDouble("valorTotal"),
+                        rs.getString("dataCompra")));
+            }
+            return lista;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO ENCONTRAR ULTIMA COMPRA! (method listaUltimaCompra())");
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 }

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="merge dev">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" afterDir="false" />
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="modificação para servlet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resource/notaFiscalResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resource/notaFiscalResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev" />
+        <entry key="$PROJECT_DIR$/.." value="feature-relatorios" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -173,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658249787619</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modificação para servlet">
+      <created>1658253044663</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658253044664</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -190,7 +197,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="gina" />
+                        <option value="feature-relatorios" />
                       </list>
                     </value>
                   </entry>
@@ -207,7 +214,8 @@
     <MESSAGE value="Alterações workspace.xml" />
     <MESSAGE value="Alterações" />
     <MESSAGE value="merge dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge dev" />
+    <MESSAGE value="modificação para servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificação para servlet" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
