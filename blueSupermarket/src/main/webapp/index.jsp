@@ -9,8 +9,7 @@
     <style>
        #container{
             display: grid;
-            grid-template-columns: 1fr 5fr 1fr;
-
+            grid-template-columns: 1fr 7fr 1fr;
         }
         .posicaoTitulo{    
             text-align: center;
@@ -45,8 +44,7 @@
             display: flex;    
             list-style: none;    
             width: 1100px;
-            height: 460px;  
-
+            height: 460px;
         }
         .carrocel li{    
             position: relative;
@@ -121,9 +119,7 @@
         </div>
         <div>
             <br>
-
             	<h2>Lista de produtos: </h2><br>
-
             	<br>
             	  <table>
                     <thead>
@@ -142,10 +138,10 @@
                                 <td>${produto.ID }</td>
                                 <td>${produto.nome}</td>
                                 <td>${produto.desc}</td>
-                                <td>${produto.preco}</td>
+                                <td>${produto.preco} </td>
                                 <td>${produto.validade}</td>
                                 <td><form action="/blueSupermarket/sistema/carrinho?add=${produto.ID}" method="post">
-                                	<input type="submit" value="Enviar para o carrinho"/>
+                                	<input type="submit" value="Enviar carrinho"/>
                                 </form></td>
                             </tr>
 

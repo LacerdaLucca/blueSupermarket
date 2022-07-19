@@ -49,7 +49,6 @@
                     </form></td>
                 </tr>
                     <br>
-                   ${produto.valorTotal}
             </c:forEach>
 
         </tbody>    

@@ -9,7 +9,6 @@ CREATE TABLE `bluesupermarket`.`produto` (
   UNIQUE INDEX `idProduto_UNIQUE` (`idProduto` ASC) VISIBLE);
 
 
-
   CREATE TABLE `bluesupermarket`.`carrinho` (
     `idcarrinhos` INT NOT NULL AUTO_INCREMENT,
     `idProduto` INT NOT NULL,
