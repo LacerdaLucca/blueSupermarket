@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65812146-e47f-480f-982f-7594d9b32f9c" name="Changes" comment="criação de metodo de busca em CarrinhoDao" />
+    <list default="true" id="65812146-e47f-480f-982f-7594d9b32f9c" name="Changes" comment="Correcao de erro de merge">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/CarrinhoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/CarrinhoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/ProdutosDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/ProdutosDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658256922885</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Correcao de erro de merge">
+      <created>1658261433253</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658261433253</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -224,7 +239,8 @@
     <MESSAGE value="merge dev" />
     <MESSAGE value="modificação para servlet" />
     <MESSAGE value="criação de metodo de busca em CarrinhoDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação de metodo de busca em CarrinhoDao" />
+    <MESSAGE value="Correcao de erro de merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcao de erro de merge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

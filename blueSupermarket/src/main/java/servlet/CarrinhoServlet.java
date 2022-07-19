@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class CarrinhoServlet extends HttpServlet {
                     int idProd = Integer.parseInt(id);
                     Produto produto = new CarrinhoService().addProdutoCarrinho(idProd);
                     valorTotal+= produto.getPreco();
-                    this.listProdutosCarrinho.add(new Produto(produto.getID(), produto.getNome(), produto.getDesc(), produto.getPreco(), 0, produto.getValidade(), valorTotal));
+                    this.listProdutosCarrinho.add(new Produto(produto.getID(), produto.getNome(), produto.getDesc(), produto.getPreco(), produto.getValidade(), valorTotal));
 
                     response.sendRedirect("/blueSupermarket/produtos");
                 }else{
@@ -65,6 +66,5 @@ public class CarrinhoServlet extends HttpServlet {
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
