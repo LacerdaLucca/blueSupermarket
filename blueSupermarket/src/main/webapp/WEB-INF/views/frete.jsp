@@ -12,7 +12,7 @@
 <body>
 
 	<h2>Frete</h2>
-
+    ${usuario.cpf}
 
 	<br>
 
@@ -36,7 +36,7 @@
 
                 </tr>
 
-                <form action="/blueSupermarket/finalizar" method="post">
+                <form action="/blueSupermarket/sistema/finalizar" method="post">
                    	<input type="hidden" name="cep" value="${frete.cep}" />
                    	<input type="hidden" name="valor" value="${frete.valorFrete}" />
                    	<input type="hidden" name="prazo" value="${frete.prazo}" />

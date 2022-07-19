@@ -1,0 +1,14 @@
+#container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+}
+.carrocel img{
+    display:flex;
+    flex:wrap;
+    height: 100px;
+}
+
+.carrocel ul{
+    list-style: none;
+}

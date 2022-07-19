@@ -3,13 +3,10 @@ package DAO;
 import factory.Factory;
 import model.Produto;
 
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,12 +44,10 @@ public class ProdutosDao {
 			return;
 		}
 		//2 Obtem os dados atraves do arquivo csv e atualiza os valores dentro da tabela
-
-		String line = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
+		
+		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(line+"\\Produtos.csv",Charset.forName("ISO-8859-1")));
-
-
+			BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Produtos.csv",Charset.forName("ISO-8859-1")));
 			while((line = br.readLine())!=null) {
 				String[] produto = line.split(",");
 				try {
@@ -134,7 +129,7 @@ public class ProdutosDao {
 	}
 	
 	public List<Produto> getProdutos(){
-		List<Produto> produtos = new ArrayList<Produto>();
+		List<Produto> produtos = new ArrayList();
 		String sql = "SELECT * FROM produtos";
 		
 		try {
@@ -167,6 +162,28 @@ public class ProdutosDao {
 				if(!rs.next()) return produto;
 			}
 			return produto;
+		}catch(SQLException e) {
+			System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+	public List<Produto> listaProdutoPorNome(String nome){
+		List<Produto> produtos = new ArrayList();
+		String nomeSql = "%"+nome+"%";
+		String sql = "SELECT ID, NOME FROM produtos WHERE NOME LIKE ?";
+
+		try {
+			PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+			ps.setString(1,nomeSql);
+			ps.execute();
+			ResultSet rs = ps.getResultSet();
+			while(rs.next()) {
+				produtos.add(new Produto(rs.getInt(1),rs.getString(2)));
+				if(!rs.next()) return produtos;
+			}
+			return produtos;
 		}catch(SQLException e) {
 			System.out.println("ERRO AO OBTER PRODUTO! (method getProdutos())");
 			System.out.println(e.getMessage());

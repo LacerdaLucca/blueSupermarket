@@ -11,11 +11,11 @@ public class RelatoriosService {
     private List<Relatorio> relatoriosComp = new ArrayList<>();
     private long qtn=0;
 
-    public List<Relatorio> listaVenda(String nome, String dataInic, String dataFinal){
+    public List<Relatorio> listaVenda(String nome, String dataInic, String dataFinal,String cpf){
         List<Relatorio> relatoriosPorData = new ArrayList<>();
         long qtnVen = 0;
         try {
-            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorNome(nome, dataInic, dataFinal));
+            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorNome(nome, dataInic, dataFinal, cpf));
             if(relatoriosPorData!=null){
                 for (int i = 0; i < relatoriosPorData.size(); i++) {
                     String nomeBase = relatoriosPorData.get(i).getNomeProd();
@@ -34,10 +34,10 @@ public class RelatoriosService {
         }
     }
 
-    public List<Relatorio> listaVendaPeriodo(String dataInic, String dataFinal){
+    public List<Relatorio> listaVendaPeriodo(String dataInic, String dataFinal, String cpf){
         List<Relatorio> relatoriosPorData = new ArrayList<>();
         try {
-            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorData(dataInic, dataFinal));
+            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorData(dataInic, dataFinal, cpf));
             if(relatoriosPorData!=null){
                 long qtnVen= calculoQtnVenda(relatoriosPorData);
                 for (Relatorio relatorio: relatoriosPorData) {
@@ -50,14 +50,14 @@ public class RelatoriosService {
             throw new RuntimeException(e);
         }
     }
-    public List<Relatorio> listaVendaNome(String nome, String dataInic, String dataFinal){
+    public List<Relatorio> listaVendaNome(String nome, String dataInic, String dataFinal,String cpf){
         List<Relatorio> relatoriosPorData = new ArrayList<>();
         List<Relatorio> verificarRepeticao = new ArrayList<>();
         long qtnVen = 0;
         String nomeBase =null;
 
         try {
-            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorNome(nome, dataInic, dataFinal));
+            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorNome(nome, dataInic, dataFinal, cpf));
             for (Relatorio rel:relatoriosPorData) {
                 System.out.println(rel.getNomeProd());
             }

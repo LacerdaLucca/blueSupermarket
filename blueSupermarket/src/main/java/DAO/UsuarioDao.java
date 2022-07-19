@@ -47,19 +47,19 @@ public class UsuarioDao {
             pstm.setString(1,cpf);
             pstm.execute();
             ResultSet rst = pstm.getResultSet();
-            while (rst.next()) {
+                while (rst.next()) {
 
-                String nomeUsuario = rst.getString("NOME");
-                usuarioRetornado.setNome(nomeUsuario);
-                String cpfUsuario = rst.getString("CPF");
-                usuarioRetornado.setCpf(cpfUsuario);
-                String senhaUsuario = rst.getString("SENHA");
-                usuarioRetornado.setSenha(senhaUsuario);
-                String cepUsuario = rst.getString("CEP");
-                usuarioRetornado.setCep(cepUsuario);
-                String enderecoUsuario = rst.getString("ENDERECO");
-                usuarioRetornado.setEndereco(enderecoUsuario);
-            }
+                    String nomeUsuario = rst.getString("NOME");
+                    usuarioRetornado.setNome(nomeUsuario);
+                    String cpfUsuario = rst.getString("CPF");
+                    usuarioRetornado.setCpf(cpfUsuario);
+                    String senhaUsuario = rst.getString("SENHA");
+                    usuarioRetornado.setSenha(senhaUsuario);
+                    String cepUsuario = rst.getString("CEP");
+                    usuarioRetornado.setCep(cepUsuario);
+                    String enderecoUsuario = rst.getString("ENDERECO");
+                    usuarioRetornado.setEndereco(enderecoUsuario);
+                }
 
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
@@ -67,7 +67,6 @@ public class UsuarioDao {
         }
         return usuarioRetornado;
     }
-
 
     public void deletarPorCpf(String cpf) {
         try (java.sql.PreparedStatement pstm = stm.getConnection().prepareStatement("DELETE FROM USUARIOS WHERE CPF = " +cpf)){
