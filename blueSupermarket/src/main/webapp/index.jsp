@@ -90,7 +90,7 @@
                 <a class="nav-link" href="/blueSupermarket/sistema/carrinho"><h3>Carrinho</h3></a>                
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/usuarioForm"><h3>Cadastro de Usuário</h3></a>
+                <a class="nav-link" href="/blueSupermarket/sistema/relatorio"><h3>Relatórios</h3></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>

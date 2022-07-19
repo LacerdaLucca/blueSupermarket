@@ -60,7 +60,7 @@
          <a href="/blueSupermarket/produtos"><h3>Continuar comprando </h3> </a>
       	<br>
 
-      	 <a href="/blueSupermarket/sistema/carrinho?salvar=true"><h3>Finalizar carrinho </h3> </a>
+      	 <a href="/blueSupermarket/sistema/carrinho?salvar=t"><h3>Finalizar carrinho </h3> </a>
          <br>
       <br>
 

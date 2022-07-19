@@ -20,9 +20,7 @@ public class FreteServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String cepEscolhido = req.getParameter("cep");
-
         this.frete.add(new FreteService().retornoDadosFrete(cepEscolhido));
-
         System.out.println(frete.get(0).getCep()+" "+frete.get(0).getValorFrete()+" "+frete.get(0).getPrazo());
         req.setAttribute("frete", frete);
         req.getRequestDispatcher("/WEB-INF/views/frete.jsp").forward(req,resp);

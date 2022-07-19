@@ -25,6 +25,7 @@ public class RelatoriosServlets extends HttpServlet {
         String paramNomeProd = req.getParameter("nome");
         String paramDataIn = req.getParameter("dataIn");
         String paramDataFim = req.getParameter("dataFim");
+        String getCpfUsuario= req.getParameter("usuario");
 
         if (paramNomeProd == null & paramNomeBusca == null & paramDataIn == null & paramDataFim == null) {
             req.getRequestDispatcher("/WEB-INF/views/buscaRelatorio.jsp").forward(req, resp);
@@ -39,11 +40,11 @@ public class RelatoriosServlets extends HttpServlet {
                 req.getRequestDispatcher("/WEB-INF/views/listaProdutos.jsp").forward(req, resp);
 
             } else if (paramNomeBusca != null & paramDataIn != null & paramDataFim != null) {
-                relatoriosPorData.addAll(new RelatoriosService().listaVendaNome(paramNomeProd, paramDataIn, paramDataFim));
+                relatoriosPorData.addAll(new RelatoriosService().listaVendaNome(paramNomeProd, paramDataIn, paramDataFim, getCpfUsuario));
 
 
             } else if (paramNomeBusca == null & paramDataIn != null & paramDataFim != null) {
-                relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramDataIn, paramDataFim));
+                relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramDataIn, paramDataFim, getCpfUsuario));
             }
 
             req.setAttribute("vendas", relatoriosPorData);

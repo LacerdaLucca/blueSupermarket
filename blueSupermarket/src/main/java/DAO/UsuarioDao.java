@@ -42,9 +42,11 @@ public class UsuarioDao {
 
     public Usuario consultarUsuarioPorCpf (String cpf)  {
         Usuario usuarioRetornado = new Usuario();
-        try(java.sql.PreparedStatement pstm = stm.getConnection().prepareStatement("SELECT NOME, CPF, SENHA, CEP, ENDERECO FROM USUARIOS WHERE CPF = " +cpf)){
+        String sql = "SELECT NOME, CPF, SENHA, CEP, ENDERECO FROM USUARIOS WHERE CPF = ?";
+        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+            pstm.setString(1,cpf);
             pstm.execute();
-            try(ResultSet rst = stm.getResultSet()) {
+            ResultSet rst = pstm.getResultSet();
                 while (rst.next()) {
 
                     String nomeUsuario = rst.getString("NOME");
@@ -58,7 +60,7 @@ public class UsuarioDao {
                     String enderecoUsuario = rst.getString("ENDERECO");
                     usuarioRetornado.setEndereco(enderecoUsuario);
                 }
-            }
+
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
 

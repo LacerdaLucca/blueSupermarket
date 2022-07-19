@@ -12,7 +12,7 @@
 <body>
 
 	<h2>Frete</h2>
-
+    ${usuario.cpf}
 
 	<br>
 

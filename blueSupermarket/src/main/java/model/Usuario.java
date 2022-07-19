@@ -5,11 +5,11 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String senha;
+    private String cep;
     private String endereco;
 
-    private String cep;
 
-    public Usuario(String nome, String cpf, String senha, String endereco, String cep) {
+    public Usuario(String nome, String cpf, String senha,String cep, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;

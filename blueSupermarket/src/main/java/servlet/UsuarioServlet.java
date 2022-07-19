@@ -20,25 +20,16 @@ public class UsuarioServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
         UsuarioDao teste = new UsuarioDao();
-        System.out.println(cpf);
-        // Usuario u = teste.consultarUsuarioPorCpf(cpf);
-        //    System.out.println(u);
-        //   teste.deletarPorCpf(cpf);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        System.out.println(senha);
         String cep = request.getParameter("cep");
         String endereco = request.getParameter("endereco");
-    //    Usuario usuario = new Usuario(nome, cpf);
-   //     usuarioDao.inserirUsuario(usuario);
         usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
-
-   //     System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
+        response.sendRedirect("/blueSupermarket/produtos");
 
     }
 

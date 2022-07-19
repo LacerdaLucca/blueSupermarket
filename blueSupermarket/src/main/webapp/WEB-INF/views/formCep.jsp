@@ -10,7 +10,7 @@
 <title>Calculo Frete</title>
 </head>
 <body>
-
+     Voce esta logado ${usuario.nome}
 	<br>
 
 	<h2>Calcular Frete</h2>
