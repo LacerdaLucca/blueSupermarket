@@ -9,12 +9,13 @@ public class Usuario {
 
     private String cep;
 
-    public Usuario(String nome, String cpf, String senha, String endereco, String cep) {
+    public Usuario(String nome, String cpf, String senha, String cep, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
-        this.endereco = endereco;
         this.cep = cep;
+        this.endereco = endereco;
+
     }
 
     public Usuario() {
