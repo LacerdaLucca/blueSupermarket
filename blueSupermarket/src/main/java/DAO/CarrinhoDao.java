@@ -100,7 +100,5 @@ public class CarrinhoDao {
                 e.getMessage();
                 System.out.println("Produto não deletado");
             }
-
-
     }
 }
