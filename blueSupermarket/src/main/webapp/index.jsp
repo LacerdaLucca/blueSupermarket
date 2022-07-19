@@ -75,7 +75,7 @@
 <body>
 <header>
     <div>
-        <div class="posicaoTitulo"><h2> Sua melhor e mais Completa loja do país </h2></div>
+        <div class="posicaoTitulo"><h2> O melhor e mais barato supermercado do país </h2></div>
     </div>
     
     <div class="nav">
@@ -84,14 +84,20 @@
                 <a class="nav-link active" aria-current="page" href="#"></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/usuarioForm"><h3>Cadastro de Usuário</h3></a>
+                <a class="nav-link" href="/blueSupermarket/usuarioForm"><h4>Cadastro de Usuário</h4></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/sistema/carrinho"><h3>Carrinho</h3></a>                
+                <a class="nav-link" href="/blueSupermarket/sistema/carrinho"><h4>Carrinho</h4></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/sistema/relatorio"><h3>Relatórios</h3></a>
+                <a class="nav-link" href="/blueSupermarket/sistema/relatorio"><h4>Relatórios</h4></a>
             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="/blueSupermarket/cep"><h4>Busca Endereço</h4></a>
+             </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="/blueSupermarket/"><h4>Localização</h4></a>
+             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </li>

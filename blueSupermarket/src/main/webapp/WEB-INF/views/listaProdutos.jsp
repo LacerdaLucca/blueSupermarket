@@ -27,7 +27,7 @@
         	<c:forEach items="${listaProd}" var="produto">
                 <tr>
                      <td>${produto.ID }</td>
-                     <td><a href="/blueSupermarket/relatorio?nomeProd=${produto.nome}">${produto.nome}</a></td>
+                     <td><a href="/blueSupermarket/sistema/relatorio?nomeProd=${produto.nome}">${produto.nome}</a></td>
                 </tr>
 
            </c:forEach>

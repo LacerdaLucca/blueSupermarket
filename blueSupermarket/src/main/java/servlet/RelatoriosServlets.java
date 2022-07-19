@@ -40,8 +40,11 @@ public class RelatoriosServlets extends HttpServlet {
                 req.getRequestDispatcher("/WEB-INF/views/listaProdutos.jsp").forward(req, resp);
 
             } else if (paramNomeBusca != null & paramDataIn != null & paramDataFim != null) {
-                relatoriosPorData.addAll(new RelatoriosService().listaVendaNome(paramNomeProd, paramDataIn, paramDataFim, getCpfUsuario));
+                relatoriosPorData.addAll(new RelatoriosService().listaVendaNome(paramNomeBusca, paramDataIn, paramDataFim, getCpfUsuario));
 
+            } else if (paramNomeBusca != null & paramDataIn == null & paramDataFim == null) {
+                req.setAttribute("nomeProd", paramNomeBusca);
+                req.getRequestDispatcher("/WEB-INF/views/formDataRelatorio.jsp").forward(req, resp);
 
             } else if (paramNomeBusca == null & paramDataIn != null & paramDataFim != null) {
                 relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramDataIn, paramDataFim, getCpfUsuario));
