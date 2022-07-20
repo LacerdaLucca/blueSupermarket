@@ -47,7 +47,7 @@ public class RelatoriosDao {
 
     public List<Relatorio> listVendaPorData(String nome, String dataInic, String dataFinal, String cpf){
         List<Relatorio> listaDeVendas = new ArrayList<>();
-        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? AND nomProd LIKE ? AND dataCompra BETWEEN ? AND ?";
+        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? AND nomProd = ? AND dataCompra BETWEEN ? AND ?";
 
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
