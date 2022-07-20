@@ -119,8 +119,37 @@ public class CarrinhoDao {
             System.out.println(e.getMessage());
             return null;
         }
-
     }
+    public int buscarIdProdParamBusRel(String nome){
+        String sql = "SELECT * FROM compras WHERE dataCompra= ?";
+        int id = 0;
+
+        try {
+            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            ps.setString(1,nome);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                id= rs.getInt(2);
+            }
+            return id;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO OBTER LISTA DE COMPRA! (method getProdutos())");
+            System.out.println(e.getMessage());
+        }
+        return 0;
+    }
+    public void salvarParamBuscaRelatorio(int id){
+        String sql = "INSERT INTO carrinho (idProd) VALUES (?)";
+        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+            pstm.setInt(1,id);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.getMessage();
+            System.out.println("Não foi possível isnserir produto");
+        }
+    }
+
 
     public void truncateCarrinho(){
             String sql = "TRUNCATE carrinho";

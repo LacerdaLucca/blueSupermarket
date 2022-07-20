@@ -34,10 +34,10 @@ public class RelatoriosService {
         }
     }
 
-    public List<Relatorio> listaVendaPeriodo(String dataInic, String dataFinal, String cpf){
+    public List<Relatorio> listaVendaPeriodo(String nomeProd, String dataInic, String dataFinal, String cpf){
         List<Relatorio> relatoriosPorData = new ArrayList<>();
         try {
-            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorData(dataInic, dataFinal, cpf));
+            relatoriosPorData.addAll(new RelatoriosDao().listVendaPorData(nomeProd, dataInic, dataFinal, cpf));
             if(relatoriosPorData!=null){
                 long qtnVen= calculoQtnVenda(relatoriosPorData);
                 for (Relatorio relatorio: relatoriosPorData) {

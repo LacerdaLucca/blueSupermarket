@@ -45,15 +45,16 @@ public class RelatoriosDao {
         }
     }
 
-    public List<Relatorio> listVendaPorData(String dataInic, String dataFinal, String cpf){
+    public List<Relatorio> listVendaPorData(String nome, String dataInic, String dataFinal, String cpf){
         List<Relatorio> listaDeVendas = new ArrayList<>();
-        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? & dataCompra BETWEEN ? AND ?";
+        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? AND nomProd = ? AND dataCompra BETWEEN ? AND ?";
 
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
             ps.setString(1,cpf);
-            ps.setString(2,dataInic);
-            ps.setString(3,dataFinal);
+            ps.setString(2,nome);
+            ps.setString(3,dataInic);
+            ps.setString(4,dataFinal);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {

@@ -19,6 +19,19 @@ public class Compra {
 
     }
 
+    public Compra(int idCarrinhos, int idProdutos, String nomeProd, int qtn, String cpfUsuario, String cep, double valorFrete, int prazoEntrega, double valorTotal, String dataCompra) {
+        this.idCarrinhos = idCarrinhos;
+        this.idProdutos = idProdutos;
+        this.nomeProd = nomeProd;
+        this.qtn = qtn;
+        this.cpfUsuario = cpfUsuario;
+        this.cep = cep;
+        this.valorFrete = valorFrete;
+        this.prazoEntrega = prazoEntrega;
+        this.valorTotal = valorTotal;
+        this.dataCompra = dataCompra;
+    }
+
     public Compra(int idCarrinhos, int idProdutos, String nomeProd, String cep, double valorFrete, int prazoEntrega, String dataCompra) {
         this.idCarrinhos = idCarrinhos;
         this.idProdutos = idProdutos;
@@ -27,6 +40,10 @@ public class Compra {
         this.valorFrete = valorFrete;
         this.prazoEntrega = prazoEntrega;
         this.dataCompra = dataCompra;
+    }
+
+    public void setIdCarrinhos(int idCarrinhos) {
+        this.idCarrinhos = idCarrinhos;
     }
 
     public int getIdCarrinhos() {
