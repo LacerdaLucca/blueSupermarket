@@ -18,15 +18,16 @@
 		<jsp:include page="../../componentes/Header.jsp"/>
 	</header>
 	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				Periodo : <br>
-				Produto ${nomeProd}
-				<br>
+		<div class="row d-flex justify-content-center">
+			<div class="col-4">
+				<h4>Produto ${nomeProd}</h4>
+				<h5 class="mt-5">Periodo:</h5>
 				<form action="/blueSupermarket/sistema/relatorio" method="get">
-					Data Inicial: <input type="text" name="dataIn"/>
-					Data Inicial: <input type="text" name="dataFim"/>
-					<input type="submit" value="buscar"/>
+					<label for="dataIn">Data Inicial:</label>
+					<input class="form-control" type="text" name="dataIn" id="dataIn"/>
+					<label class="mt-2" for="dataFim">Data Final:</label>
+					<input class="form-control" type="text" name="dataFim" id="dataFim"/>
+					<input class="mt-4 btn btn-primary" type="submit" value="Buscar"/>
 				</form>
 			</div>
 		</div>

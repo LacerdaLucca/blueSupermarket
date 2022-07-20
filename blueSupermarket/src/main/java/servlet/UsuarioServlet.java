@@ -35,16 +35,16 @@ public class UsuarioServlet extends HttpServlet {
         System.out.println(senha);
         String cep = request.getParameter("cep");
         String endereco = request.getParameter("endereco");
-    //    Usuario usuario = new Usuario(nome, cpf);
-   //     usuarioDao.inserirUsuario(usuario);
+        //    Usuario usuario = new Usuario(nome, cpf);
+        //     usuarioDao.inserirUsuario(usuario);
         try {
             usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
         }catch(LoginInvalidoException ex){
             response.setContentType("text/html");
             response.getWriter().println(ex.getMessage() + " <a href ='usuarioForm' > Volte a tela interior </a>");
-    }
-   //     System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
-
+        }
+        //     System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
+        request.getRequestDispatcher("/blueSupermarket/").forward(request, response);
     }
 
 
