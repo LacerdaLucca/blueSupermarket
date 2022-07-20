@@ -108,12 +108,12 @@
                     <c:set var="listaProdutos" value="${ProdutosDao().getProdutos()}" />
                     <c:forEach items="${listaProdutos}" var="produto">
                         <tr>
-                            <td class="table-row">${produto.ID}</td>
+                            <td class="table-row">${produto.idProd}</td>
                             <td class="table-row">${produto.nome}</td>
                             <td class="table-row">${produto.desc}</td>
                             <td class="table-row">${produto.preco}</td>
                             <td class="table-row">${produto.validade}</td>
-                            <td class="table-row"><form action="/blueSupermarket/sistema/carrinho?add=${produto.ID}" method="post">
+                            <td class="table-row"><form action="/blueSupermarket/sistema/carrinho?add=${produto.idProd}" method="post">
                                 <input class="btn btn-success" type="submit" value="Adicionar ao carrinho"/>
                             </form></td>
                         </tr>

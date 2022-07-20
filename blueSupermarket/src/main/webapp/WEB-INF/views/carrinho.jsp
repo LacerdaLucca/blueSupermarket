@@ -43,13 +43,13 @@
                     <tbody>
                         <c:forEach items="${produtos}" var="produto">
                             <tr>
-                                <td class="table-row">${produto.ID}</td>
+                                <td class="table-row">${produto.idProd}</td>
                                 <td class="table-row"> ${produto.nome}</td>
                                 <td class="table-row"> ${produto.desc}</td>
                                 <td class="table-row"> ${produto.preco}</td>
                                 <td class="table-row"> ${produto.validade}</td>
                                 <td class="table-row">
-                                    <form action="/blueSupermarket/sistema/carrinho?del=${produto.ID}" method="post">
+                                    <form action="/blueSupermarket/sistema/carrinho?del=${produto.idProd}" method="post">
                                         <input class="btn btn-success" type="submit" value="Deletar do carrinho"/>
                                     </form>
                                 </td>
