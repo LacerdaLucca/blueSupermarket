@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/blueSupermarket.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/Produtos.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/ProdutosDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/DAO/UsuarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/factory/Factory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Carrinho.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Frete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Quantidade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/model/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/resource/carrinhoResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/CarrinhoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/FreteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/services/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/FreteServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/ProdutosServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/frete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/views/listaProdutos.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueSupermarket/blueSupermarket/src/main/webapp/usuarioForm.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CepService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Usuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +24,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/feature-validacao-usuario" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -200,7 +183,8 @@
     <MESSAGE value="Alterações no pom." />
     <MESSAGE value="Alterações workspace.xml" />
     <MESSAGE value="Alterações" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterações" />
+    <MESSAGE value="Api CEP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api CEP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

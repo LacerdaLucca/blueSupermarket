@@ -1,6 +1,7 @@
 package servlet;
 
 import DAO.UsuarioDao;
+import exception.LoginInvalidoException;
 import model.Usuario;
 import services.UsuarioService;
 
@@ -37,6 +38,12 @@ public class UsuarioServlet extends HttpServlet {
     //    Usuario usuario = new Usuario(nome, cpf);
    //     usuarioDao.inserirUsuario(usuario);
         usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
+        try {
+            usuarioService.insereUsuario(nome, cpf, senha, cep, endereco);
+        }catch(LoginInvalidoException ex){
+            response.setContentType("text/html");
+            response.getWriter().println(ex.getMessage() + " <a href ='usuarioForm' > Volte a tela interior </a>");
+        }
 
    //     System.out.println(nome + " " + cpf + " " + senha + " " + cep + " " + endereco);
 

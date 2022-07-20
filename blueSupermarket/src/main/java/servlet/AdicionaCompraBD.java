@@ -1,10 +1,12 @@
 package servlet;
 
 import DAO.CarrinhoDao;
+import exception.LoginInvalidoException;
 import model.Carrinho;
 import model.Compra;
 import model.Produto;
 import services.CarrinhoService;
+import services.CepService;
 import services.FreteService;
 
 import javax.servlet.annotation.WebServlet;
@@ -25,9 +27,9 @@ public class AdicionaCompraBD extends HttpServlet {
         String cep = req.getParameter("cep");
         String valorFrete = req.getParameter("valor");
         String prazo = req.getParameter("prazo");
-        String cpf = "05485267 ";
-        // req.getParameter("usuario");
-
+        String cpf = req.getParameter("usuario");
+        if(!new CepService().verificaCep(cep))
+            throw new LoginInvalidoException();
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 

@@ -26,5 +26,18 @@ public class CepService {
 
 
     }
+    public boolean verificaCep(String cep) {
+        if(cep.length() != 8)
+            return false;
+        String digitos = "(.*\\d.*)";
+        boolean cepValido = cep.matches(digitos);
+        try {
+            new CepService().getCep(cep);
+        } catch (Exception e) {
+            return false;
+        }
+        System.out.println(cepValido);
+        return cepValido;
+    }
 
 }
