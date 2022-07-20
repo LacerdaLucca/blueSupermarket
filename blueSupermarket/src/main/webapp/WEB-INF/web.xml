@@ -20,14 +20,6 @@
     <servlet-name>Jersey Web Application</servlet-name>
     <url-pattern>/ultimaCompra/*</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>home</servlet-name>
-    <servlet-class>servlet/CarrinhoServlet.java</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>home</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
 </web-app>
 
 

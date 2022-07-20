@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix d relatorio e página JSP.">
+    <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Feat: Integração dos servlets e páginas JSP.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/Factory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,19 +70,21 @@
       <recent name="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp\WEB-INF\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.tomcat">
+  <component name="RunManager">
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
-      <option name="envOptions" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.64" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\gina_\apache-tomcat-9.0.64-prod\apache-tomcat-9.0.64" />
+          <option name="path" value="C:\Users\vinif\apache-tomcat-9.0.64" />
           <option name="version" value="9.0.64.0" />
         </TomcatInfo>
       </option>
@@ -108,30 +113,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
-      <option name="adminPort" value="8005" />
-      <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions" />
-      <option name="passParentEnvironmentVariables" value="true" />
-      <option name="port" value="8080" />
-      <option name="tomcatInfo">
-        <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.64" />
-          <option name="number" value="0" />
-          <option name="path" value="C:\Program Files\apache-tomcat-9.0.64" />
-          <option name="version" value="9.0.64.0" />
-        </TomcatInfo>
-      </option>
-      <option name="vmOptions" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Smart Tomcat.Tomcat" />
-      <item itemvalue="Smart Tomcat.tomcat" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
