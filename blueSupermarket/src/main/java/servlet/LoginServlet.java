@@ -1,5 +1,6 @@
 package servlet;
 
+import exception.LoginInvalidoException;
 import model.Usuario;
 import services.LoginService;
 
@@ -19,11 +20,17 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Usuario usuario = loginService.login(req, resp);
-        if (usuario != null) {
-            HttpSession sessao = req.getSession();
-            sessao.setAttribute("usuario", usuario);
-            resp.sendRedirect("/blueSupermarket/produtos");
+        try {
+            Usuario usuario = loginService.login(req, resp);
+            if (usuario != null) {
+                HttpSession sessao = req.getSession();
+                sessao.setAttribute("usuario", usuario);
+                resp.sendRedirect("/blueSupermarket/");
+            }
+        } catch (LoginInvalidoException ex) {
+            resp.setContentType("text/html");
+            resp.getWriter().println(ex.getMessage() + "<a href=\"/blueSupermarket/loginForm\">Voltar para tela de Login</a>");
         }
+
     }
 }
