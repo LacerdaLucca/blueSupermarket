@@ -29,11 +29,8 @@
                      <td>${produto.ID }</td>
                      <td><a href="/blueSupermarket/sistema/relatorio?nomeProd=${produto.nome}">${produto.nome}</a></td>
                 </tr>
-
            </c:forEach>
         </tbody>
     </table>
-
-
 </body>
 </html>
