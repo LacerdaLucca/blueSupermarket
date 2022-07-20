@@ -44,7 +44,7 @@
                     <td> ${produto.desc}</td>
                     <td> ${produto.preco}</td>
                     <td> ${produto.validade}</td>
-                    <td><form action="/blueSupermarket/sistema/carrinho?del=${produto.ID}" method="post">
+                    <td><form action="/blueSupermarket/sistema/carrinho?del=${produto.idProd}" method="post">
                        	<input type="submit" value="Deletardo carrinho"/>
                     </form></td>
                 </tr>

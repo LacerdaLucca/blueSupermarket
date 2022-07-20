@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import model.Compra;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,18 +14,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/relatorios/json")
+
+@WebServlet("/sistema/relatorio/json")
 public class RelatorioJson extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Compra> listaCompraPorData = new ArrayList<>();
-        String cpf = req.getParameter("cpf");
+
         String data = req.getParameter("data");
 
         try{
-            if (cpf!=null & data!=null){
-                listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorCpf(cpf, data));
+            if (data!=null){
+                listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorData(data));
 
                 String json= new Gson().toJson(listaCompraPorData);
                 req.setAttribute("compra",json);

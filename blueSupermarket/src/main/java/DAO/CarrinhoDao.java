@@ -92,15 +92,15 @@ public class CarrinhoDao {
         }
     }
 
-    public List<Compra> buscaCompraPorCpf(String cpf, String dataBusca){
+    public List<Compra> buscaCompraPorData(String dataBusca){
         List<Compra> listaCompraJson = new ArrayList();
 
-        String sql = "SELECT * FROM compras WHERE cpfUsuario = ? & dataCompra= ?";
+        String sql = "SELECT * FROM compras WHERE dataCompra= ?";
 
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
-            ps.setString(1,cpf);
-            ps.setString(2,dataBusca);
+//            ps.setString(1,cpf);
+            ps.setString(1,dataBusca);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {

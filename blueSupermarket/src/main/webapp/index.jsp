@@ -134,12 +134,12 @@
                     <tbody>
                     	<c:forEach items="${listaProdutos}" var="produto">
                             <tr>
-                                <td>${produto.ID }</td>
+                                <td>${produto.idProd }</td>
                                 <td>${produto.nome}</td>
                                 <td>${produto.desc}</td>
                                 <td>${produto.preco} </td>
                                 <td>${produto.validade}</td>
-                                <td><form action="/blueSupermarket/sistema/carrinho?add=${produto.ID}" method="post">
+                                <td><form action="/blueSupermarket/sistema/carrinho?add=${produto.idProd}" method="post">
                                 	<input type="submit" value="Enviar carrinho"/>
                                 </form></td>
                             </tr>
