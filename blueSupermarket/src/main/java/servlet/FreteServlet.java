@@ -4,6 +4,7 @@ import exception.LoginInvalidoException;
 import model.Frete;
 import model.Produto;
 import services.CarrinhoService;
+import services.CepService;
 import services.FreteService;
 
 import javax.servlet.ServletException;
@@ -21,7 +22,9 @@ public class FreteServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{String cepEscolhido = req.getParameter("cep");
-
+            System.out.println(cepEscolhido);
+            if(!new CepService().verificaCep(cepEscolhido))
+                throw new LoginInvalidoException("cep não encontrado");
             this.frete.add(new FreteService().retornoDadosFrete(cepEscolhido));
 
             System.out.println(frete.get(0).getCep()+" "+frete.get(0).getValorFrete()+" "+frete.get(0).getPrazo());
@@ -29,7 +32,7 @@ public class FreteServlet extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/views/frete.jsp").forward(req,resp);
         }catch (LoginInvalidoException ex) {
             resp.setContentType("text/html");
-            resp.getWriter().println(ex.getMessage() + "<a href=\"/blueSupermarket/sistema/frete\">Tentar digitar o cep novamente</a>");
+            resp.getWriter().println(ex.getMessage() + "<a href=\"/blueSupermarket/sistema/carrinho?\">Tentar digitar o cep novamente</a>");
         }
     }
 }

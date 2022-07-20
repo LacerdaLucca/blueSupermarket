@@ -2,6 +2,8 @@ package services;
 
 
 
+import model.CEP;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
@@ -31,13 +33,17 @@ public class CepService {
             return false;
         String digitos = "(.*\\d.*)";
         boolean cepValido = cep.matches(digitos);
+
+        String cep1 = null;
         try {
-            new CepService().getCep(cep);
+            cep1 = new CepService().getCep(cep);
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        if(cep1.contains("erro")){
             return false;
         }
-        System.out.println(cepValido);
         return cepValido;
     }
-
 }

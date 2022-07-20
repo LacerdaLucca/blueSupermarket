@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/UsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CepService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

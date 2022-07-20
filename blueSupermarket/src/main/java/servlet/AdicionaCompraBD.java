@@ -31,8 +31,7 @@ public class AdicionaCompraBD extends HttpServlet {
         String valorFrete = req.getParameter("valor");
         String prazo = req.getParameter("prazo");
         String cpf = req.getParameter("usuario");
-        if(!new CepService().verificaCep(cep))
-            throw new LoginInvalidoException();
+
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 
