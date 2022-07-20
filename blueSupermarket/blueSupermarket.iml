@@ -98,5 +98,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.10" level="project" />
     <orderEntry type="library" name="Maven: org.joda:joda-convert:2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20220320" level="project" />
   </component>
 </module>
