@@ -22,7 +22,7 @@ public class Factory {
 	//seta uma nova conexao
 	public void setConnection(String URL) {
 		try {
-			 c = DriverManager.getConnection(URL,"root","Gb2834*71");
+			 c = DriverManager.getConnection(URL,"root","lucca");
 
 		}catch (SQLException e){
 			System.out.println("ERRO AO CONFIGURAR A CONEXAO! (method setConnection())");

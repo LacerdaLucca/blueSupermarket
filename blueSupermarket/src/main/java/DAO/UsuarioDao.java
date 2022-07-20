@@ -25,8 +25,6 @@ public class UsuarioDao {
 
         String comando = "INSERT INTO USUARIOS (NOME, CPF, SENHA, CEP, ENDERECO) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement pstm = stm.getConnection().prepareStatement(comando)) {
-            System.out.println(usuario.getSenha());
-
             pstm.setString(1, usuario.getNome());
             pstm.setString(2, usuario.getCpf());
             pstm.setString(3, usuario.getSenha());

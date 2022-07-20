@@ -40,19 +40,10 @@ CREATE TABLE `carrinho` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 
-      ALTER TABLE `bluesupermarket`.`carrinho`
-      ADD INDEX `idProduto_idx` (`idProduto` ASC) VISIBLE,
-      ADD INDEX `idUsuario_idx` (`idUsuario` ASC) VISIBLE;
-      ;
-      ALTER TABLE `bluesupermarket`.`carrinho`
-      ADD CONSTRAINT `idProduto`
-        FOREIGN KEY (`idProduto`)
-        REFERENCES `bluesupermarket`.`produto` (`idProduto`)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION;
-	 ALTER TABLE `bluesupermarket`.`carrinho`
-      ADD CONSTRAINT `idUsuario`
-        FOREIGN KEY (`idUsuario`)
-        REFERENCES `bluesupermarket`.`usuarios` (`cpf`)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION;
+create table nota_fiscal (
+id int not null primary key,
+idCarrinho int not null,
+cpf varchar(11) not null,
+foreign key (idCarrinho) references compra(idcarrinhos),
+foreign key (cpf) references usuarios(cpf)
+);

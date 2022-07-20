@@ -102,4 +102,11 @@ public class Compra {
     public void setDataCompra(String dataCompra) {
         this.dataCompra = dataCompra;
     }
+
+    @Override
+    public String toString() {
+        return "{\"nomeProduto\":\"" + nomeProd +
+                "\",\"quantidade\":\"" + qtn +
+                "\"}";
+    }
 }
