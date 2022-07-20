@@ -9,7 +9,6 @@ public class Usuario {
     private String cpf;
     private String senha;
     private String endereco;
-
     private String cep;
 
     public Usuario(String nome, String cpf, String senha, String cep, String endereco) {
@@ -18,6 +17,14 @@ public class Usuario {
         setSenha(senha);
         setCep(cep);
         setEndereco(endereco);
+=========
+    public Usuario(String nome, String cpf, String senha, String endereco, String cep) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.senha = senha;
+        this.endereco = endereco;
+        this.cep = cep;
+>>>>>>>>> Temporary merge branch 2
     }
 
     public Usuario() {
@@ -29,7 +36,7 @@ public class Usuario {
 
     public void setNome(String nome) {
         if(!verificaNome(nome))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("nome invalido");
         this.nome = nome;
     }
 
@@ -39,7 +46,7 @@ public class Usuario {
 
     public void setCpf(String cpf) {
         if(!verificaCPF(cpf))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("cpf invalido");
         this.cpf = cpf;
     }
 
@@ -49,7 +56,7 @@ public class Usuario {
 
     public void setSenha(String senha) {
         if(!verificaSenha(senha))
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("senha invalida");
         this.senha = senha;
     }
 
@@ -57,7 +64,7 @@ public class Usuario {
         return endereco;
     }
 
-    public void setEndereco(String endereço) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

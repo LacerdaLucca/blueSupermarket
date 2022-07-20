@@ -2,13 +2,16 @@ package servlet;
 
 import DAO.CarrinhoDao;
 import exception.LoginInvalidoException;
+import DAO.NotaFiscalDao;
 import model.Carrinho;
 import model.Compra;
+import model.NotaFiscal;
 import model.Produto;
 import services.CarrinhoService;
 import services.CepService;
 import services.FreteService;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/finalizar")
+@WebServlet("/sistema/finalizar")
 public class AdicionaCompraBD extends HttpServlet {
     private List<Produto> listaProdutos= new ArrayList<>();
 
@@ -43,7 +46,7 @@ public class AdicionaCompraBD extends HttpServlet {
             compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
             try{
-                new CarrinhoDao().inserirCompra(compra);
+                compra = new CarrinhoDao().inserirCompra(compra);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -51,10 +54,15 @@ public class AdicionaCompraBD extends HttpServlet {
 
         try{
             new CarrinhoDao().truncateCarrinho();
-            resp.sendRedirect("/blueSupermarket/");
+            NotaFiscal nf = new NotaFiscalDao().adiciona(new NotaFiscal(cpf,compra.getIdCarrinhos()));
+            System.out.println(nf.getId());
+            req.setAttribute("notaFiscal",nf.getId());
+            req.getRequestDispatcher("/sistema/ultimaCompra").forward(req,resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ServletException e) {
             throw new RuntimeException(e);
         }
 

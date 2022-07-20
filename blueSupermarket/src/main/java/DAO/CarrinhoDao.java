@@ -23,10 +23,10 @@ public class CarrinhoDao {
         this.stm = f.getC().createStatement();
     }
 
-    public void inserirCompra(Compra compra){
+    public Compra inserirCompra(Compra compra){
 
         String sql = "INSERT INTO compras (idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra) VALUES (?,?,?,?,?,?,?,?)";
-        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
             pstm.setInt(1,compra.getIdProdutos());
             pstm.setString(2,compra.getNomeProd());
             pstm.setInt(3,compra.getQtn());
@@ -36,10 +36,16 @@ public class CarrinhoDao {
             pstm.setInt(7,compra.getPrazoEntrega());
             pstm.setString(8,compra.getDataCompra());
             pstm.execute();
+            try(ResultSet rst = pstm.getGeneratedKeys()) {
+                while (rst.next()) {
+                    compra.setIdCarrinhos(rst.getInt(1));
+                }
+            }
         } catch (SQLException e) {
             e.getMessage();
             System.out.println("Não foi possível isnserir compra");
         }
+        return compra;
     }
     public void adicionaCarrinho(List<Produto> listProd){
 
@@ -100,7 +106,37 @@ public class CarrinhoDao {
                 e.getMessage();
                 System.out.println("Produto não deletado");
             }
-
-
     }
+
+    public List<Compra> listaUltimaCompra(String cpfUsuario){
+        List<Compra> lista = new ArrayList<>();
+        String sql = " SELECT * FROM compras  JOIN (SELECT cpfUsuario, MAX(dataCompra) ultimaData from compras where cpfUsuario = ?)ultimoRegistro\n" +
+                "                     on compras.dataCompra = ultimoRegistro.ultimaData\n" +
+                "                     and compras.cpfUsuario = ultimoRegistro.cpfUsuario;";
+        try {
+
+            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            ps.setString(1,cpfUsuario);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                lista.add(new Compra(rs.getInt("idCarrinhos"),
+                        rs.getInt("idProduto"),
+                        rs.getString("nomProd"),
+                        rs.getInt("qtn"),
+                        rs.getString("cpfUsuario"),
+                        rs.getString("cep"),
+                        rs.getDouble("valorFrete"),
+                        rs.getInt("prazoEntrega"),
+                        0,
+                        rs.getString("dataCompra")));
+            }
+            return lista;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO ENCONTRAR ULTIMA COMPRA! (method listaUltimaCompra())");
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 }

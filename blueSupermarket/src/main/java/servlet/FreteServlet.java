@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/frete")
+@WebServlet("/sistema/frete")
 public class FreteServlet extends HttpServlet {
     List<Frete> frete = new ArrayList<>();
     @Override

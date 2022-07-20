@@ -20,7 +20,7 @@
                         
                         <div class="row mb-2 d-flex justify-content-center mt-3">
                             <div class="col-6 d-flex justify-content-center"><input class="btn btn-primary" type="submit"></div>
-                            <div class="col-6 d-flex justify-content-center"><a class="btn btn-primary" href="http://localhost:8080/blueSupermarket/usuarioForm.jsp">Registrar</a></div>
+                            <div class="col-6 d-flex justify-content-center"><a class="btn btn-primary" href="http://localhost:8080/blueSupermarket/usuarioForm">Registrar</a></div>
                         </div>
                     </form>
                 </div>

@@ -21,9 +21,10 @@ public class RelatoriosDao {
         this.stm = f.getC().createStatement();
     }
 
-    public List<Relatorio> listVendaPorNome(String nome, String dataInic, String dataFinal){
+
+    public List<Relatorio> listVendaPorNome(String nome, String dataInic, String dataFinal, String cpf){
         List<Relatorio> listaDeVendas = new ArrayList<>();
-        String sql = "SELECT IdProduto, nomProd FROM compras WHERE nomProd LIKE ? AND dataCompra BETWEEN ? AND ?";
+        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? & nomProd LIKE ? AND dataCompra BETWEEN ? AND ?";
         String nomeB = nome+"%";
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
@@ -44,12 +45,13 @@ public class RelatoriosDao {
         }
     }
 
-    public List<Relatorio> listVendaPorData(String dataInic, String dataFinal){
+    public List<Relatorio> listVendaPorData(String dataInic, String dataFinal, String cpf){
         List<Relatorio> listaDeVendas = new ArrayList<>();
-        String sql = "SELECT IdProduto, nomProd FROM compras WHERE dataCompra BETWEEN ? AND ?";
+        String sql = "SELECT IdProduto, nomProd FROM compras WHERE cpfUsuario = ? & dataCompra BETWEEN ? AND ?";
 
         try {
             PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            ps.setString(1,cpf);
             ps.setString(2,dataInic);
             ps.setString(3,dataFinal);
             ps.execute();

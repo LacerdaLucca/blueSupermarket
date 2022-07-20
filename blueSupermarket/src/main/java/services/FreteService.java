@@ -15,6 +15,7 @@ public class FreteService {
             String valorString = freteDiv[0];
             String prazoString = freteDiv[1];
             Frete freteCalc = new Frete(cepDest, valorString,prazoString);
+            System.out.println(freteCalc);
             return freteCalc ;
 
         } catch (Exception e) {
@@ -39,6 +40,7 @@ public class FreteService {
         sc.close();
 
         dados=getDados(dados);
+        System.out.println(dados);
         return dados;
     }
 
