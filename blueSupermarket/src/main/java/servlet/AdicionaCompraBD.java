@@ -31,7 +31,7 @@ public class AdicionaCompraBD extends HttpServlet {
         Compra compra = new Compra();
 
         for (int i = 0; i < listaProdutos.size(); i++) {
-            compra.setIdProdutos(listaProdutos.get(i).getID());
+            compra.setIdProdutos(listaProdutos.get(i).getIdProd());
             compra.setNomeProd(listaProdutos.get(i).getNome());
             compra.setQtn(1);
             compra.setCpfUsuario(cpf);

@@ -46,7 +46,7 @@ public class CarrinhoDao {
         for (Produto produto:listProd) {
             String sql = "INSERT INTO carrinho (idProd) VALUES (?)";
             try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
-                pstm.setInt(1,produto.getID());
+                pstm.setInt(1,produto.getIdProd());
                 pstm.execute();
             } catch (SQLException e) {
                 e.getMessage();
@@ -90,6 +90,30 @@ public class CarrinhoDao {
               }
           }
         }
+    }
+
+    public List<Compra> buscaCompraPorCpf(String cpf, String dataBusca){
+        List<Compra> listaCompraJson = new ArrayList();
+
+        String sql = "SELECT * FROM compras WHERE cpfUsuario = ? & dataCompra= ?";
+
+        try {
+            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            ps.setString(1,cpf);
+            ps.setString(2,dataBusca);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                listaCompraJson.add(new Compra(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(6),rs.getDouble(7),rs.getInt(8),rs.getString(9)));
+                if(!rs.next()) return listaCompraJson;
+            }
+            return listaCompraJson;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO OBTER LISTA DE COMPRA! (method getProdutos())");
+            System.out.println(e.getMessage());
+            return null;
+        }
+
     }
 
     public void truncateCarrinho(){

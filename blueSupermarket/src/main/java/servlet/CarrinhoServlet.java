@@ -43,7 +43,7 @@ public class CarrinhoServlet extends HttpServlet {
                     int idProd = Integer.parseInt(id);
                     Produto produto = new CarrinhoService().addProdutoCarrinho(idProd);
                     valorTotal+= produto.getPreco();
-                    this.listProdutosCarrinho.add(new Produto(produto.getID(), produto.getNome(), produto.getDesc(), produto.getPreco(), 0, produto.getValidade(), valorTotal));
+                    this.listProdutosCarrinho.add(new Produto(produto.getIdProd(), produto.getNome(), produto.getDesc(), produto.getPreco(), 0, produto.getValidade(), valorTotal));
 
                     response.sendRedirect("/blueSupermarket/produtos");
                 }else{
@@ -51,7 +51,7 @@ public class CarrinhoServlet extends HttpServlet {
                     int idDel = Integer.parseInt(id);
                     int index = 0;
                     for (Produto produto: listProdutosCarrinho) {
-                        if(produto.getID() == idDel){
+                        if(produto.getIdProd() == idDel){
                             index = listProdutosCarrinho.indexOf(produto);
                         }
                     }

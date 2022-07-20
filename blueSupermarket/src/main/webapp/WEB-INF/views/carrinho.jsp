@@ -39,7 +39,7 @@
         <tbody> 
         	<c:forEach items="${produtos}" var="produto">       	          
                 <tr>
-                    <td>${produto.ID }</td>
+                    <td>${produto.idProd }</td>
                     <td> ${produto.nome}</td>
                     <td> ${produto.desc}</td>
                     <td> ${produto.preco}</td>

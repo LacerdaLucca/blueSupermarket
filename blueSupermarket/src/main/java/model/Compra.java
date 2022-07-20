@@ -15,8 +15,21 @@ public class Compra {
 
     private String dataCompra;
 
+    public Compra(){
 
-     public int getIdCarrinhos() {
+    }
+
+    public Compra(int idCarrinhos, int idProdutos, String nomeProd, String cep, double valorFrete, int prazoEntrega, String dataCompra) {
+        this.idCarrinhos = idCarrinhos;
+        this.idProdutos = idProdutos;
+        this.nomeProd = nomeProd;
+        this.cep = cep;
+        this.valorFrete = valorFrete;
+        this.prazoEntrega = prazoEntrega;
+        this.dataCompra = dataCompra;
+    }
+
+    public int getIdCarrinhos() {
         return idCarrinhos;
     }
 

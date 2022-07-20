@@ -23,8 +23,8 @@ public class Produto extends Quantidade{
         this.nome = nome;
     }
 
-    public Produto(int ID, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
-        this.idProd=ID;
+    public Produto(int idProd, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+        this.idProd=idProd;
         this.nome= nome;
         this.desc = desc;
         this.preco = preco;
@@ -41,13 +41,13 @@ public class Produto extends Quantidade{
     }
     
     //getters
-    public int getID() {
+
+    public int getIdProd() {
         return idProd;
     }
 
-
-    public void setID(int ID) {
-        this.idProd = ID;
+    public void setIdProd(int idProd) {
+        this.idProd = idProd;
     }
 
     public String getNome() {
@@ -126,7 +126,7 @@ public class Produto extends Quantidade{
     	}else if (quant > this.getQuant()) {
     		throw new RuntimeException("DEMANDA MAIOR DO QUE A OFERTA!");
     	}else {
-    		this.setID(this.getQuant()-quant);
+    		this.setIdProd(this.getQuant()-quant);
     		return cloneProduto();
     	}
     	
@@ -134,7 +134,7 @@ public class Produto extends Quantidade{
     
     //clona o produto
     private Produto cloneProduto() {
-    	Produto clone = new Produto(getID(),this.nome,this.desc,this.preco,getQuant(),this.validade, this.valorTotal);
+    	Produto clone = new Produto(getIdProd(),this.nome,this.desc,this.preco,getQuant(),this.validade, this.valorTotal);
     	return clone;
     }
 }

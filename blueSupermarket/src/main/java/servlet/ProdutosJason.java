@@ -21,12 +21,26 @@ public class ProdutosJason extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         listaProdJson.addAll(new ProdutosDao().getProdutos());
 
-       String json= new Gson().toJson(listaProdJson);
+        String idParam = req.getParameter("id");
+        if(idParam!=null){
+            int id= Integer.parseInt(idParam);
+            Produto produto= new ProdutosDao().getProdutosPorId(id);
 
-        req.setAttribute("produtos", json);
-        req.getRequestDispatcher("/WEB-INF/views/produtosJson.jsp").forward(req,resp);
+            String json= new Gson().toJson(produto);
+            req.setAttribute("produto",json);
+            try{
+                req.getRequestDispatcher("/WEB-INF/views/buscaProdJason.jsp").forward(req,resp);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            String json= new Gson().toJson(listaProdJson);
 
+            req.setAttribute("produtos", json);
+            req.getRequestDispatcher("/WEB-INF/views/produtosJson.jsp").forward(req,resp);
+
+        }
     }
-
-
 }
