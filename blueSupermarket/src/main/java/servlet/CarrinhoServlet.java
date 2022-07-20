@@ -65,6 +65,8 @@ public class CarrinhoServlet extends HttpServlet {
             }
         }catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
+
     }
 }

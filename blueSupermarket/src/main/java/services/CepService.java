@@ -2,6 +2,8 @@ package services;
 
 
 
+import model.CEP;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
@@ -26,5 +28,22 @@ public class CepService {
 
 
     }
+    public boolean verificaCep(String cep) {
+        if(cep.length() != 8)
+            return false;
+        String digitos = "(.*\\d.*)";
+        boolean cepValido = cep.matches(digitos);
 
+        String cep1 = null;
+        try {
+            cep1 = new CepService().getCep(cep);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        if(cep1.contains("erro")){
+            return false;
+        }
+        return cepValido;
+    }
 }

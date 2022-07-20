@@ -1,6 +1,7 @@
 package model;
 
 import exception.LoginInvalidoException;
+import services.CepService;
 
 public class Usuario {
 
@@ -64,8 +65,8 @@ public class Usuario {
     }
 
     public void setCep(String cep) {
-        if(!verificaCep(cep))
-            throw new LoginInvalidoException("cep invalido");
+        if(!new CepService().verificaCep(cep))
+            throw new LoginInvalidoException();
         this.cep = cep;
     }
 
@@ -75,7 +76,7 @@ public class Usuario {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", senha='" + senha + '\'' +
-                ", endereço='" + endereco + '\'' +
+                ", endereco='" + endereco + '\'' +
                 ", cep='" + cep + '\'' +
                 '}';
     }
@@ -138,10 +139,5 @@ public class Usuario {
                 + ".{8,20}$"; // De 8 a 20 chars
         return senha.matches(senhaValida);
     }
-    private boolean verificaCep(String cep) {
-        if(cep.length() != 8)
-            return false;
-        String digitos = "(.*\\d.*)";
-        return cep.matches(digitos);
-    }
+
 }
