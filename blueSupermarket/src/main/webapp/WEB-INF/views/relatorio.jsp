@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Relatório</title>
+    <title>Relatï¿½rio</title>
 </head>
 <body>
     <header>
@@ -34,7 +34,7 @@
                     <tbody>
                         <c:forEach items="${vendas}" var="produto">
                             <tr>
-                                <td>${produto.idProd }</td>
+                                <td>${produto.idProd}</td>
                                 <td>${produto.nomeProd}</td>
                                 <td>${produto.qntVendas}</td>
                             </tr>
