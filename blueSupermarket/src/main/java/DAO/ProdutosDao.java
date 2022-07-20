@@ -129,8 +129,8 @@ public class ProdutosDao {
 		}
 	}
 	
-	public List<Produto> getProdutos(){
-		List<Produto> produtos = new ArrayList();
+	public ArrayList<Produto> getProdutos(){
+		ArrayList<Produto> produtos = new ArrayList<>();
 		String sql = "SELECT * FROM produtos";
 		
 		try {

@@ -46,7 +46,7 @@ public class CarrinhoServlet extends HttpServlet {
                     valorTotal+= produto.getPreco();
                     this.listProdutosCarrinho.add(new Produto(produto.getID(), produto.getNome(), produto.getDesc(), produto.getPreco(), produto.getValidade(), valorTotal));
 
-                    response.sendRedirect("/blueSupermarket/produtos");
+                    response.sendRedirect("/blueSupermarket/");
                 }else{
                     String id = request.getParameter("del");
                     int idDel = Integer.parseInt(id);

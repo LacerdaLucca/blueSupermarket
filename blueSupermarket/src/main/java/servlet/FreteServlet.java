@@ -16,12 +16,10 @@ import java.util.List;
 
 @WebServlet("/sistema/frete")
 public class FreteServlet extends HttpServlet {
-    List<Frete> frete = new ArrayList<>();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String cepEscolhido = req.getParameter("cep");
-        this.frete.add(new FreteService().retornoDadosFrete(cepEscolhido));
-        System.out.println(frete.get(0).getCep()+" "+frete.get(0).getValorFrete()+" "+frete.get(0).getPrazo());
+        Frete frete = new FreteService().retornoDadosFrete(cepEscolhido);
         req.setAttribute("frete", frete);
         req.getRequestDispatcher("/WEB-INF/views/frete.jsp").forward(req,resp);
     }
