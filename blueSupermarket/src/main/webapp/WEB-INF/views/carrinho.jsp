@@ -34,8 +34,8 @@
                         <tr>
                             <th>ID</th>
                             <th>NOME</th>
-                            <th>DESCRI��O</th>
-                            <th>PRE�O</th>
+                            <th>DESCRICAO</th>
+                            <th>PRECO</th>
                             <th>QUANTIDADE</th>
                             <th>VALIDADE</th>
                         </tr>
