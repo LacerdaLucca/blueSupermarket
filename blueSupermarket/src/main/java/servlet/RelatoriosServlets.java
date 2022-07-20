@@ -18,6 +18,7 @@ import java.util.List;
 
 @WebServlet("/sistema/relatorio")
 public class RelatoriosServlets extends HttpServlet {
+    String paramNomeProd;
     private List<Relatorio> relatoriosPorData = new ArrayList<>();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
