@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65812146-e47f-480f-982f-7594d9b32f9c" name="Changes" comment="criação de metodo de busca em CarrinhoDao" />
+    <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Correcao na promocao">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/CarrinhoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/CarrinhoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="feature-relatorios" />
+        <entry key="$PROJECT_DIR$/.." value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
