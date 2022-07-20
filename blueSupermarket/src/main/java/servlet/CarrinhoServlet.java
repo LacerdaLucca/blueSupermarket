@@ -46,7 +46,7 @@ public class CarrinhoServlet extends HttpServlet {
                     valorTotal+= produto.getPreco();
                     this.listProdutosCarrinho.add(new Produto(produto.getIdProd(), produto.getNome(), produto.getDesc(), produto.getPreco(), 0, produto.getValidade(), valorTotal));
 
-                    response.sendRedirect("/blueSupermarket/produtos");
+                    response.sendRedirect("/blueSupermarket/");
                 }else{
                     String id = request.getParameter("del");
                     int idDel = Integer.parseInt(id);
@@ -65,6 +65,8 @@ public class CarrinhoServlet extends HttpServlet {
             }
         }catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
+
     }
 }

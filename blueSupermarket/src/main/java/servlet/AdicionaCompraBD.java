@@ -1,12 +1,14 @@
 package servlet;
 
 import DAO.CarrinhoDao;
+import exception.LoginInvalidoException;
 import DAO.NotaFiscalDao;
 import model.Carrinho;
 import model.Compra;
 import model.NotaFiscal;
 import model.Produto;
 import services.CarrinhoService;
+import services.CepService;
 import services.FreteService;
 
 import javax.servlet.ServletException;

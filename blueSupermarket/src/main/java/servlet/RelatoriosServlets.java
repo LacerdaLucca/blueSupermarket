@@ -50,6 +50,7 @@ public class RelatoriosServlets extends HttpServlet {
             } else if (paramNomeBusca == null & paramDataIn != null & paramDataFim != null) {
                 relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramDataIn, paramDataFim, getCpfUsuario));
             }
+
             req.setAttribute("vendas", relatoriosPorData);
             Dispatcher(req,resp,"relatorio.jsp");
 

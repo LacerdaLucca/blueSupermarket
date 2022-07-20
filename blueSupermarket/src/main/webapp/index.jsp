@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.List, model.Produto"%>
+<%@ page import="java.util.List, model.Produto, DAO.ProdutosDao"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:directive.page isELIgnored="false"/>
 <!doctype html>
@@ -9,7 +9,8 @@
     <style>
        #container{
             display: grid;
-            grid-template-columns: 1fr 7fr 1fr;
+            grid-template-columns: 1fr 5fr 1fr;
+
         }
         .posicaoTitulo{    
             text-align: center;
@@ -37,14 +38,15 @@
             display:flex;   
             width: 820px;
             height:480px;      
-            margin: 0,5px 20px ;
+            margin: 5px 20px;
         }
 
         .carrocel ul{   
             display: flex;    
             list-style: none;    
             width: 1100px;
-            height: 460px;
+            height: 460px;  
+
         }
         .carrocel li{    
             position: relative;
@@ -67,41 +69,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>blueSupermarket</title>
 </head>
 <body>
 <header>
-    <div>
-        <div class="posicaoTitulo"><h2> O melhor e mais barato supermercado do país </h2></div>
-    </div>
-    
-    <div class="nav">
-        <ul class="nav nav-tabs">           
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/usuarioForm"><h4>Cadastro de Usuário</h4></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/sistema/carrinho"><h4>Carrinho</h4></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blueSupermarket/sistema/relatorio"><h4>Relatórios</h4></a>
-            </li>
-             <li class="nav-item">
-                   <a class="nav-link" href="/blueSupermarket/cep"><h4>Busca Endereço</h4></a>
-             </li>
-             <li class="nav-item">
-                   <a class="nav-link" href="/blueSupermarket/"><h4>Localização</h4></a>
-             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-            </li>
-        </ul>
-    </div>
-
+    <jsp:include page="componentes/Header.jsp"/>
 </header>
 <section id="container">
     <div>
@@ -119,41 +92,44 @@
         </div>
         <div>
             <br>
-            	<h2>Lista de produtos: </h2><br>
-            	<br>
-            	  <table>
-                    <thead>
+            <h2 class="mt-5">Lista de produtos: </h2>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>DESCRIÇÃO</th>
+                        <th>PREÇO</th>
+                        <th>VALIDADE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:set var="listaProdutos" value="${ProdutosDao().getProdutos()}" />
+                    <c:forEach items="${listaProdutos}" var="produto">
                         <tr>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>PREÇO</th>
-                            <th>VALIDADE</th>
+                            <td class="table-row">${produto.ID}</td>
+                            <td class="table-row">${produto.nome}</td>
+                            <td class="table-row">${produto.desc}</td>
+                            <td class="table-row">${produto.preco}</td>
+                            <td class="table-row">${produto.validade}</td>
+                            <td class="table-row"><form action="/blueSupermarket/sistema/carrinho?add=${produto.ID}" method="post">
+                                <input class="btn btn-success" type="submit" value="Adicionar ao carrinho"/>
+                            </form></td>
                         </tr>
-                    </thead>
-                    <tbody>
-                    	<c:forEach items="${listaProdutos}" var="produto">
-                            <tr>
-                                <td>${produto.idProd }</td>
-                                <td>${produto.nome}</td>
-                                <td>${produto.desc}</td>
-                                <td>${produto.preco} </td>
-                                <td>${produto.validade}</td>
-                                <td><form action="/blueSupermarket/sistema/carrinho?add=${produto.idProd}" method="post">
-                                	<input type="submit" value="Enviar carrinho"/>
-                                </form></td>
-                            </tr>
-                       </c:forEach>
-                    </tbody>
-                </table>
-                <form action="/blueSupermarket/sistema/carrinho" method="get">
-                    <input type="submit" value="Ir para o Carrinho"/>
-                </form>
+                   </c:forEach>
+                </tbody>
+            </table>
+            <div class="m-4"></div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <form action="/blueSupermarket/sistema/carrinho" class="mx-auto" method="get">
+                        <input class="btn btn-primary" type="submit" value="Ir para o Carrinho"/>
+                    </form>
+                </div>
+            </div>
+            <div class="m-5"></div>
         </div>
-
-    </div>
-    <div>
-
     </div>
 </section>
 
