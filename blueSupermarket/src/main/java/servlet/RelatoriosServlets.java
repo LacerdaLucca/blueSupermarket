@@ -29,7 +29,8 @@ public class RelatoriosServlets extends HttpServlet {
         String paramDataFim = req.getParameter("dataFim");
         Usuario usuario= (Usuario) req.getSession().getAttribute("usuario");
         String getCpfUsuario= usuario.getCpf();
-        System.out.println(paramNomeProd);
+        System.out.println("busca param"+paramNomeProd);
+        System.out.println("busca param Produto"+paramNomeBusca);
 //                req.getParameter("usuario");
 
        if (paramNomeProd == null & paramNomeBusca == null & paramDataIn == null & paramDataFim == null) {
@@ -38,9 +39,9 @@ public class RelatoriosServlets extends HttpServlet {
             if (paramNomeProd != null & paramDataIn == null & paramDataFim == null) {
                 List<Produto> listaProdutos = new ArrayList<>();
                 listaProdutos.addAll(new ProdutosDao().listaProdutoPorNome(paramNomeProd));
-                for (Produto prod:listaProdutos) {
-                    System.out.println(prod.getNome());
-                }
+//                for (Produto prod:listaProdutos) {
+//                    System.out.println(prod.getNome());
+//                }
                 req.setAttribute("listaProd", listaProdutos);
                 Dispatcher(req,resp,"listaProdutos.jsp");
 
@@ -52,7 +53,7 @@ public class RelatoriosServlets extends HttpServlet {
                 Dispatcher(req,resp,"formDataRelatorio.jsp");
 
             } else if (paramNomeBusca == null & paramDataIn != null & paramDataFim != null) {
-                relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramNomeProd, paramDataIn, paramDataFim, getCpfUsuario));
+                relatoriosPorData.addAll(new RelatoriosService().listaVendaPeriodo(paramNomeBusca, paramDataIn, paramDataFim, getCpfUsuario));
             }
 
             req.setAttribute("vendas", relatoriosPorData);
