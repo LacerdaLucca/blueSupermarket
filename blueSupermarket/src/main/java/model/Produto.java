@@ -1,7 +1,9 @@
 package model;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 
 public class Produto extends Quantidade{
@@ -99,21 +101,27 @@ public class Produto extends Quantidade{
     public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
 
     public boolean getPromocao() throws ParseException{
-    	this.promocao = false;
-		java.util.Date date = new java.util.Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String tmp = sdf.format(date);
-		java.util.Date agora = sdf.parse(tmp);
-		int vencimento = this.validade.compareTo(agora);
-		if(vencimento < 7 && vencimento >0) {
-			setPreco(this.preco*0.7);
-			this.promocao = true;
-		}else if(vencimento <=0) {
-			this.setQuant(0);
-		}
-		
-		return this.promocao;
-	}
+        this.promocao = false;
+        DecimalFormat df = new DecimalFormat("#,##");
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tmp = sdf.format(date);
+        java.util.Date agora = sdf.parse(tmp);
+        if(this.validade!=null && !this.promocao){
+            long diff = this.validade.getTime() - agora.getTime();
+            TimeUnit time = TimeUnit.DAYS;
+            long vencimento = time.convert(diff, TimeUnit.MILLISECONDS);
+            if(vencimento < 14 && vencimento >0) {
+                double precoPromocional = this.preco*0.7;
+                setPreco(Double.parseDouble(df.format(precoPromocional)));
+                this.promocao = true;
+            }else if(vencimento <=0) {
+                this.setQuant(0);
+            }
+        }
+
+        return this.promocao;
+    }
     
     public void setPreco(double preco) {
     	this.preco = preco;
