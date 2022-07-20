@@ -17,14 +17,6 @@ public class Usuario {
         setSenha(senha);
         setCep(cep);
         setEndereco(endereco);
-=========
-    public Usuario(String nome, String cpf, String senha, String endereco, String cep) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.senha = senha;
-        this.endereco = endereco;
-        this.cep = cep;
->>>>>>>>> Temporary merge branch 2
     }
 
     public Usuario() {
