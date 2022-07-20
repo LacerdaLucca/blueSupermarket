@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Feat: Integração dos servlets e páginas JSP.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/Factory.class" afterDir="false" />
+    <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do web.xml e FreteServlet.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Produto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658256922885</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix: Fix do web.xml e FreteServlet.">
+      <created>1658283197627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658283197627</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -203,7 +207,8 @@
     <MESSAGE value="merge dev" />
     <MESSAGE value="modificação para servlet" />
     <MESSAGE value="criação de metodo de busca em CarrinhoDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação de metodo de busca em CarrinhoDao" />
+    <MESSAGE value="Fix: Fix do web.xml e FreteServlet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Fix do web.xml e FreteServlet." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

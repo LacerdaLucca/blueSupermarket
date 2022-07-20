@@ -41,6 +41,7 @@ public class UsuarioServlet extends HttpServlet {
             response.setContentType("text/html");
             response.getWriter().println(ex.getMessage() + " <a href ='usuarioForm' > Volte a tela interior </a>");
         }
+        request.getRequestDispatcher("/blueSupermarket/").forward(request, response);
     }
 
 
