@@ -24,19 +24,15 @@ public class RelatorioJson extends HttpServlet {
 
         String data = req.getParameter("data");
 
-        try{
-            if (data!=null){
-                listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorData(data));
+        if (data!=null){
+            listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorData(data));
 
-                String json= new Gson().toJson(listaCompraPorData);
-                req.setAttribute("compra",json);
-                req.getRequestDispatcher("/WEB-INF/views/buscaCompraPorData.jsp").forward(req,resp);
-            }else {
-                req.setAttribute("msg","Digite um valor valido");
-                resp.sendRedirect("/blueSupermarket/relatorios/json");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String json= new Gson().toJson(listaCompraPorData);
+            req.setAttribute("compra",json);
+            req.getRequestDispatcher("/WEB-INF/views/buscaCompraPorData.jsp").forward(req,resp);
+        }else {
+            req.setAttribute("msg","Digite um valor valido");
+            resp.sendRedirect("/blueSupermarket/relatorios/json");
         }
 
     }

@@ -14,10 +14,9 @@
 
 	Periodo : <br>
 
-    Produto ${nomeProd}
+   Pesquisa data Produto:  ${nomeProd}
 	<br>
 	<form action="/blueSupermarket/sistema/relatorio" method="get">
-	    Produto <input type=text name="nomeProd" value="${nomeProd}"/>
 	   Data Inicial: <input type="text" name="dataIn"/>
 	   Data Inicial: <input type="text" name="dataFim"/>
        <input type="submit" value="buscar"/>

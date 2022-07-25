@@ -36,16 +36,6 @@
            </c:forEach>
         </tbody>
 	<tbody>
-            <c:import url="buscaRelatorio.jsp" />
-        </tbody>
-
-        <tbody>
-            <c:import url="formDataRelatorio.jsp" />
-        </tbody>
-
-        <tbody>
-            <c:import url="relatorio.jsp" />
-        </tbody>
 
     </table>
 

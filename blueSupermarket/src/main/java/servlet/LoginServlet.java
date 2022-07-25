@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     LoginService loginService = new LoginService();
@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
         if (usuario != null) {
             HttpSession sessao = req.getSession();
             sessao.setAttribute("usuario", usuario);
-            resp.sendRedirect("/blueSupermarket/produtos");
+            resp.sendRedirect("/blueSupermarket");
         }
     }
 }

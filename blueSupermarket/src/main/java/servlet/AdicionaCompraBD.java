@@ -2,10 +2,7 @@ package servlet;
 
 import DAO.CarrinhoDao;
 import DAO.NotaFiscalDao;
-import model.Carrinho;
-import model.Compra;
-import model.NotaFiscal;
-import model.Produto;
+import model.*;
 import services.CarrinhoService;
 import services.FreteService;
 
@@ -15,13 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/sistema/finalizar")
 public class AdicionaCompraBD extends HttpServlet {
     private List<Produto> listaProdutos= new ArrayList<>();
+    private List<Carrinho> listaCarrinho=new ArrayList<>();
 
     public void service(HttpServletRequest req, HttpServletResponse resp){
 
@@ -30,24 +27,31 @@ public class AdicionaCompraBD extends HttpServlet {
         String prazo = req.getParameter("prazo");
         String cpf = req.getParameter("usuario");
 
+        listaCarrinho.addAll(new CarrinhoDao().listaProdutosCarrinho());
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
+
+        int idUltimaCompra= new CarrinhoDao().buscarIdUltimaCompra()+1;
+        FreteAPICorreios freteAPICorreios;
+        try {
+           freteAPICorreios =new FreteService().getFrete(cep);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         for (int i = 0; i < listaProdutos.size(); i++) {
             compra.setIdProdutos(listaProdutos.get(i).getIdProd());
             compra.setNomeProd(listaProdutos.get(i).getNome());
-            compra.setQtn(1);
+            compra.setQtn(listaCarrinho.get(i).getQtn());
             compra.setCpfUsuario(cpf);
             compra.setCep(cep);
-            compra.setValorFrete(new FreteService().tratamentoValorFrete(valorFrete));
+            compra.setValorFrete(Double.parseDouble(freteAPICorreios.getValor()));
             compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
-            try{
-                compra = new CarrinhoDao().inserirCompra(compra);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
+            new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
         }
+        new CarrinhoServletAtual().getListProdutosCarrinho().clear();
 
         try{
             new CarrinhoDao().truncateCarrinho();
@@ -55,8 +59,6 @@ public class AdicionaCompraBD extends HttpServlet {
             System.out.println(nf.getId());
             req.setAttribute("notaFiscal",nf.getId());
             req.getRequestDispatcher("/sistema/ultimaCompra").forward(req,resp);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ServletException e) {

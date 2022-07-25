@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/produtos")
+@WebServlet("/")
 public class ProdutosServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private List<Produto> listProdutos= new ArrayList<>();
@@ -24,7 +24,7 @@ public class ProdutosServlet extends HttpServlet {
         new CarrinhoService().esvaziarCarrinho();
         listProdutos.addAll(new ProdutosDao().getProdutos());
             request.setAttribute("listaProdutos", listProdutos);
-            request.getRequestDispatcher("/index.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request,response);
 
 
     }

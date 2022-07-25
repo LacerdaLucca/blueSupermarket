@@ -11,15 +11,15 @@ import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
 
-@Path("/carrinho")
-@Produces(MediaType.APPLICATION_JSON)
+//@Path("/carrinho")
+//@Produces(MediaType.APPLICATION_JSON)
 public class carrinhoResource {
 
-    @GET
-    @Path("/{id}")
-    public void inserirCarrinhoProdId(@PathParam("id") int id) throws SQLException {
-        new CarrinhoService().addProdutoCarrinho(id);
-    }
+//    @GET
+//    @Path("/{id}")
+//    public void inserirCarrinhoProdId(@PathParam("id") int id) throws SQLException {
+//        new CarrinhoService().addProdutoCarrinho(id);
+//    }
 
 //
 //    @GET
@@ -29,11 +29,11 @@ public class carrinhoResource {
 //        listProdutos.remove(idDel);
 //    }
 
-    @POST
-    @Path("/salvarCarrinho")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void salvarCarrinho(@FormParam("carrinho") Compra compra) throws SQLException {
-        new CarrinhoDao().inserirCompra(compra);
-
-    }
+//    @POST
+//    @Path("/salvarCarrinho")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void salvarCarrinho(@FormParam("carrinho") Compra compra) throws SQLException {
+//        new CarrinhoDao().inserirCompra(compra);
+//
+//    }
 }

@@ -11,7 +11,7 @@ public class Compra {
     private String cep;
     private double valorFrete;
     private int prazoEntrega;
-    private double valorTotal =0;
+    private double valorTotal;
 
     private String dataCompra;
 

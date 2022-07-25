@@ -13,7 +13,7 @@ public class Produto extends Quantidade{
     private String desc;
     private double preco;
 
-    private long quantidade;
+    private int quantidade;
     private java.util.Date validade;
     private boolean promocao;
     private double valorTotal;
@@ -26,7 +26,7 @@ public class Produto extends Quantidade{
         this.nome = nome;
     }
 
-    public Produto(int idProd, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+    public Produto(int idProd, String nome, String desc, double preco, int quant, Date validade, double valorTotal){
         this.idProd=idProd;
         this.nome= nome;
         this.desc = desc;
@@ -73,11 +73,11 @@ public class Produto extends Quantidade{
         return preco;
     }
 
-    public long getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(long quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -85,19 +85,7 @@ public class Produto extends Quantidade{
         return validade;
     }
 
-    public void setValidade(Date validade) {
-        this.validade = validade;
-    }
-
-    public boolean isPromocao() {
-        return promocao;
-    }
-
-    public void setPromocao(boolean promocao) {
-        this.promocao = promocao;
-    }
-
-    public double getValorTotal() {return valorTotal; }
+     public double getValorTotal() {return valorTotal; }
 
     public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
 

@@ -23,7 +23,7 @@
         <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" /></label><br />
        <button type="submit">Buscar</button>
       </form>
-
+     <a href="/blueSupermarket/"><h3>Voltar a home </h3> </a>
     </body>
 
     </html>

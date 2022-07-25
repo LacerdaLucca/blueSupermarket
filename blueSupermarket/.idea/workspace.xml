@@ -5,9 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="Correcao na promocao">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/FreteAPICorreios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServletAtual.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProdutosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filter/AutorizacaFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CEP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CEP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Carrinho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Carrinho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resource/carrinhoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resource/carrinhoResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CarrinhoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CarrinhoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/FreteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FreteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/RelatoriosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/NotaFiscalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProdutosServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProdutosServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RelatoriosServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RelatoriosServlets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCep.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaRelatorio.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UsuarioDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Carrinho.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Produto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Quantidade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/CarrinhoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ProdutosServlet.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +79,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_11_ProdutosDao.class" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_6_ProdutosDao.class" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_9_ProdutosDao.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -62,22 +106,30 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucca/Documents/ESTUDOS/Compass.UOL/Sprint3/Loja&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Bolsa Estágio CompassoUol/Projetos-AEM/Projeto-Inicaial-IntelliJ&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Estagio-Backups\AvaliacaoIV\blueSupermarket\blueSupermarket\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Estagio-Backups\AvaliacaoIV\blueSupermarket\blueSupermarket\src\main\webapp" />
       <recent name="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
       <recent name="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp\WEB-INF\view" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="servlet" />
+    </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.tomcat">
+  <component name="RunManager">
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
@@ -85,7 +137,7 @@
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.64" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\gina_\apache-tomcat-9.0.64-prod\apache-tomcat-9.0.64" />
+          <option name="path" value="C:\Bolsa Estágio CompassoUol\apache-tomcat-9.0.64" />
           <option name="version" value="9.0.64.0" />
         </TomcatInfo>
       </option>
@@ -114,30 +166,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
-      <option name="adminPort" value="8005" />
-      <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions" />
-      <option name="passParentEnvironmentVariables" value="true" />
-      <option name="port" value="8080" />
-      <option name="tomcatInfo">
-        <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.64" />
-          <option name="number" value="0" />
-          <option name="path" value="C:\Program Files\apache-tomcat-9.0.64" />
-          <option name="version" value="9.0.64.0" />
-        </TomcatInfo>
-      </option>
-      <option name="vmOptions" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Smart Tomcat.Tomcat" />
-      <item itemvalue="Smart Tomcat.tomcat" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -229,6 +257,22 @@
     <MESSAGE value="modificação para servlet" />
     <MESSAGE value="criação de metodo de busca em CarrinhoDao" />
     <option name="LAST_COMMIT_MESSAGE" value="criação de metodo de busca em CarrinhoDao" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

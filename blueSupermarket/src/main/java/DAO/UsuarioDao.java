@@ -8,23 +8,11 @@ import java.sql.*;
 
 public class UsuarioDao {
 
-    private Statement stm;
-    private Factory f;
-
-    public UsuarioDao()  {
-       try{
-           this.f = new Factory();
-           f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-           this.stm = f.getC().createStatement();
-       } catch (SQLException e) {
-           throw new RuntimeException(e);
-       }
-    }
-
+    private Connection conn= new Factory().getC();
     public String inserirUsuario(Usuario usuario) {
 
         String comando = "INSERT INTO USUARIOS (NOME, CPF, SENHA, CEP, ENDERECO) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement pstm = stm.getConnection().prepareStatement(comando)) {
+        try (PreparedStatement pstm = conn.prepareStatement(comando)) {
             pstm.setString(1, usuario.getNome());
             pstm.setString(2, usuario.getCpf());
             pstm.setString(3, usuario.getSenha());
@@ -41,10 +29,11 @@ public class UsuarioDao {
     public Usuario consultarUsuarioPorCpf (String cpf)  {
         Usuario usuarioRetornado = new Usuario();
         String sql = "SELECT NOME, CPF, SENHA, CEP, ENDERECO FROM USUARIOS WHERE CPF = ?";
-        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
-            pstm.setString(1,cpf);
-            pstm.execute();
-            ResultSet rst = pstm.getResultSet();
+        try(PreparedStatement pst = conn.prepareStatement(sql)){
+            pst.setString(1,cpf);
+            pst.execute();
+            ResultSet rst = pst.getResultSet();
+            System.out.println(rst);
                 while (rst.next()) {
 
                     String nomeUsuario = rst.getString("NOME");
@@ -61,13 +50,12 @@ public class UsuarioDao {
 
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
-
         }
         return usuarioRetornado;
     }
 
     public void deletarPorCpf(String cpf) {
-        try (java.sql.PreparedStatement pstm = stm.getConnection().prepareStatement("DELETE FROM USUARIOS WHERE CPF = " +cpf)){
+        try (java.sql.PreparedStatement pstm = conn.prepareStatement("DELETE FROM USUARIOS WHERE CPF = " +cpf)){
             pstm.execute();
         }catch(Exception ex){
             System.out.println(ex.getMessage());

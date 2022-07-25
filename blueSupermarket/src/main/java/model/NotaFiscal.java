@@ -1,5 +1,6 @@
 package model;
 
+
 import DAO.CarrinhoDao;
 import DAO.UsuarioDao;
 import com.google.gson.Gson;
@@ -48,11 +49,7 @@ public class NotaFiscal {
     public String toJson() {
         UsuarioDao usuarioDao = new UsuarioDao();
         CarrinhoDao carrinhoDao = null;
-        try {
-            carrinhoDao = new CarrinhoDao();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        carrinhoDao = new CarrinhoDao();
         Usuario usuario = usuarioDao.consultarUsuarioPorCpf(this.cpfUsuario);
         String nome = usuario.getNome();
         List<Compra> carrinho = carrinhoDao.listaUltimaCompra(cpfUsuario);

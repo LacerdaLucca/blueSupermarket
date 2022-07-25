@@ -16,6 +16,7 @@ public class LoginService {
         String senha = req.getParameter("senha");
 
         Usuario usuario = usuarioDao.consultarUsuarioPorCpf(cpf);
+        System.out.println(usuario.getSenha());
 
         if (usuario != null && usuario.getSenha().equals(senha)) {
             return usuario;
