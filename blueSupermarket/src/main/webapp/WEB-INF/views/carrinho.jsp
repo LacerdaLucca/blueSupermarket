@@ -13,6 +13,12 @@
     height: 20px;
     }
     #tamanhoBot{ height: 115px; }
+    #posicBotom{display block;}
+    #posicValor{
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+    }
 </style>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -44,6 +50,7 @@
                             <th class="table-row">PREÇO</th>
                             <th class="table-row">VALIDADE</th>
                             <th class="table-row">QUANTIDADE</th>
+                            <th class="table-row">VALOR TOTAL</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,24 +64,24 @@
                                 <td class="table-row"><form action="/blueSupermarket/sistema/carrinho?id=${produto.idProd}" method="post">
                                      <input id="campQtn" type="text" name="quant" value="${produto.quantidade}"/>
                                      <input type="submit" value="confirmar"/>
-                              </form></td>
-                     <td> ${produto.valorTotal}</td>
-                    <td><form action="/blueSupermarket/sistema/carrinho?del=${produto.idProd}" method="post">
-                       	<input type="submit" value="Deletardo carrinho"/>
-                    </form></td>
-                </tr>
-               <div hidden> ${valorTotalCarr=valorTotalCarr+produto.valorTotal} </div>
-                    <br>
-            </c:forEach>
+                                </form></td>
+                                <td> ${produto.valorTotal}</td>
+                                <td><form action="/blueSupermarket/sistema/carrinho?del=${produto.idProd}" method="post">
+                                    <input type="submit" value="Deletardo carrinho"/>
+                                </form></td>
+                             </tr>
 
-        </tbody>
-      </table>
+                             <div hidden > ${valorTotalCarr=valorTotalCarr+produto.valorTotal} </div>
+                             <br>
+                         </c:forEach>
 
-      <br>
-    <div class="row">
-            Valor Total: ${valorTotalCarr}
-      </div>
-      <div class="row">
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+        <br>
+        <div id="posicValor"> <h3>Valor Total No Carrinho: ${valorTotalCarr}</h3></div>
+        <div id="posicBotom" class="row">
                  <div id="tamanhoBot" class="col-12 d-flex justify-content-center">
                      <a class="btn btn-secondary m-3" href="/blueSupermarket/">Continuar comprando</a>
                      <a class="btn btn-secondary m-3" href="/blueSupermarket/sistema/carrinho?salvar=t">Finalizar carrinho</a>
@@ -83,5 +90,6 @@
          </div>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    </div>
 </body>
 </html>

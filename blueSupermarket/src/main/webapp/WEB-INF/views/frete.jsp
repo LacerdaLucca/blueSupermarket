@@ -12,6 +12,7 @@
     #botomFinal{
         display: block;
     }
+    #posicao{  }
 </style>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -42,20 +43,22 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${frete}" var="frete">
+                        <div class="row col-3">
                         <tr>
                             <td class="pe-3">${frete.cep}</td>
                             <td class="pe-3">${frete.valorFrete}</td>
                             <td class="pe-3">${frete.prazo}</td>
                         </tr>
-                        <div class="row mt-4">
+                        </div>
+                        <div class="row col-3">
                                         <div class="col-12 d-flex justify-content-center">
                                             <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
-                                                <input type="hidden" name="cep" value="${frete.cep}" />
-                                                <input type="hidden" name="valor" value="${frete.valorFrete}" />
-                                                <input type="hidden" name="prazo" value="${frete.prazo}" />
-                                                <input type="hidden" name="usuario" value="${usuario.cpf}" />
-                                                <button id="botomFinal" class="btn btn-primary" type="submit">Finalizar Compra</button>
-                                            </form>
+                                                    <input type="hidden" name="cep" value="${frete.cep}" />
+                                                    <input type="hidden" name="valor" value="${frete.valorFrete}" />
+                                                    <input type="hidden" name="prazo" value="${frete.prazo}" />
+                                                    <input type="hidden" name="usuario" value="${usuario.cpf}" />
+                                                    <button class="btn btn-primary" type="submit">Finalizar Compra</button>
+                                           </form>
                                         </div>
                                     </div>
                        </c:forEach>
