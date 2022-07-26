@@ -42,8 +42,8 @@ public class AdicionaCompraBD extends HttpServlet {
             compra.setQtn(listaCarrinho.get(i).getQtn());
             compra.setCpfUsuario(cpf);
             compra.setCep(cep);
-            compra.setValorFrete(Double.parseDouble(frete.getValorFrete ()));
-            compra.setPrazoEntrega(Integer.parseInt(frete.getPrazo()));
+            compra.setValorFrete(Double.parseDouble(valorFrete));
+            compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
             compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
             new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
