@@ -23,10 +23,10 @@ public class AdicionaCompraBD extends HttpServlet {
 
     public void service(HttpServletRequest req, HttpServletResponse resp){
 
-        String cep = req.getParameter("cep");
-        String valorFrete = req.getParameter("valor");
-        String prazo = req.getParameter("prazo");
-        String cpf = req.getParameter("usuario");
+            String cep = req.getParameter("cep");
+            String valorFrete = req.getParameter("valor");
+            String prazo = req.getParameter("prazo");
+            String cpf = req.getParameter("usuario");
 
         try {
             listaCarrinho.addAll(new CarrinhoDao().listaProdutosCarrinho());
@@ -34,9 +34,9 @@ public class AdicionaCompraBD extends HttpServlet {
             throw new RuntimeException(e);
         }
         listaProdutos.addAll(new CarrinhoService().listaProd());
-        Compra compra = new Compra();
+            Compra compra = new Compra();
 
-        double valorDoFrete = new FreteService().tratamentoValorFrete(valorFrete);
+            double valorDoFrete = new FreteService().tratamentoValorFrete(valorFrete);
 
         int idUltimaCompra= 0;
         try {
@@ -47,35 +47,38 @@ public class AdicionaCompraBD extends HttpServlet {
 
 
         for (int i = 0; i < listaProdutos.size(); i++) {
-            compra.setIdProdutos(listaProdutos.get(i).getIdProd());
-            compra.setNomeProd(listaProdutos.get(i).getNome());
-            compra.setQtn(listaCarrinho.get(i).getQtn());
-            compra.setCpfUsuario(cpf);
-            compra.setCep(cep);
-            compra.setValorFrete(valorDoFrete);
-            compra.setPrazoEntrega(Integer.parseInt(prazo));
-            compra.setDataCompra(new CarrinhoService().dataCompra());
-            compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
+                compra.setIdProdutos(listaProdutos.get(i).getIdProd());
+                compra.setNomeProd(listaProdutos.get(i).getNome());
+                compra.setQtn(listaCarrinho.get(i).getQtn());
+                compra.setCpfUsuario(cpf);
+                compra.setCep(cep);
+                compra.setValorFrete(valorDoFrete);
+                compra.setPrazoEntrega(Integer.parseInt(prazo));
+                compra.setDataCompra(new CarrinhoService().dataCompra());
+                compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
             try {
                 new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
-        new CarrinhoServlet().getListProdutosCarrinho().clear();
-        try{
-            new CarrinhoDao().truncateCarrinho();
-            NotaFiscal nf = new NotaFiscalDao().adiciona(new NotaFiscal(cpf,compra.getIdCarrinhos()));
-            System.out.println(nf.getId());
-            req.setAttribute("notaFiscal",nf.getId());
-            req.getRequestDispatcher("/sistema/ultimaCompra").forward(req,resp);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            new CarrinhoServlet().getListProdutosCarrinho().clear();
+
+            try{
+                new CarrinhoDao().truncateCarrinho();
+                System.out.println(cpf);
+                System.out.println(compra.getIdCarrinhos());
+                NotaFiscal nf = new NotaFiscalDao().adiciona(new NotaFiscal(cpf,compra.getIdCarrinhos()));
+                System.out.println(nf.getId());
+                req.setAttribute("notaFiscal",nf.getId());
+                req.getRequestDispatcher("/sistema/ultimaCompra").forward(req,resp);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
     }
 
