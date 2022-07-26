@@ -15,10 +15,11 @@ public class Compra {
 
     private String dataCompra;
 
+
     public Compra(){
 
     }
-
+//rs.getInt(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(7),rs.getDouble(8),rs.getInt(9),rs.getDouble(11)
     public Compra(int idCarrinhos, int idProdutos, String nomeProd, int qtn, String cpfUsuario, String cep, double valorFrete, int prazoEntrega, double valorTotal, String dataCompra) {
         this.idCarrinhos = idCarrinhos;
         this.idProdutos = idProdutos;
@@ -32,15 +33,22 @@ public class Compra {
         this.dataCompra = dataCompra;
     }
 
-    public Compra(int idCarrinhos, int idProdutos, String nomeProd, String cep, double valorFrete, int prazoEntrega, String dataCompra) {
+
+    public Compra(int idCarrinhos, int idProdutos, String nomeProd,int qtn, String cep, double valorFrete, int prazoEntrega, double valorTotal) {
         this.idCarrinhos = idCarrinhos;
         this.idProdutos = idProdutos;
         this.nomeProd = nomeProd;
+        this.qtn = qtn;
         this.cep = cep;
         this.valorFrete = valorFrete;
         this.prazoEntrega = prazoEntrega;
         this.dataCompra = dataCompra;
+        this.valorTotal = valorTotal;
+
     }
+
+
+
 
     public int getIdCarrinhos() {
         return idCarrinhos;

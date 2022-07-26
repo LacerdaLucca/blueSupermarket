@@ -7,14 +7,8 @@
     <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filter/AutorizacaFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/FreteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usuarioForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usuarioForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +237,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java</url>
           <line>31</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
