@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List, model.Produto"%>
@@ -19,10 +18,10 @@
 <body>
 
 	<br>
-	
+
 	<h2>Carrinho De Compras</h2>
 	<br>
-			
+
 	<h3> Lista de produto: </h3>
 	  <table>
         <thead>
@@ -37,8 +36,8 @@
 
             </tr>
         </thead>
-        <tbody> 
-        	<c:forEach items="${produtos}" var="produto">       	          
+        <tbody>
+        	<c:forEach items="${produtos}" var="produto">
                 <tr>
                     <td> ${produto.idProd }</td>
                     <td> ${produto.nome}</td>
@@ -58,7 +57,7 @@
                     <br>
             </c:forEach>
 
-        </tbody>    
+        </tbody>
       </table>
                     Valor Total: ${valorTotalCarr}
       <br>

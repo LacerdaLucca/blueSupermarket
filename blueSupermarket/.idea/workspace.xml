@@ -7,12 +7,22 @@
     <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resource/carrinhoResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Carrinho.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Carrinho.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/RelatoriosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/RelatoriosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RelatoriosServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RelatoriosServlets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/autenticacaoForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCep.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaCompraPorData.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/buscaRelatorio.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formCep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formCep.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/formDataRelatorio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/frete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/frete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/listaProdutos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/listaProdutos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mapa.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mapa.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/produtosJson.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/produtosJson.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/relatorio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usuarioForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usuarioForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

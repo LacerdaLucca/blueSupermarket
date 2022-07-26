@@ -46,6 +46,7 @@ public class CarrinhoDao {
             e.getMessage();
             System.out.println("Não foi possível isnserir compra");
         }
+
     }
     public void adicionaCarrinho(List<Produto> listProd){
 
@@ -123,7 +124,7 @@ public class CarrinhoDao {
         }
 
     }
-    
+
         public int buscarIdUltimaCompra(){
         String sql = "SELECT MAX(idcarrinhos) FROM compras";
         int id = 0;
