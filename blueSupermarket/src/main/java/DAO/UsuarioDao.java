@@ -46,19 +46,15 @@ public class UsuarioDao {
             pstm.execute();
             ResultSet rst = pstm.getResultSet();
                 while (rst.next()) {
-
                     String nomeUsuario = rst.getString("NOME");
-                    usuarioRetornado.setNome(nomeUsuario);
                     String cpfUsuario = rst.getString("CPF");
-                    usuarioRetornado.setCpf(cpfUsuario);
                     String senhaUsuario = rst.getString("SENHA");
-                    usuarioRetornado.setSenha(senhaUsuario);
                     String cepUsuario = rst.getString("CEP");
-                    usuarioRetornado.setCep(cepUsuario);
                     String enderecoUsuario = rst.getString("ENDERECO");
-                    usuarioRetornado.setEndereco(enderecoUsuario);
-                }
+                    usuarioRetornado=(new Usuario(nomeUsuario,cpfUsuario,senhaUsuario,cepUsuario,enderecoUsuario));
 
+                }
+            return usuarioRetornado;
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
 
