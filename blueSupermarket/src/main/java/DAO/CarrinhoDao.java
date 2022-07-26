@@ -124,6 +124,25 @@ public class CarrinhoDao {
         }
 
     }
+    
+        public int buscarIdUltimaCompra(){
+        String sql = "SELECT MAX(idcarrinhos) FROM compras";
+        int id = 0;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.execute();
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                id= rs.getInt(1);
+            }
+            return id;
+        }catch(SQLException e) {
+            System.out.println("ERRO AO OBTER LISTA DE COMPRA! (method getProdutos())");
+            System.out.println(e.getMessage());
+        }
+        return id;
+    } 
 
     public void truncateCarrinho(){
             String sql = "TRUNCATE carrinho";
