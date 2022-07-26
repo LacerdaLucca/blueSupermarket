@@ -23,18 +23,19 @@ public class CarrinhoDao {
         this.stm = f.getC().createStatement();
     }
 
-    public Compra inserirCompra(Compra compra){
-
-        String sql = "INSERT INTO compras (idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra) VALUES (?,?,?,?,?,?,?,?)";
-        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
-            pstm.setInt(1,compra.getIdProdutos());
-            pstm.setString(2,compra.getNomeProd());
-            pstm.setInt(3,compra.getQtn());
-            pstm.setString(4,compra.getCpfUsuario());
-            pstm.setString(5,compra.getCep());
-            pstm.setDouble(6,compra.getValorFrete());
-            pstm.setInt(7,compra.getPrazoEntrega());
-            pstm.setString(8,compra.getDataCompra());
+     public void inserirCompra(Compra compra, int id){
+        String sql = "INSERT INTO compras (idcarrinhos, idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra, valorTotal) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+            pstm.setInt(1,id);
+            pstm.setInt(2,compra.getIdProdutos());
+            pstm.setString(3,compra.getNomeProd());
+            pstm.setInt(4,compra.getQtn());
+            pstm.setString(5,compra.getCpfUsuario());
+            pstm.setString(6,compra.getCep());
+            pstm.setDouble(7,compra.getValorFrete());
+            pstm.setInt(8,compra.getPrazoEntrega());
+            pstm.setString(9,compra.getDataCompra());
+            pstm.setDouble(10,compra.getValorTotal());
             pstm.execute();
             try(ResultSet rst = pstm.getGeneratedKeys()) {
                 while (rst.next()) {
@@ -49,10 +50,12 @@ public class CarrinhoDao {
     }
     public void adicionaCarrinho(List<Produto> listProd){
 
-        for (Produto produto:listProd) {
-            String sql = "INSERT INTO carrinho (idProd) VALUES (?)";
-            try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+         for (Produto produto:listProd) {
+            String sql = "INSERT INTO carrinho (idProd,qtn,valorTotal) VALUES (?,?,?)";
+            try(PreparedStatement pstm = conn.prepareStatement(sql)){
                 pstm.setInt(1,produto.getIdProd());
+                pstm.setInt(2, produto.getQuantidade());
+                pstm.setDouble(3,produto.getValorTotal());
                 pstm.execute();
             } catch (SQLException e) {
                 e.getMessage();
@@ -62,13 +65,13 @@ public class CarrinhoDao {
     }
     public List<Carrinho> listaProdutosCarrinho(){
         List<Carrinho> lista = new ArrayList<>();
-        String sql = "SELECT idProd FROM carrinho";
+        String sql = "SELECT idProd,qtn,valorTotal FROM carrinho";
         try {
-            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
-                lista.add(new Carrinho(rs.getInt("idProd")));
+                lista.add(new Carrinho(rs.getInt("idProd"),rs.getInt("qtn"),rs.getDouble("valorTotal")));
             }
             System.out.println(lista.size());
             return lista;
