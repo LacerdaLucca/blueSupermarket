@@ -31,7 +31,7 @@ public class AdicionaCompraBD extends HttpServlet {
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 
-        Frete frete = new FreteService().retornoDadosFrete(cep);
+        double valorDoFrete = new FreteService().tratamentoValorFrete(valorFrete);
 
         int idUltimaCompra= new CarrinhoDao().buscarIdUltimaCompra()+1;
 
@@ -42,14 +42,13 @@ public class AdicionaCompraBD extends HttpServlet {
             compra.setQtn(listaCarrinho.get(i).getQtn());
             compra.setCpfUsuario(cpf);
             compra.setCep(cep);
-            compra.setValorFrete(Double.parseDouble(valorFrete));
+            compra.setValorFrete(valorDoFrete);
             compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
             compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
             new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
         }
         new CarrinhoServlet().getListProdutosCarrinho().clear();
-
         try{
             new CarrinhoDao().truncateCarrinho();
             NotaFiscal nf = new NotaFiscalDao().adiciona(new NotaFiscal(cpf,compra.getIdCarrinhos()));
