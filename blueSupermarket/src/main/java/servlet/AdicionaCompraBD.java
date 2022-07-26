@@ -31,13 +31,10 @@ public class AdicionaCompraBD extends HttpServlet {
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 
+        double valorDoFrete = new FreteService().tratamentoValorFrete(valorFrete);
+
         int idUltimaCompra= new CarrinhoDao().buscarIdUltimaCompra()+1;
-        FreteAPICorreios freteAPICorreios;
-        try {
-           freteAPICorreios =new FreteService().getFrete(cep);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
 
         for (int i = 0; i < listaProdutos.size(); i++) {
             compra.setIdProdutos(listaProdutos.get(i).getIdProd());
@@ -45,13 +42,13 @@ public class AdicionaCompraBD extends HttpServlet {
             compra.setQtn(listaCarrinho.get(i).getQtn());
             compra.setCpfUsuario(cpf);
             compra.setCep(cep);
-            compra.setValorFrete(Double.parseDouble(freteAPICorreios.getValor()));
+            compra.setValorFrete(valorDoFrete);
             compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
             compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
             new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
         }
-        new CarrinhoServletAtual().getListProdutosCarrinho().clear();
+        new CarrinhoServlet().getListProdutosCarrinho().clear();
 
         try{
             new CarrinhoDao().truncateCarrinho();

@@ -27,11 +27,7 @@ public class CarrinhoDao {
             pstm.setString(9,compra.getDataCompra());
             pstm.setDouble(10,compra.getValorTotal());
             pstm.execute();
-//            try(ResultSet rst = pstm.getGeneratedKeys()) {
-//                while (rst.next()) {
-//                    compra.setIdCarrinhos(rst.getInt(1));
-//                }
-//            }
+
         } catch (SQLException e) {
             e.getMessage();
             System.out.println("Não foi possível isnserir compra");
@@ -130,17 +126,6 @@ public class CarrinhoDao {
         }
         return id;
     }
-    public void salvarParamBuscaRelatorio(int id){
-        String sql = "INSERT INTO carrinho (idProd) VALUES (?)";
-        try(PreparedStatement pstm = conn.prepareStatement(sql)){
-            pstm.setInt(1,id);
-            pstm.execute();
-        } catch (SQLException e) {
-            e.getMessage();
-            System.out.println("Não foi possível isnserir produto");
-        }
-    }
-
 
     public void truncateCarrinho(){
             String sql = "TRUNCATE carrinho";

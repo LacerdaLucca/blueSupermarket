@@ -16,38 +16,39 @@
 	<br>
 
 	Dados do Frete: <br>
+   <br>
+   	  <table>
+           <thead>
+               <tr>
+                   <th>CEP</th>
+                   <th>VALOR DO FRETE</th>
+                   <th>PRAZO</th>
+               </tr>
+           </thead>
+           <tbody>
 
-	<br>
-	  <table>
-        <thead>
-            <tr>
-                <th>CEP</th>
-                <th>VALOR DO FRETE</th>
-                <th>PRAZO</th>
-            </tr>
-        </thead>
-        <tbody>
-        	<c:forEach items="${frete}" var="frete">
-                <tr>
-                    <td>${frete.cep }</td>
-                    <td>${frete.valorFrete}</td>
-                    <td>${frete.prazo}</td>
+           <c:forEach items="${frete}" var="frete">
+                   <tr>
+                       <td>${frete.cep}</td>
+                       <td>${frete.valorFrete}</td>
+                       <td>${frete.prazo}</td>
 
-                </tr>
+                   </tr>
 
-                <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
-                   	<input type="hidden" name="cep" value="${frete.cep}" />
-                   	<input type="hidden" name="valor" value="${frete.valorFrete}" />
-                   	<input type="hidden" name="prazo" value="${frete.prazo}" />
-                   	<input type="hidden" name="usuario" value="${usuario.cpf}" />
-  					<button type="submit">Finalizar Compra</button>
-       			</form>
-            </c:forEach>
-        </tbody>
-    </table>
-    <br>
+                   <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
+                      	<input type="hidden" name="cep" value="${frete.cep}" />
+                      	<input type="hidden" name="valor" value="${frete.valorFrete}" />
+                      	<input type="hidden" name="prazo" value="${frete.prazo}" />
+                      	<input type="hidden" name="usuario" value="${usuario.cpf}" />
+     					<button type="submit">Finalizar Compra</button>
+          			</form>
+               </c:forEach>
+           </tbody>
+       </table>
+       <br>
 
 
-    </form>
+       </form>
+
 </body>
 </html>

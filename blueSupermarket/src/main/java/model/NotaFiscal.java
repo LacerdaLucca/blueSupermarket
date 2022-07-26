@@ -8,7 +8,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class NotaFiscal {
