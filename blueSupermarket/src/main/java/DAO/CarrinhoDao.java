@@ -25,7 +25,7 @@ public class CarrinhoDao {
 
      public void inserirCompra(Compra compra, int id){
         String sql = "INSERT INTO compras (idcarrinhos, idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra, valorTotal) VALUES (?,?,?,?,?,?,?,?,?,?)";
-        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
             pstm.setInt(1,id);
             pstm.setInt(2,compra.getIdProdutos());
             pstm.setString(3,compra.getNomeProd());
@@ -46,15 +46,14 @@ public class CarrinhoDao {
             e.getMessage();
             System.out.println("Não foi possível isnserir compra");
         }
-        return compra;
     }
     public void adicionaCarrinho(List<Produto> listProd){
 
          for (Produto produto:listProd) {
             String sql = "INSERT INTO carrinho (idProd,qtn,valorTotal) VALUES (?,?,?)";
-            try(PreparedStatement pstm = conn.prepareStatement(sql)){
+            try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
                 pstm.setInt(1,produto.getIdProd());
-                pstm.setInt(2, produto.getQuantidade());
+                pstm.setLong(2, produto.getQuantidade());
                 pstm.setDouble(3,produto.getValorTotal());
                 pstm.execute();
             } catch (SQLException e) {
@@ -67,7 +66,7 @@ public class CarrinhoDao {
         List<Carrinho> lista = new ArrayList<>();
         String sql = "SELECT idProd,qtn,valorTotal FROM carrinho";
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
+            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
@@ -130,7 +129,7 @@ public class CarrinhoDao {
         int id = 0;
 
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
+            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {

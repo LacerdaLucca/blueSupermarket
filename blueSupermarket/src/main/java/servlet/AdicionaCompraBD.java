@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,13 +28,22 @@ public class AdicionaCompraBD extends HttpServlet {
         String prazo = req.getParameter("prazo");
         String cpf = req.getParameter("usuario");
 
-        listaCarrinho.addAll(new CarrinhoDao().listaProdutosCarrinho());
+        try {
+            listaCarrinho.addAll(new CarrinhoDao().listaProdutosCarrinho());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         listaProdutos.addAll(new CarrinhoService().listaProd());
         Compra compra = new Compra();
 
         double valorDoFrete = new FreteService().tratamentoValorFrete(valorFrete);
 
-        int idUltimaCompra= new CarrinhoDao().buscarIdUltimaCompra()+1;
+        int idUltimaCompra= 0;
+        try {
+            idUltimaCompra = new CarrinhoDao().buscarIdUltimaCompra()+1;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
 
         for (int i = 0; i < listaProdutos.size(); i++) {
@@ -46,7 +56,11 @@ public class AdicionaCompraBD extends HttpServlet {
             compra.setPrazoEntrega(Integer.parseInt(prazo));
             compra.setDataCompra(new CarrinhoService().dataCompra());
             compra.setValorTotal(listaCarrinho.get(i).getValorTotal());
-            new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
+            try {
+                new CarrinhoDao().inserirCompra(compra,idUltimaCompra);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
         new CarrinhoServlet().getListProdutosCarrinho().clear();
         try{
@@ -58,6 +72,8 @@ public class AdicionaCompraBD extends HttpServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

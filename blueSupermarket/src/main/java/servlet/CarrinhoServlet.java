@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,12 @@ public class CarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             if(request.getParameter("salvar")!=null){
 //                String valorTotal=request.getParameter("salvar");
-                CarrinhoDao carrinhoDao = new CarrinhoDao();
+                CarrinhoDao carrinhoDao = null;
+                try {
+                    carrinhoDao = new CarrinhoDao();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 carrinhoDao.adicionaCarrinho(listProdutosCarrinho);
                 request.getRequestDispatcher("/WEB-INF/views/formCep.jsp").forward(request, response);
             }else {

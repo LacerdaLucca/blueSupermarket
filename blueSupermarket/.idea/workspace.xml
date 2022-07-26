@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resource/carrinhoResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Carrinho.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Carrinho.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resource/carrinhoResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/CarrinhoServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +55,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucca/Documents/ESTUDOS/Compass.UOL/Sprint3/Loja&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Estagio-Backups/Trabalho Finalizado AvaliacaoIV/blueSupermarket/blueSupermarket/src/main/webapp",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.import"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gina_\IdeaProjects\blueSupermarket\blueSupermarket\src\main\webapp" />
@@ -72,7 +77,7 @@
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="docBase" value="C:\Estagio-Backups\Trabalho Finalizado AvaliacaoIV\blueSupermarket\blueSupermarket\src\main\webapp" />
       <option name="envOptions">
         <map />
       </option>
@@ -82,7 +87,7 @@
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.64" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\vinif\apache-tomcat-9.0.64" />
+          <option name="path" value="C:\Bolsa Estágio CompassoUol\apache-tomcat-9.0.64" />
           <option name="version" value="9.0.64.0" />
         </TomcatInfo>
       </option>
@@ -115,7 +120,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="" />
+      <changelist id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home." />
       <created>1657302562362</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
