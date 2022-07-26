@@ -20,11 +20,10 @@ import java.util.List;
 public class FreteServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Frete> frete= new ArrayList<>();
         try{String cepEscolhido = req.getParameter("cep");
             System.out.println(cepEscolhido);
-            if(!new CepService().verificaCep(cepEscolhido))
-                throw new LoginInvalidoException("cep não encontrado");
-            Frete frete = new FreteService().retornoDadosFrete(cepEscolhido);
+            frete.add(new FreteService().retornoDadosFrete(cepEscolhido));
 
             req.setAttribute("frete", frete);
             req.getRequestDispatcher("/WEB-INF/views/frete.jsp").forward(req,resp);

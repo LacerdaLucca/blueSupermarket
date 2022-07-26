@@ -26,7 +26,6 @@ public class CarrinhoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             if(request.getParameter("salvar")!=null){
-//                String valorTotal=request.getParameter("salvar");
                 CarrinhoDao carrinhoDao = null;
                 try {
                     carrinhoDao = new CarrinhoDao();

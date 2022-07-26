@@ -13,7 +13,7 @@
 
 	<br>
 
-	Relatorio Solicitado: <br>
+	Relatorio Solicitado ${usuario.nome}: <br>
 
 	<br>
 	  <table>
