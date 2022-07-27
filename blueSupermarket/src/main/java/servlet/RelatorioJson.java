@@ -3,6 +3,7 @@ package servlet;
 import DAO.CarrinhoDao;
 import com.google.gson.Gson;
 import model.Compra;
+import model.Usuario;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,10 +24,12 @@ public class RelatorioJson extends HttpServlet {
         List<Compra> listaCompraPorData = new ArrayList<>();
 
         String data = req.getParameter("data");
+        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
+        String getCpfUsuario = usuario.getCpf();
 
         try{
             if (data!=null){
-                listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorData(data));
+                listaCompraPorData.addAll(new CarrinhoDao().buscaCompraPorData(getCpfUsuario,data));
 
                 String json= new Gson().toJson(listaCompraPorData);
                 req.setAttribute("compra",json);

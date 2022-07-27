@@ -21,14 +21,9 @@ public class CepServlet extends HttpServlet {
 
         String cep = req.getParameter("cep");
         if (cep == null) {
-
-
             req.getRequestDispatcher("/WEB-INF/views/buscaCep.jsp").forward(req,resp);
-
         }else {
-
             String cepBusca;
-
             try {
                 cepBusca = new CepService().getCep(cep);
                 CepJson cepjason = new CepJson();
@@ -37,10 +32,6 @@ public class CepServlet extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-
         }
-
-
     }
 }
