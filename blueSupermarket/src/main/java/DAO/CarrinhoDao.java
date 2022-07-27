@@ -5,27 +5,17 @@ import model.Carrinho;
 import model.Compra;
 import model.Produto;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class CarrinhoDao {
-    private Statement stm;
-    private Factory f;
+    private Connection conn= new Factory().getC();
 
-    public CarrinhoDao() throws SQLException {
-        this.f = new Factory();
-        f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        this.stm = f.getC().createStatement();
-    }
-
-     public void inserirCompra(Compra compra, int id){
+    public void inserirCompra(Compra compra, int id){
         String sql = "INSERT INTO compras (idcarrinhos, idProduto, nomProd, qtn, cpfUsuario, cep, valorFrete, prazoEntrega, dataCompra, valorTotal) VALUES (?,?,?,?,?,?,?,?,?,?)";
-        try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+        try(PreparedStatement pstm = conn.prepareStatement(sql)){
             pstm.setInt(1,id);
             pstm.setInt(2,compra.getIdProdutos());
             pstm.setString(3,compra.getNomeProd());
@@ -37,24 +27,23 @@ public class CarrinhoDao {
             pstm.setString(9,compra.getDataCompra());
             pstm.setDouble(10,compra.getValorTotal());
             pstm.execute();
-            try(ResultSet rst = pstm.getGeneratedKeys()) {
-                while (rst.next()) {
-                    compra.setIdCarrinhos(rst.getInt(1));
-                }
-            }
+//            try(ResultSet rst = pstm.getGeneratedKeys()) {
+//                while (rst.next()) {
+//                    compra.setIdCarrinhos(rst.getInt(1));
+//                }
+//            }
         } catch (SQLException e) {
             e.getMessage();
             System.out.println("Não foi possível isnserir compra");
         }
-
     }
     public void adicionaCarrinho(List<Produto> listProd){
 
-         for (Produto produto:listProd) {
+        for (Produto produto:listProd) {
             String sql = "INSERT INTO carrinho (idProd,qtn,valorTotal) VALUES (?,?,?)";
-            try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+            try(PreparedStatement pstm = conn.prepareStatement(sql)){
                 pstm.setInt(1,produto.getIdProd());
-                pstm.setLong(2, produto.getQuantidade());
+                pstm.setInt(2, produto.getQuantidade());
                 pstm.setDouble(3,produto.getValorTotal());
                 pstm.execute();
             } catch (SQLException e) {
@@ -67,7 +56,7 @@ public class CarrinhoDao {
         List<Carrinho> lista = new ArrayList<>();
         String sql = "SELECT idProd,qtn,valorTotal FROM carrinho";
         try {
-            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
@@ -89,7 +78,7 @@ public class CarrinhoDao {
         for (Carrinho carrinho:listCarrinho) {
           if (carrinho.getIdProd() == id){
               String sql = "DELETE FROM carrinho WHERE idCar = ?";
-              try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+              try(PreparedStatement pstm = conn.prepareStatement(sql)){
                   pstm.setInt(1,carrinho.getIdCar());
                   pstm.execute();
                   return;
@@ -101,19 +90,19 @@ public class CarrinhoDao {
         }
     }
 
-    public List<Compra> buscaCompraPorData(String cpf,String dataBusca){
+    public List<Compra> buscaCompraPorData(String dataBusca){
         List<Compra> listaCompraJson = new ArrayList();
-        String sql = "SELECT * FROM compras WHERE cpfUsuario = ? AND dataCompra = ?";
+
+        String sql = "SELECT * FROM compras WHERE dataCompra= ?";
 
         try {
-            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
-            ps.setString(1,cpf);
-            ps.setString(2,dataBusca);
-
+            PreparedStatement ps = conn.prepareStatement(sql);
+//            ps.setString(1,cpf);
+            ps.setString(1,dataBusca);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
-                listaCompraJson.add(new Compra(rs.getInt(2),rs.getInt(3),rs.getString(4),rs.getInt(5),rs.getString(7),rs.getDouble(8),rs.getInt(9),rs.getDouble(11)));
+                listaCompraJson.add(new Compra(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(6),rs.getDouble(7),rs.getInt(8),rs.getString(9)));
                 if(!rs.next()) return listaCompraJson;
             }
             return listaCompraJson;
@@ -122,15 +111,13 @@ public class CarrinhoDao {
             System.out.println(e.getMessage());
             return null;
         }
-
     }
-
-        public int buscarIdUltimaCompra(){
+    public int buscarIdUltimaCompra(){
         String sql = "SELECT MAX(idcarrinhos) FROM compras";
         int id = 0;
 
         try {
-            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()) {
@@ -142,15 +129,26 @@ public class CarrinhoDao {
             System.out.println(e.getMessage());
         }
         return id;
-    } 
+    }
+    public void salvarParamBuscaRelatorio(int id){
+        String sql = "INSERT INTO carrinho (idProd) VALUES (?)";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+            pstm.setInt(1,id);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.getMessage();
+            System.out.println("Não foi possível isnserir produto");
+        }
+    }
+
 
     public void truncateCarrinho(){
             String sql = "TRUNCATE carrinho";
-            try(PreparedStatement pstm = stm.getConnection().prepareStatement(sql)){
+            try(PreparedStatement pstm = conn.prepareStatement(sql)){
                 pstm.execute();
             } catch (SQLException e) {
                 e.getMessage();
-                System.out.println("Produto não deletado");
+                System.out.println("Produtos do carrinho não deletado");
             }
     }
 
@@ -161,7 +159,7 @@ public class CarrinhoDao {
                 "                     and compras.cpfUsuario = ultimoRegistro.cpfUsuario;";
         try {
 
-            PreparedStatement ps = this.stm.getConnection().prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,cpfUsuario);
             ps.execute();
             ResultSet rs = ps.getResultSet();

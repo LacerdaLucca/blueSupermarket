@@ -4,30 +4,19 @@ import factory.Factory;
 import model.Produto;
 import model.Relatorio;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RelatoriosDao {
-    private Statement stm;
-    private Factory f;
-
-    public RelatoriosDao() throws SQLException {
-        this.f = new Factory();
-        f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        this.stm = f.getC().createStatement();
-    }
-
+    private Connection conn= new Factory().getC();
 
     public List<Relatorio> listVendaPorData(String dataInic, String dataFinal, String cpf){
         List<Relatorio> listaDeVendas = new ArrayList<>();
         String sql = "SELECT IdProduto, nomProd, qtn FROM compras WHERE cpfUsuario = ? AND dataCompra BETWEEN ? AND ?";
 
         try {
-            PreparedStatement ps = stm.getConnection().prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,cpf);
             ps.setString(2,dataInic);
             ps.setString(3,dataFinal);

@@ -19,33 +19,21 @@ public class CarrinhoService {
     }
 
     public void deletarProdPorID(int idDel){
-        try {
-            new CarrinhoDao().deletarCarrinho(idDel);
-        } catch (SQLException e) {
-            System.out.println("Erro ao deletar do carrinho, produto não encontrado");
-        }
+        new CarrinhoDao().deletarCarrinho(idDel);
     }
 
     public List<Produto> listaProd(){
         List<Produto> listaProduto=new ArrayList<>();
         List<Carrinho> listaProdCarrinhos = new ArrayList<>();
-        try {
-            listaProdCarrinhos.addAll(new CarrinhoDao().listaProdutosCarrinho());
-            System.out.println(listaProdCarrinhos.size());
-            for (int i = 0; i < listaProdCarrinhos.size(); i++) {
-                listaProduto.add(new ProdutosDao().getProdutosPorId(listaProdCarrinhos.get(i).getIdProd()));
-            }
-            return listaProduto;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        listaProdCarrinhos.addAll(new CarrinhoDao().listaProdutosCarrinho());
+        System.out.println(listaProdCarrinhos.size());
+        for (int i = 0; i < listaProdCarrinhos.size(); i++) {
+            listaProduto.add(new ProdutosDao().getProdutosPorId(listaProdCarrinhos.get(i).getIdProd()));
         }
+        return listaProduto;
     }
     public void esvaziarCarrinho(){
-        try {
-            new CarrinhoDao().truncateCarrinho();
-        } catch (SQLException e) {
-            System.out.println("Erro ao deletar do carrinho, produto não encontrado");
-        }
+        new CarrinhoDao().truncateCarrinho();
     }
 
     public String dataCompra() {

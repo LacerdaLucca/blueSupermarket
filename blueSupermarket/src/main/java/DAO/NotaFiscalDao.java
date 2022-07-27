@@ -7,18 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NotaFiscalDao {
-    private Statement stm;
-    private Factory f;
-    public NotaFiscalDao() throws SQLException {
-        this.f = new Factory();
-        f.setConnection("jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false");
-        this.stm = f.getC().createStatement();
-    }
+    private Connection conn = new Factory().getC();
+
+
 
     public NotaFiscal adiciona(NotaFiscal nf){
 
-        String comando = "INSERT INTO nota_fiscal (idCarrinho, cpf) VALUES (?, ?)";
-        try (PreparedStatement ps = stm.getConnection().prepareStatement(comando, Statement.RETURN_GENERATED_KEYS)){
+        String comando = "INSERT INTO nota_fiscal (idcarrinho, cpf) VALUES (?, ?)";
+        try (PreparedStatement ps =conn.prepareStatement(comando, Statement.RETURN_GENERATED_KEYS)){
             ps.setInt(1,nf.getIdCarrinho());
             ps.setString(2,nf.getCpfUsuario());
             ps.execute();
@@ -35,7 +31,7 @@ public class NotaFiscalDao {
 
     public void remove(int id){
         String comando = "DELETE FROM nota_fiscal WHERE ID = ?";
-        try (PreparedStatement ps = stm.getConnection().prepareStatement(comando)){
+        try (PreparedStatement ps = conn.prepareStatement(comando)){
             ps.setInt(1,id);
             ps.execute();
 
@@ -46,7 +42,7 @@ public class NotaFiscalDao {
 
     public void atualiza(NotaFiscal nf){
         String comando = "UPDATE nota_fiscal NF SET NF.IDCARRINHO = ?, NF.CPF = ? WHERE ID = ?";
-        try (PreparedStatement ps = stm.getConnection().prepareStatement(comando)) {
+        try (PreparedStatement ps = conn.prepareStatement(comando)) {
             ps.setInt(1, nf.getIdCarrinho());
             ps.setString(2, nf.getCpfUsuario());
             ps.setInt(3, nf.getId());
@@ -59,7 +55,7 @@ public class NotaFiscalDao {
     public List<NotaFiscal> lista(){
         List<NotaFiscal> notas = new ArrayList<NotaFiscal>();
         String comando = "SELECT * FROM nota_fiscal";
-        try (PreparedStatement ps = stm.getConnection().prepareStatement(comando)){
+        try (PreparedStatement ps = conn.prepareStatement(comando)){
             ps.execute();
             try(ResultSet rst = ps.getResultSet()) {
                 while (rst.next()) {
@@ -76,7 +72,7 @@ public class NotaFiscalDao {
     public NotaFiscal busca(int id) {
         NotaFiscal nf = null;
         String comando = "SELECT * FROM nota_fiscal WHERE ID = ?";
-        try (PreparedStatement pstm = stm.getConnection().prepareStatement(comando)) {
+        try (PreparedStatement pstm = conn.prepareStatement(comando)) {
             pstm.setInt(1, id);
             pstm.execute();
             try(ResultSet rst = pstm.getResultSet()) {

@@ -10,25 +10,18 @@ public class Factory {
 	}
 	//construtor
 	public Factory() {
-
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			String URL = "jdbc:mysql://localhost:3306/bluesupermarket?useTimezone=true&serverTimezone=UTC&useSSL=false";
+			c = DriverManager.getConnection(URL,"root","Gb2834*71");
 		}catch(ClassNotFoundException e) {
 			System.out.println("ERRO NO CONSTRUTOR DA CLASSE FACTORY!");
 			e.printStackTrace();
-		}
-	}
-	
-	//seta uma nova conexao
-	public void setConnection(String URL) {
-		try {
-			 c = DriverManager.getConnection(URL,"root","Gb2834*71");
-
-		}catch (SQLException e){
+		} catch (SQLException e) {
 			System.out.println("ERRO AO CONFIGURAR A CONEXAO! (method setConnection())");
-			System.out.println(e.getMessage());
 		}
 	}
+
 
 	public void closeConnection() {
 		System.out.println("Fechando conexao com o banco de dados");

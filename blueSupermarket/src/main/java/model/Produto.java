@@ -1,4 +1,5 @@
 package model;
+
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +13,7 @@ public class Produto extends Quantidade{
     private String desc;
     private double preco;
 
-    private long quantidade;
+    private int quantidade;
     private java.util.Date validade;
     private boolean promocao;
     private double valorTotal;
@@ -25,7 +26,7 @@ public class Produto extends Quantidade{
         this.nome = nome;
     }
 
-    public Produto(int idProd, String nome, String desc, double preco, long quant, Date validade, double valorTotal){
+    public Produto(int idProd, String nome, String desc, double preco, int quant, Date validade, double valorTotal){
         this.idProd=idProd;
         this.nome= nome;
         this.desc = desc;
@@ -72,11 +73,11 @@ public class Produto extends Quantidade{
         return preco;
     }
 
-    public long getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(long quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -84,29 +85,17 @@ public class Produto extends Quantidade{
         return validade;
     }
 
-    public void setValidade(Date validade) {
-        this.validade = validade;
-    }
-
-    public boolean isPromocao() {
-        return promocao;
-    }
-
-    public void setPromocao(boolean promocao) {
-        this.promocao = promocao;
-    }
-
-    public double getValorTotal() {return valorTotal; }
+     public double getValorTotal() {return valorTotal; }
 
     public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
 
     public boolean getPromocao() throws ParseException{
-        this.promocao = false;
+    	this.promocao = false;
         DecimalFormat df = new DecimalFormat("#,##");
-        java.util.Date date = new java.util.Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String tmp = sdf.format(date);
-        java.util.Date agora = sdf.parse(tmp);
+		java.util.Date date = new java.util.Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String tmp = sdf.format(date);
+		java.util.Date agora = sdf.parse(tmp);
         if(this.validade!=null && !this.promocao){
             long diff = this.validade.getTime() - agora.getTime();
             TimeUnit time = TimeUnit.DAYS;
@@ -117,11 +106,11 @@ public class Produto extends Quantidade{
                 this.promocao = true;
             }else if(vencimento <=0) {
                 this.setQuant(0);
-            }
         }
-
-        return this.promocao;
-    }
+        }
+		
+		return this.promocao;
+	}
     
     public void setPreco(double preco) {
     	this.preco = preco;

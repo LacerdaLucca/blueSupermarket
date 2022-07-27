@@ -18,11 +18,7 @@ public class NotaFiscalServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         NotaFiscalDao notaFiscalDao = null;
-        try {
-            notaFiscalDao = new NotaFiscalDao();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        notaFiscalDao = new NotaFiscalDao();
         NotaFiscal notaFiscal = notaFiscalDao.busca((int)req.getAttribute("notaFiscal"));
         resp.setContentType("application/json");
         resp.getWriter().print(notaFiscal.toJson());

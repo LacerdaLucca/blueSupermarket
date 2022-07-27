@@ -1,7 +1,3 @@
-<!--<!DOCTYPE web-app PUBLIC-->
-<!-- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"-->
-<!-- "http://java.sun.com/dtd/web-app_2_3.dtd" >-->
-
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
@@ -20,19 +16,13 @@
     <servlet-name>Jersey Web Application</servlet-name>
     <url-pattern>/ultimaCompra/*</url-pattern>
   </servlet-mapping>
-
-  <error-page>
-    <error-code>404</error-code>
-    <location>/ErrosServlet</location>
-  </error-page>
-  <error-page>
-    <exception-type>java.io.FileNotFoundException</exception-type>
-    <location>/ErrosServlet</location>
-  </error-page>
-  <error-page>
-    <exception-type>500</exception-type>
-    <location>/ErrosServlet</location>
-  </error-page>
+  <servlet>
+    <servlet-name>home</servlet-name>
+    <servlet-class>servlet/ProdutosServlet.java</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern>/produtos</url-pattern>
+  </servlet-mapping>
 </web-app>
-
 

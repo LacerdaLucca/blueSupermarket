@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 
 public class Compra {
     private int idCarrinhos;
@@ -10,15 +11,14 @@ public class Compra {
     private String cep;
     private double valorFrete;
     private int prazoEntrega;
-    private double valorTotal =0;
+    private double valorTotal;
 
     private String dataCompra;
-
 
     public Compra(){
 
     }
-//rs.getInt(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(7),rs.getDouble(8),rs.getInt(9),rs.getDouble(11)
+
     public Compra(int idCarrinhos, int idProdutos, String nomeProd, int qtn, String cpfUsuario, String cep, double valorFrete, int prazoEntrega, double valorTotal, String dataCompra) {
         this.idCarrinhos = idCarrinhos;
         this.idProdutos = idProdutos;
@@ -32,29 +32,22 @@ public class Compra {
         this.dataCompra = dataCompra;
     }
 
-
-    public Compra(int idCarrinhos, int idProdutos, String nomeProd,int qtn, String cep, double valorFrete, int prazoEntrega, double valorTotal) {
+    public Compra(int idCarrinhos, int idProdutos, String nomeProd, String cep, double valorFrete, int prazoEntrega, String dataCompra) {
         this.idCarrinhos = idCarrinhos;
         this.idProdutos = idProdutos;
         this.nomeProd = nomeProd;
-        this.qtn = qtn;
         this.cep = cep;
         this.valorFrete = valorFrete;
         this.prazoEntrega = prazoEntrega;
         this.dataCompra = dataCompra;
-        this.valorTotal = valorTotal;
-
-    }
-
-
-
-
-    public int getIdCarrinhos() {
-        return idCarrinhos;
     }
 
     public void setIdCarrinhos(int idCarrinhos) {
         this.idCarrinhos = idCarrinhos;
+    }
+
+    public int getIdCarrinhos() {
+        return idCarrinhos;
     }
 
     public int getIdProdutos() {
