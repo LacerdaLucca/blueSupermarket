@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ErrosServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/erro.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NotaFiscalDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
