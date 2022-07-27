@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="blueSupermarket:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>blueSupermarket</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="blueSupermarket.war">
+      <element id="artifact" artifact-name="blueSupermarket:war exploded" />
+    </root>
+  </artifact>
+</component>
