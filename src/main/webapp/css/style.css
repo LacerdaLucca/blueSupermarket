@@ -1,0 +1,40 @@
+#container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+}
+.carrocel img{
+    display:flex;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+.carrocel ul{
+    list-style: none;
+}
+
+.navbar-brand {
+    font-size: 22px !important;
+    font-weight: 500;
+}
+
+a.nav-link {
+    color: black !important;
+    font-size: 18px !important;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.table-row {
+    padding: 0 10px 10px 0 !important;
+}
+
+.btn-carrinho {
+    margin-right: 20px !important;
+}
+
+.wrapper {
+    flex-wrap: nowrap !important;
+}
