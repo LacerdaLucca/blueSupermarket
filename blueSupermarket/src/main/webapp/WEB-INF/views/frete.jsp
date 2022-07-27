@@ -5,14 +5,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:directive.page isELIgnored="false"/>
 
-<%
-    Frete frete = (Frete) request.getAttribute("frete");
-    Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+    #botomFinal{
+        display: block;
+    }
+    #posicao{  }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,6 +23,7 @@
     <title>Frete</title>
 </head>
 <body>
+    Voce esta logado ${usuario.nome}
     <header>
         <jsp:include page="../../componentes/Header.jsp"/>
     </header>
@@ -40,25 +42,30 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="${frete}" var="frete">
+                        <div class="row col-3">
                         <tr>
-                            <td class="pe-3"><%= frete.getCep() %></td>
-                            <td class="pe-3"><%= frete.getValorFrete() %></td>
-                            <td class="pe-3"><%= frete.getPrazo() %></td>
+                            <td class="pe-3">${frete.cep}</td>
+                            <td class="pe-3">${frete.valorFrete}</td>
+                            <td class="pe-3">${frete.prazo}</td>
                         </tr>
+                        </div>
+                        <div class="row col-3">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
+                                                    <input type="hidden" name="cep" value="${frete.cep}" />
+                                                    <input type="hidden" name="valor" value="${frete.valorFrete}" />
+                                                    <input type="hidden" name="prazo" value="${frete.prazo}" />
+                                                    <input type="hidden" name="usuario" value="${usuario.cpf}" />
+                                                    <button class="btn btn-primary" type="submit">Finalizar Compra</button>
+                                           </form>
+                                        </div>
+                                    </div>
+                       </c:forEach>
                     </tbody>
                 </table>
             </div>
-            <div class="row mt-4">
-                <div class="col-12 d-flex justify-content-center">
-                    <form action="/blueSupermarket/sistema/finalizar" method="post" target="_blank">
-                        <input type="hidden" name="cep" value="<%=frete.getCep()%>" />
-                        <input type="hidden" name="valor" value="<%=frete.getValorFrete()%>" />
-                        <input type="hidden" name="prazo" value="<%=frete.getPrazo()%>" />
-                        <input type="hidden" name="usuario" value="<%=usuario.getCpf()%>" />
-                        <button class="btn btn-primary" type="submit">Finalizar Compra</button>
-                    </form>
-                </div>
-            </div>
+
         </div>
     </div>
 </body>

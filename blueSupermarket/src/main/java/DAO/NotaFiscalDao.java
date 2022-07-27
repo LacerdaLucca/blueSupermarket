@@ -17,7 +17,7 @@ public class NotaFiscalDao {
 
     public NotaFiscal adiciona(NotaFiscal nf){
 
-        String comando = "INSERT INTO nota_fiscal (idcarrinho, cpf) VALUES (?, ?)";
+        String comando = "INSERT INTO nota_fiscal (idCarrinho, cpf) VALUES (?, ?)";
         try (PreparedStatement ps = stm.getConnection().prepareStatement(comando, Statement.RETURN_GENERATED_KEYS)){
             ps.setInt(1,nf.getIdCarrinho());
             ps.setString(2,nf.getCpfUsuario());

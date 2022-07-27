@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ErrosServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/erro.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrinho.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/UsuarioServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CepServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucca/Documents/ESTUDOS/Compass.UOL/Sprint3/Loja&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Estagio-Backups/Trabalho Finalizado AvaliacaoIV/blueSupermarket/blueSupermarket/src/main/webapp&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
@@ -72,7 +74,7 @@
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/blueSupermarket" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="docBase" value="C:\Estagio-Backups\Trabalho Finalizado AvaliacaoIV\blueSupermarket\blueSupermarket\src\main\webapp" />
       <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
@@ -80,7 +82,7 @@
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.64" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\vinif\apache-tomcat-9.0.64" />
+          <option name="path" value="C:\Bolsa Estágio CompassoUol\apache-tomcat-9.0.64" />
           <option name="version" value="9.0.64.0" />
         </TomcatInfo>
       </option>
@@ -113,7 +115,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c10fd49-de7d-4321-adce-c69a30c264a3" name="Changes" comment="" />
+      <changelist id="86a31d0e-7388-4513-a29c-7a23377a31c7" name="Changes" comment="Fix: Fix do UsuarioServlet redirecionando para home." />
       <created>1657302562362</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -216,6 +218,47 @@
     <MESSAGE value="Fix: Fix do web.xml e FreteServlet." />
     <MESSAGE value="Fix: Fix do UsuarioServlet redirecionando para home." />
     <option name="LAST_COMMIT_MESSAGE" value="Fix: Fix do UsuarioServlet redirecionando para home." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/CarrinhoServlet.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/RelatorioJson.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/CarrinhoDao.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/UsuarioServlet.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/AdicionaCompraBD.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/UsuarioDao.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
